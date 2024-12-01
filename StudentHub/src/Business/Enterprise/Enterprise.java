@@ -1,0 +1,94 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Business.Enterprise;
+
+import java.util.ArrayList;
+
+/**
+ *
+ * @author omkarsalian
+ */
+public abstract class Enterprise {
+    
+    private EnterpriseType enterpriseType;
+    private ArrayList<Items> itemsList;
+    private ArrayList<ServiceTypes> serviceTypeList;
+    
+    public Enterprise(String name,EnterpriseType type){
+        this.enterpriseType = type;
+        this.itemsList = new ArrayList<>();
+        this.serviceTypeList = new ArrayList<>();
+    }
+    
+    public enum EnterpriseType{
+        
+        DietUnit("Diet Unit"),
+        TrainerUnit("Trainer Unit"),
+        DoctorUnit("Doctor Unit"),
+        DormInventoryUnit("Dorm Inventory Unit"),
+        MaintenanceUnit("Maintenance Unit");
+        
+        private String value;
+        
+        private EnterpriseType(String value){
+            this.value=value;
+        }
+        
+        public String getValue() {
+            return value;
+        }
+        
+        @Override
+        public String toString(){
+            return value;
+        }
+    }
+
+    public ArrayList<Items> getItemsList() {
+        return itemsList;
+    }
+
+    public void setItemsList(ArrayList<Items> itemsList) {
+        this.itemsList = itemsList;
+    }
+    
+    public ArrayList<ServiceTypes> getServiceTypeList() {
+        return serviceTypeList;
+    }
+
+    public void getServiceTypeList(ArrayList<ServiceTypes> serviceTypeList) {
+        this.serviceTypeList = serviceTypeList;
+    }
+    
+    public ServiceTypes createServiceType(){
+        ServiceTypes service = new ServiceTypes(); 
+        this.serviceTypeList.add(service);
+        return service;
+    }
+      
+    
+    public void deleteService(ServiceTypes service){
+         this.serviceTypeList.remove(service); 
+    }
+
+    public EnterpriseType getEnterpriseType() {
+        return enterpriseType;
+    }
+
+    public void setEnterpriseType(EnterpriseType enterpriseType) {
+        this.enterpriseType = enterpriseType;
+    }
+    
+    public Items createMenuItem(){
+        Items item = new Items(); 
+        this.itemsList.add(item);
+        return item;
+    }
+      
+    public void deleteItem(Items item){
+       itemsList.remove(item); 
+    }
+      
+}
