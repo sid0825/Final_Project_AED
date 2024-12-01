@@ -5,6 +5,7 @@
 package Business.UserAccount;
 
 import Business.Role.Role;
+import Business.Student.Student;
 import java.util.ArrayList;
 
 /**
@@ -41,5 +42,24 @@ public class UserAccountDirectory {
         return userAccount;
     }
     
+    public UserAccount createStudentAccount(String username, String password,Student student, Role role){
+        UserAccount userAccount = new UserAccount();
+        userAccount.setUsername(username);
+        userAccount.setPassword(password);
+        //userAccount.setEmployee(employee);
+        userAccount.setStudent(student);
+        userAccount.setRole(role);
+        userAccountList.add(userAccount);
+        return userAccount;
+    }
+    
+    public void removeUserAccount(UserAccount ua){
+        userAccountList.remove(ua);
+    }
+    
+    public UserAccount updateUserAccount(UserAccount userAccount, String password){
+        userAccount.setPassword(password);
+        return userAccount;
+    }
     
 }
