@@ -4,13 +4,14 @@
  */
 package Business.Student;
 
+import Business.Network.Network;
 import java.util.Random;
 
 /**
  *
  * @author omkarsalian
  */
-public class Student {
+public class Student { 
 
     private String name;
     private int id;
@@ -20,6 +21,7 @@ public class Student {
     private double BMI;
     private String gender;
     private static int count = 0;
+    private Network network;
     private String enterprise;
     private String goal;
     private String email;
@@ -32,9 +34,9 @@ public class Student {
 
     public Student() {
         Random r = new Random();
-        count = r.nextInt(max - min) + min;
+        count = r.nextInt(max-min) + min;
         id = count;
-        roomNumber = r.nextInt(max - min) + min;
+        roomNumber = r.nextInt(max-min)+min;
     }
 
     public int getId() {
@@ -43,6 +45,10 @@ public class Student {
 
     public double getHeight() {
         return height;
+    }
+
+    public Network getNetwork() {
+        return network;
     }
 
     public String getGender() {
@@ -59,6 +65,10 @@ public class Student {
 
     public void setBMI(double BMI) {
         this.BMI = BMI;
+    }
+    
+    public void setNetwork(Network network) {
+        this.network = network;
     }
 
     public String getEnterprise() {
@@ -88,7 +98,7 @@ public class Student {
     public void setAge(int age) {
         this.age = age;
     }
-
+    
     public void setName(String name) {
         this.name = name;
     }
@@ -139,6 +149,11 @@ public class Student {
 
     public int getRoomNumber() {
         return roomNumber;
+    }
+    
+    @Override
+    public String toString() {
+        return name;
     }
 
 }
