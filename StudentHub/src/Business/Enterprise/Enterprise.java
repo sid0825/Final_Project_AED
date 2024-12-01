@@ -4,22 +4,37 @@
  */
 package Business.Enterprise;
 
+import Business.Organization.Organization;
+import Business.Organization.OrganizationDirectory;
+import Business.Inventory.DormInventoryDirectory;
 import java.util.ArrayList;
 
 /**
  *
  * @author omkarsalian
  */
-public abstract class Enterprise {
+public abstract class Enterprise extends Organization {
     
     private EnterpriseType enterpriseType;
+    private OrganizationDirectory organizationDirectory;
+    private DormInventoryDirectory dormInventoryDirectory;
     private ArrayList<Items> itemsList;
     private ArrayList<ServiceTypes> serviceTypeList;
     
     public Enterprise(String name,EnterpriseType type){
+        super(name);
         this.enterpriseType = type;
         this.itemsList = new ArrayList<>();
         this.serviceTypeList = new ArrayList<>();
+        organizationDirectory = new OrganizationDirectory();
+    }
+
+    public OrganizationDirectory getOrganizationDirectory() {
+        return organizationDirectory;
+    }
+    
+    public DormInventoryDirectory getDormInventoryDirectory() {
+        return dormInventoryDirectory;
     }
     
     public enum EnterpriseType{
