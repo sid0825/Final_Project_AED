@@ -4,6 +4,9 @@
  */
 package Business.Enterprise;
 
+import Business.Role.Role;
+import java.util.ArrayList;
+
 /**
  *
  * @author omkarsalian
@@ -12,5 +15,10 @@ public class DoctorEnterprise extends Enterprise {
 
     public DoctorEnterprise(String name) {
         super(name, Enterprise.EnterpriseType.DoctorUnit);
+    }
+
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        return null;
     }
 }
