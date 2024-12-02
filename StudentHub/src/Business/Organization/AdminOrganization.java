@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Business.Enterprise;
+package Business.Organization;
 
 import Business.Role.Role;
 import java.util.ArrayList;
@@ -11,15 +11,15 @@ import java.util.ArrayList;
  *
  * @author Sumeet
  */
-public class TrainerEnterprise extends Enterprise {
+public class AdminOrganization extends Organization {
     
-    public TrainerEnterprise(String name){
-        super(name,EnterpriseType.TrainerUnit);
+    public AdminOrganization() {
+        super(Type.Admin.getValue());
     }
-    
+
     @Override
     public ArrayList<Role> getSupportedRole() {
-        return null;
+        throw new UnsupportedOperationException("Not supported yet.");
     }
     
 }
