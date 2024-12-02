@@ -4,6 +4,9 @@
  */
 package Business.Enterprise;
 
+import Business.Role.Role;
+import java.util.ArrayList;
+
 /**
  *
  * @author Sumeet
@@ -12,6 +15,11 @@ public class TrainerEnterprise extends Enterprise {
     
     public TrainerEnterprise(String name){
         super(name,EnterpriseType.TrainerUnit);
+    }
+    
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        return null;
     }
     
 }
