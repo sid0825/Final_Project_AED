@@ -9,10 +9,11 @@ package Business.Store;
  * @author siddheshsawant
  */
 public class Store {
+
     String itemName;
     int price;
     String itemType;
-    
+
     public String getItemName() {
         return itemName;
     }
@@ -35,5 +36,10 @@ public class Store {
 
     public void setItemType(String itemType) {
         this.itemType = itemType;
+    }
+
+    @Override
+    public String toString() {
+        return itemName;
     }
 }

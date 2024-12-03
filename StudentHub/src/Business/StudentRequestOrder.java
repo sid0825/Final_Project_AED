@@ -13,21 +13,22 @@ import java.util.ArrayList;
  * @author siddheshsawant
  */
 public class StudentRequestOrder {
+
     private int reqId;
-    private static int counter=1;
+    private static int counter = 1;
     private String status;
     private String studentName;
     private int studentId;
     private String goal;
-    private String  studentUserName;
+    private String studentUserName;
     private ArrayList<Items> itemsList;
     private ArrayList<ServiceTypes> serviceList;
     private String feedback;
-    
+
     public StudentRequestOrder() {
         reqId = counter;
         ++counter;
-        itemsList=new ArrayList<>();
+        itemsList = new ArrayList<>();
         serviceList = new ArrayList<>();
     }
 
@@ -38,7 +39,7 @@ public class StudentRequestOrder {
     public void setItemsList(ArrayList<Items> itemsList) {
         this.itemsList = itemsList;
     }
-    
+
     public ArrayList<ServiceTypes> getServiceList() {
         return serviceList;
     }
@@ -102,5 +103,10 @@ public class StudentRequestOrder {
     public void setFeedback(String feedback) {
         this.feedback = feedback;
     }
-    
+
+    @Override
+    public String toString() {
+        return Integer.toString(this.reqId);
+    }
+
 }
