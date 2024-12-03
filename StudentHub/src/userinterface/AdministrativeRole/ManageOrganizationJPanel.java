@@ -188,7 +188,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 12, -1, 30));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        enterpriseLabel.setForeground(new java.awt.Color(255, 51, 51));
+        enterpriseLabel.setForeground(new java.awt.Color(51, 204, 255));
         enterpriseLabel.setText("Manage Organization");
         add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, 270, 30));
 
