@@ -486,12 +486,38 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_createUserJButtonActionPerformed
 
     private void organizationEmpJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_organizationEmpJComboBoxActionPerformed
-        
+        Organization organization = (Organization) organizationEmpJComboBox.getSelectedItem();
+        if (organization != null) {
+            //populateEmployeeComboBox(organization);
+            populateRoleComboBox(organization);
+        }
         // TODO add your handling code here:
     }//GEN-LAST:event_organizationEmpJComboBoxActionPerformed
 
     private void txtUserNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUserNameKeyReleased
+        Organization organization = (Organization) organizationEmpJComboBox.getSelectedItem();
+        if (!usernamePatternCorrect(txtUserName.getText()) && !(txtUserName.getText().isEmpty())) {
+            emailSuccessLbl.setVisible(false);
+            emailIDAlreadyLbl.setVisible(false);
+            emailLbl.setVisible(true);
+            userNameValid = false;
+        } else if (!organization.getUserAccountDirectory().checkIfUsernameIsUnique(txtUserName.getText())) {
+            emailSuccessLbl.setVisible(false);
+            emailIDAlreadyLbl.setVisible(true);
+            emailLbl.setVisible(false);
+            userNameValid = false;
 
+        } else if (txtUserName.getText().isEmpty()) {
+            emailSuccessLbl.setVisible(false);
+            emailIDAlreadyLbl.setVisible(false);
+            emailLbl.setVisible(false);
+            userNameValid = false;
+        } else {
+            emailSuccessLbl.setVisible(true);
+            emailIDAlreadyLbl.setVisible(false);
+            emailLbl.setVisible(false);
+            userNameValid = true;
+        }
         
     }//GEN-LAST:event_txtUserNameKeyReleased
 
@@ -500,13 +526,35 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_txtUserNameActionPerformed
 
     private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
-        
+        int row = organizationJTable.getSelectedRow();
+
+        if (row < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a row from the table first", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        Employee e1 = (Employee) organizationJTable.getValueAt(row, 1);
+        UserAccount ua = (UserAccount) organizationJTable.getValueAt(row, 2);
+        org.getEmployeeDirectory().removeEmployee(e1);
+        org.getUserAccountDirectory().removeUserAccount(ua);
+        populateTable(org);
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRemoveActionPerformed
 
     private void txtNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyReleased
         // TODO add your handling code here:
-        
+        if (!cityPatternCorrect(txtName.getText()) && !(txtName.getText().isEmpty())) {
+            citySuccessLbl.setVisible(false);
+            cityLbl.setVisible(true);
+            nameValid = false;
+        } else if (txtName.getText().isEmpty()) {
+            citySuccessLbl.setVisible(false);
+            cityLbl.setVisible(false);
+            nameValid = false;
+        } else {
+            nameValid = true;
+            cityLbl.setVisible(false);
+            citySuccessLbl.setVisible(true);
+        }
     }//GEN-LAST:event_txtNameKeyReleased
 
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
@@ -515,7 +563,16 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
 
     private void passwordJTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordJTextFieldKeyReleased
         // TODO add your handling code here:
-        
+        if (!passwordPatternCorrect(passwordJTextField.getText()) && !(passwordJTextField.getText().isEmpty())) {
+            passwordSuccessLbl.setVisible(false);
+            passwordLbl.setVisible(true);
+        } else if (passwordJTextField.getText().isEmpty()) {
+            passwordLbl.setVisible(false);
+            passwordSuccessLbl.setVisible(false);
+        } else {
+            passwordLbl.setVisible(false);
+            passwordSuccessLbl.setVisible(true);
+        }
     }//GEN-LAST:event_passwordJTextFieldKeyReleased
 
     private void roleJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roleJComboBoxActionPerformed
