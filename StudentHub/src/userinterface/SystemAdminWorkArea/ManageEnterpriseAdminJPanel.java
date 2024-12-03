@@ -261,7 +261,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         add(passwordJPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 530, 190, 30));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel6.setForeground(new java.awt.Color(51, 204, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("MANAGE ENTERPRISE ADMIN");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 723, 30));
