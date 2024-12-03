@@ -43,7 +43,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         this.system = system;
         clearLabels();
         organizationJTable.getTableHeader().setDefaultRenderer(new tableHeaderColors());
-//        populateOrganizationComboBox();
+        populateOrganizationComboBox();
 //        populateOrganizationEmpComboBox();
 
     }
@@ -63,6 +63,21 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
 
         for (Organization organization : organizationDir.getOrganizationList()) {
             organizationJComboBox.addItem(organization);
+        }
+    }
+    
+    private boolean cityPatternCorrect(String val3) {
+        Pattern p = Pattern.compile("^[a-zA-Z ]+$");
+        Matcher m = p.matcher(val3);
+        boolean b = m.matches();
+        return b;
+    }
+
+    public void populateOrganizationEmpComboBox() {
+        organizationEmpJComboBox.removeAllItems();
+
+        for (Organization organization : organizationDir.getOrganizationList()) {
+            organizationEmpJComboBox.addItem(organization);
         }
     }
 
