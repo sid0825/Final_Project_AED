@@ -44,10 +44,26 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
             processJButton.setText("Mark as completed");
         }
 
-       
+        populateTable();
     }
 
-    
+    public void populateTable() {
+        DefaultTableModel dtm = (DefaultTableModel) delManTbl.getModel();
+        dtm.setRowCount(0);
+        for (Organization o : enterprise.getOrganizationDirectory().getOrganizationList()) {
+            for (WorkRequest request : o.getWorkQueue().getWorkRequestList()) {
+                if (request.getReceiver() != null && request.getReceiver().getEmployee().getName().equals(userAccount.getEmployee().getName())) {
+                    Object row[] = new Object[4];
+                    row[0] = request.getRequestID();
+                    row[1] = request.getSender().getStudent().getName();
+                    row[2] = request;
+                    row[3] = request.getStatus();
+                    dtm.addRow(row);
+                }
+            }
+        }
+
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -159,12 +175,26 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
 
     private void processJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processJButtonActionPerformed
 
-        
+        int selectedRow = delManTbl.getSelectedRow();
+
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a row.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        DormInventoryWorkRequest request = (DormInventoryWorkRequest) delManTbl.getValueAt(selectedRow, 2);
+        if (request.getStatus() == "Delivered") {
+            JOptionPane.showMessageDialog(null, "The order has been already Delivered.", "Error", JOptionPane.ERROR_MESSAGE);
+            populateTable();
+        } else {
+            request.setStatus("Delivered");
+            JOptionPane.showMessageDialog(null, "The order has been delivered successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+            populateTable();
+        }
 
     }//GEN-LAST:event_processJButtonActionPerformed
 
     private void refreshJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshJButtonActionPerformed
-        
+        populateTable();
     }//GEN-LAST:event_refreshJButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
