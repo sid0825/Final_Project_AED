@@ -73,6 +73,13 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
             }
         }
     }
+    
+    private boolean usernamePatternCorrect(String val) {
+        Pattern p = Pattern.compile("^.+@[^\\.].*\\.[a-z]{2,}$");
+        Matcher m = p.matcher(val);
+        boolean b = m.matches();
+        return b;
+    }
 
 
 
