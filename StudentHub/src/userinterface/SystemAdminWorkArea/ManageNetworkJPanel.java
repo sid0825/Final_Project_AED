@@ -227,7 +227,14 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_nameJTextFieldKeyReleased
 
     private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
-
+        int row = networkJTable.getSelectedRow();
+        if (row < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a row!!", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        Network n = (Network) networkJTable.getValueAt(row, 0);
+        system.getNetworkList().remove(n);
+        populateNetworkTable();
     }//GEN-LAST:event_DeleteButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
