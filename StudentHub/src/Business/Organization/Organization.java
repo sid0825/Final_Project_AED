@@ -8,6 +8,7 @@ import Business.Employee.EmployeeDirectory;
 import Business.Role.Role;
 import Business.Student.StudentDirectory;
 import Business.UserAccount.UserAccountDirectory;
+import Business.WorkQueue.WorkQueue;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -18,7 +19,7 @@ import java.util.Random;
 public abstract class Organization {
     
     public String name;
-//    private WorkQueue workQueue;
+    private WorkQueue workQueue;
     private EmployeeDirectory employeeDirectory;
     private UserAccountDirectory userAccountDirectory;
     private StudentDirectory studentDirectory;
@@ -58,7 +59,7 @@ public abstract class Organization {
 
     public Organization(String name) {
         this.name = name;
-//        workQueue = new WorkQueue();
+        workQueue = new WorkQueue();
         employeeDirectory = new EmployeeDirectory();
         userAccountDirectory = new UserAccountDirectory();
         studentDirectory = new StudentDirectory();
@@ -93,17 +94,17 @@ public abstract class Organization {
         return name;
     }
 
-//    public WorkQueue getWorkQueue() {
-//        return workQueue;
-//    }
+    public WorkQueue getWorkQueue() {
+        return workQueue;
+    }
 
     public void setName(String name) {
         this.name = name;
     }
 
-//    public void setWorkQueue(WorkQueue workQueue) {
-//        this.workQueue = workQueue;
-//    }
+    public void setWorkQueue(WorkQueue workQueue) {
+        this.workQueue = workQueue;
+    }
 
     @Override
     public String toString() {
