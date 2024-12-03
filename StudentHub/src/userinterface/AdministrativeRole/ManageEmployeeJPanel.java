@@ -106,7 +106,27 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         }
     }
 
+    private boolean usernamePatternCorrect(String val) {
+        Pattern p = Pattern.compile("^.+@[^\\.].*\\.[a-z]{2,}$");
+        Matcher m = p.matcher(val);
+        boolean b = m.matches();
+        return b;
+    }
 
+    private boolean namePatternCorrect(String val1) {
+        Pattern p = Pattern.compile("^[a-zA-Z]+$");
+        Matcher m = p.matcher(val1);
+        boolean b = m.matches();
+        return b;
+    }
+
+    private boolean passwordPatternCorrect(String val4) {
+        Pattern p1;
+        p1 = Pattern.compile("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$");
+        Matcher m1 = p1.matcher(String.valueOf(val4));
+        boolean b1 = m1.matches();
+        return b1;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
