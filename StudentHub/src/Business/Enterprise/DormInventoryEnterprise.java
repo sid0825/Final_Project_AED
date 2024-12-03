@@ -16,6 +16,7 @@ public class DormInventoryEnterprise extends Enterprise {
         super(name,Enterprise.EnterpriseType.DormInventoryUnit);
     }
     
+    @Override
     public ArrayList<Role> getSupportedRole() {
         return null;
     }
