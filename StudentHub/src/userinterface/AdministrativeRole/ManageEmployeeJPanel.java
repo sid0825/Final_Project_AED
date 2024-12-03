@@ -409,14 +409,80 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
 
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
 
     private void organizationJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_organizationJComboBoxActionPerformed
-        
+  
+        org = (Organization) organizationJComboBox.getSelectedItem();
+        if (org != null) {
+            populateTable(org);
+        }
     }//GEN-LAST:event_organizationJComboBoxActionPerformed
 
     private void createUserJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserJButtonActionPerformed
-        
+        String userName = txtUserName.getText();
+        String password = passwordJTextField.getText();
+        //String name = txtName.getText();
+
+        Organization organization = (Organization) organizationEmpJComboBox.getSelectedItem();
+
+        Employee employee = new Employee();
+        employee.setName(txtName.getText());
+
+        Role role = (Role) roleJComboBox.getSelectedItem();
+
+        if (!txtUserName.getText().isEmpty() && !passwordJTextField.getText().isEmpty() && !txtName.getText().isEmpty()) {
+            if (organization.getEmployeeDirectory().checkIfUsernameIsUnique(userName)) {
+                if (usernamePatternCorrect(userName)) {
+                    if (organization.getUserAccountDirectory().checkIfUsernameIsUnique(userName)) {
+                        organization.getEmployeeDirectory().createEmployee(txtName.getText());
+                        organization.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
+                        // organization.getUserAccountDirectory().createUserAccount(userName, password, role);
+                        JOptionPane.showMessageDialog(null, "Employee created successfully");
+                        //nd@nd.com    populateTable(organization);
+                        txtUserName.setText("");
+                        passwordJTextField.setText("");
+                        txtName.setText("");
+                        citySuccessLbl.setVisible(false);
+                        emailSuccessLbl.setVisible(false);
+                        passwordSuccessLbl.setVisible(false);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Username already exists", "Warning", JOptionPane.WARNING_MESSAGE);
+                        txtUserName.setText("");
+                        return;
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "Email format emp@domain.com", "Warning", JOptionPane.WARNING_MESSAGE);
+                    txtUserName.setText("");
+                    return;
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Employee already exists", "Warning", JOptionPane.WARNING_MESSAGE);
+                txtName.setText("");
+                return;
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "All fields must be entered", "Warning", JOptionPane.WARNING_MESSAGE);
+            txtName.setText("");
+            if (txtUserName.getText().isEmpty() && passwordJTextField.getText().isEmpty() && txtName.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "All fields must be entered", "Warning", JOptionPane.WARNING_MESSAGE);
+
+                return;
+            }
+            if (userNameValid && nameValid && passwordValid) {
+                organization.getEmployeeDirectory().createEmployee(txtUserName.getText());
+                organization.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
+                JOptionPane.showMessageDialog(null, "Employee created successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+                //populateTable(organization);
+                txtUserName.setText("");
+                passwordJTextField.setText("");
+                txtName.setText("");
+                clearLabels();
+            }
+        }
     }//GEN-LAST:event_createUserJButtonActionPerformed
 
     private void organizationEmpJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_organizationEmpJComboBoxActionPerformed
