@@ -80,6 +80,31 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
             organizationEmpJComboBox.addItem(organization);
         }
     }
+    
+    private void populateRoleComboBox(Organization organization) {
+        roleJComboBox.removeAllItems();
+        for (Role role : organization.getSupportedRole()) {
+
+            String r = role.toString();
+            roleJComboBox.addItem(role);
+        }
+    }
+
+    private void populateTable(Organization organization) {
+        DefaultTableModel model = (DefaultTableModel) organizationJTable.getModel();
+
+        model.setRowCount(0);
+
+        for (UserAccount acc : organization.getUserAccountDirectory().getUserAccountList()) {
+            Employee employee = acc.getEmployee();
+            Object[] row = new Object[3];
+            row[0] = employee.getId();
+            row[1] = employee;
+            row[2] = acc;
+            model.addRow(row);
+
+        }
+    }
 
 
 
