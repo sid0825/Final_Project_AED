@@ -336,11 +336,51 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_enterpriseJComboBoxActionPerformed
 
     private void backJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButton1ActionPerformed
-        
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        SystemAdminWorkAreaJPanel sysAdminwjp = (SystemAdminWorkAreaJPanel) component;
+        sysAdminwjp.populateTree();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButton1ActionPerformed
 
     private void submitJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButton1ActionPerformed
-        
+        Enterprise enterprise = (Enterprise) enterpriseJComboBox.getSelectedItem();
+        if (enterprise.getEmployeeDirectory().getEmployeeList().size() != 0) {
+            entAvail = 1;
+        }
+        if (usernameJTextField.getText().isEmpty() || passwordJPasswordField.getText().isEmpty() || nameJTextField.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Field(s) cannot be Empty!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        } else if (emailValid && nameValid && entAvail != 1) {
+
+            String username = usernameJTextField.getText();
+            String password = String.valueOf(passwordJPasswordField.getPassword());
+            String name = nameJTextField.getText();
+
+            Employee employee = enterprise.getEmployeeDirectory().createEmployee(name);
+
+            UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new AdminRole());
+            populateTable();
+            networkJComboBox.setSelectedIndex(0);
+            enterpriseJComboBox.setSelectedIndex(0);
+            usernameJTextField.setText("");
+            passwordJPasswordField.setText("");
+            nameJTextField.setText("");
+            clearLabels();
+
+        } else {
+            if (entAvail == 1) {
+                JOptionPane.showMessageDialog(null, "Enterprise admin is already added !", "Alert", JOptionPane.INFORMATION_MESSAGE);
+                clearLabels();
+                usernameJTextField.setText("");
+                passwordJPasswordField.setText("");
+                nameJTextField.setText("");
+            } else {
+                JOptionPane.showMessageDialog(null, "Please enter all the required fields correctly!", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
 
     }//GEN-LAST:event_submitJButton1ActionPerformed
 
