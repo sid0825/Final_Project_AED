@@ -42,7 +42,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         clearLabels();
         populateTable();
         enterpriseJTable.getTableHeader().setDefaultRenderer(new tableHeaderColors());
-        
+        populateNetworkComboBox();
     }
 
     private void clearLabels() {
@@ -81,7 +81,28 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         return b;
     }
 
+    private boolean cityPatternCorrect(String val3) {
+        Pattern p = Pattern.compile("^[a-zA-Z ]+$");
+        Matcher m = p.matcher(val3);
+        boolean b = m.matches();
+        return b;
+    }
+    
+    private boolean passwordPatternCorrect(String val4) {
+        Pattern p1;
+        p1 = Pattern.compile("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$");
+        Matcher m1 = p1.matcher(String.valueOf(val4));
+        boolean b1 = m1.matches();
+        return b1;
+    }
 
+    private void populateNetworkComboBox() {
+        networkJComboBox.removeAllItems();
+
+        for (Network network : system.getNetworkList()) {
+            networkJComboBox.addItem(network);
+        }
+    }
 
     private void populateEnterpriseComboBox(Network network) {
         enterpriseJComboBox.removeAllItems();
@@ -342,12 +363,33 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
     private void passwordJPasswordFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordJPasswordFieldKeyReleased
         // TODO add your handling code here:
-        
+        if (!passwordPatternCorrect(passwordJPasswordField.getText()) && !(passwordJPasswordField.getText().isEmpty())) {
+            passwordSuccessLbl.setVisible(false);
+            passwordLbl.setVisible(true);
+        } else if (passwordJPasswordField.getText().isEmpty()) {
+            passwordLbl.setVisible(false);
+            passwordSuccessLbl.setVisible(false);
+        } else {
+            passwordLbl.setVisible(false);
+            passwordSuccessLbl.setVisible(true);
+        }
     }//GEN-LAST:event_passwordJPasswordFieldKeyReleased
 
     private void nameJTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameJTextFieldKeyReleased
         // TODO add your handling code here:
-        
+        if (!cityPatternCorrect(nameJTextField.getText()) && !(nameJTextField.getText().isEmpty())) {
+            citySuccessLbl.setVisible(false);
+            cityLbl.setVisible(true);
+            nameValid = false;
+        } else if (nameJTextField.getText().isEmpty()) {
+            citySuccessLbl.setVisible(false);
+            cityLbl.setVisible(false);
+            nameValid = false;
+        } else {
+            nameValid = true;
+            cityLbl.setVisible(false);
+            citySuccessLbl.setVisible(true);
+        }
     }//GEN-LAST:event_nameJTextFieldKeyReleased
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
