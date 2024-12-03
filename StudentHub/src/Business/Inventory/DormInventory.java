@@ -9,10 +9,10 @@ package Business.Inventory;
  * @author siddheshsawant
  */
 public class DormInventory {
-    
+
     String itemName;
     int price;
-    
+
     public String getItemName() {
         return itemName;
     }
@@ -28,6 +28,10 @@ public class DormInventory {
     public void setPrice(int price) {
         this.price = price;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return itemName;
+    }
+
 }
