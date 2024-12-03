@@ -189,7 +189,15 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void SubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitButtonActionPerformed
-
+        if (cityValid) {
+            String name = nameJTextField.getText();
+            Network network = system.createAndAddNetwork();
+            network.setName(name);
+            citySuccessLbl.setVisible(false);
+            populateNetworkTable();
+        } else {
+            JOptionPane.showMessageDialog(null, "Please enter all the required fields correctly!", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_SubmitButtonActionPerformed
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
@@ -197,7 +205,19 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_BackButtonActionPerformed
 
     private void nameJTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameJTextFieldKeyReleased
-
+         if (!cityPatternCorrect(nameJTextField.getText()) && !(nameJTextField.getText().isEmpty())) {
+            citySuccessLbl.setVisible(false);
+            cityLbl.setVisible(true);
+            cityValid = false;
+        } else if (nameJTextField.getText().isEmpty()) {
+            citySuccessLbl.setVisible(false);
+            cityLbl.setVisible(false);
+            cityValid = false;
+        } else {
+            cityLbl.setVisible(false);
+            cityValid = true;
+            citySuccessLbl.setVisible(true);
+        }
     }//GEN-LAST:event_nameJTextFieldKeyReleased
 
     private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
