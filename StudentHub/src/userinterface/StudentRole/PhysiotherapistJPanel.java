@@ -21,7 +21,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author ashish
+ * @author omkarsalian
  */
 public class PhysiotherapistJPanel extends javax.swing.JPanel {
 
@@ -41,9 +41,38 @@ public class PhysiotherapistJPanel extends javax.swing.JPanel {
         this.network = network;
         this.userAccount = userAccount;
         physioTbl.getTableHeader().setDefaultRenderer(new tableHeaderColors());
+        populatePhysioStatusTable();
     }
 
-    
+    private void populatePhysioStatusTable() {
+        DefaultTableModel dtm = (DefaultTableModel) physioTbl.getModel();
+        dtm.setRowCount(0);
+        Organization org = null;
+        for (Enterprise enter : network.getEnterpriseDirectory().getEnterpriseList()) {
+            if (enter instanceof DoctorEnterprise) {
+                e = enter;
+            }
+        }
+        for (Organization organization : e.getOrganizationDirectory().getOrganizationList()) {
+            if (organization instanceof PhysioOrganization) {
+                org = organization;
+                break;
+            }
+        }
+        if (org != null) {
+            for (WorkRequest request : org.getWorkQueue().getWorkRequestList()) {
+                if (request.getSender().equals(userAccount)) {
+                    Object row[] = new Object[5];
+                    row[0] = request.getRequestID();
+                    row[1] = request.getMessage();
+                    row[2] = request.getReceiver();
+                    row[3] = ((PhysioWorkRequest) request).getPhysioResult();
+                    row[4] = request.getStatus();
+                    dtm.addRow(row);
+                }
+            }
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -137,7 +166,61 @@ public class PhysiotherapistJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+        if (userAccount.getWorkQueue().getWorkRequestList().size() == 0) {
+            PhysioWorkRequest req = new PhysioWorkRequest();
+            req.setSender(userAccount);
+            req.setMessage(msgTxt.getText());
+            req.setStatus("Request sent to Physiotherapist");
+            Organization org = null;
+
+            for (Enterprise enter : network.getEnterpriseDirectory().getEnterpriseList()) {
+                if (enter instanceof DoctorEnterprise) {
+                    e = enter;
+                }
+            }
+            for (Organization organization : e.getOrganizationDirectory().getOrganizationList()) {
+                if (organization instanceof PhysioOrganization) {
+                    org = organization;
+                    break;
+                }
+            }
+            if (org != null) {
+                org.getWorkQueue().getWorkRequestList().add(req);
+                userAccount.getWorkQueue().getWorkRequestList().add(req);
+            }
+            JOptionPane.showMessageDialog(null, "Request has been sent. You will receive an email once it is processed!!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            populatePhysioStatusTable();
+        } else {
+            int x = userAccount.getWorkQueue().getWorkRequestList().size() - 1;
+            WorkRequest r = userAccount.getWorkQueue().getWorkRequestList().get(x);
+            if (r.getStatus().toLowerCase().equals("result posted")) {
+                PhysioWorkRequest req = new PhysioWorkRequest();
+                req.setSender(userAccount);
+                req.setMessage(msgTxt.getText());
+                req.setStatus("Request sent to Physiotherapist");
+                Organization org = null;
+
+                for (Enterprise enter : network.getEnterpriseDirectory().getEnterpriseList()) {
+                    if (enter instanceof DoctorEnterprise) {
+                        e = enter;
+                    }
+                }
+                for (Organization organization : e.getOrganizationDirectory().getOrganizationList()) {
+                    if (organization instanceof PhysioOrganization) {
+                        org = organization;
+                        break;
+                    }
+                }
+                if (org != null) {
+                    org.getWorkQueue().getWorkRequestList().add(req);
+                    userAccount.getWorkQueue().getWorkRequestList().add(req);
+                }
+                JOptionPane.showMessageDialog(null, "Request has been sent. You will receive an email once it is processed!!", "Success", JOptionPane.INFORMATION_MESSAGE);
+                populatePhysioStatusTable();
+            } else {
+                JOptionPane.showMessageDialog(null, "Please wait until the previous request has been processed !", "Alert", JOptionPane.WARNING_MESSAGE);
+            }
+        }
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
