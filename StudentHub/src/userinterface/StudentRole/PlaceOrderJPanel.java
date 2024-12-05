@@ -374,13 +374,54 @@ public class PlaceOrderJPanel extends javax.swing.JPanel {
 
     private void placeOrderBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_placeOrderBtnActionPerformed
         // TODO add your handling code here:
-        
+        if (invoiceTbl.getRowCount() > 0 && cartCount > 0) {
+            DormInventoryWorkRequest request = new DormInventoryWorkRequest();
+            request.setCusList(cusList);
+            request.setSender(userAccount);
+            request.setStatus("Order Placed");
+            request.setTotalBill(Integer.parseInt(totBillTxt.getText()));
+            request.setMessage(studentNotes.getText());
+            Organization org = null;
+            for (Network net : business.getNetworkList()) {
+                for (Enterprise enter : net.getEnterpriseDirectory().getEnterpriseList()) {
+                    if (enter instanceof DormInventoryEnterprise) {
+                        for (Organization organization : enter.getOrganizationDirectory().getOrganizationList()) {
+                            if (organization instanceof InventoryOrganization) {
+                                org = organization;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (org != null) {
+                org.getWorkQueue().getWorkRequestList().add(request);
+                userAccount.getWorkQueue().getWorkRequestList().add(request);
+                JOptionPane.showMessageDialog(null, "Order placed successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Please add the menus to the cart to place the order.", "INFORMATION", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
 
     }//GEN-LAST:event_placeOrderBtnActionPerformed
 
     private void addToCartBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addToCartBtnActionPerformed
         // TODO add your handling code here:
-        
+        int selectedRow = dormInventoryTbl.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a row", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        } else {
+            Items i = (Items) dormInventoryTbl.getValueAt(selectedRow, 0);
+            cartCount++;
+            cusList.add(i);
+            this.total = populateTable();
+            totBillTxt.setText(this.total);
+            JOptionPane.showMessageDialog(null, "Added to cart successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_addToCartBtnActionPerformed
 
     private void delCartBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delCartBtnActionPerformed
