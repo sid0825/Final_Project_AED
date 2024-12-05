@@ -38,7 +38,24 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         citySuccessLbl.setVisible(false);
         enterpriseJTable.getTableHeader().setDefaultRenderer(new tableHeaderColors());
         cityLbl.setVisible(false);
+        populateTable();
 
+    }
+    
+    private void populateTable() {
+        DefaultTableModel model = (DefaultTableModel) enterpriseJTable.getModel();
+
+        model.setRowCount(0);
+        for (Network network : system.getNetworkList()) {
+            for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
+                Object[] row = new Object[3];
+                row[0] = enterprise.getName();
+                row[1] = network.getName();
+                row[2] = enterprise.getEnterpriseType().getValue();
+
+                model.addRow(row);
+            }
+        }
     }
 
     private boolean cityPatternCorrect(String val3) {
