@@ -8,7 +8,7 @@ package Business.WorkQueue;
  *
  * @author omkarsalian
  */
-public class FitnessTrainerWorkRequest {
+public class FitnessTrainerWorkRequest extends WorkRequest{
     private String fitnessTrainerResult;
 
     public String getFitnessTrainerResult() {
