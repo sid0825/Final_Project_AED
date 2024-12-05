@@ -101,6 +101,28 @@ public class CreateNewStudentJPanel extends javax.swing.JPanel {
         boolean b = m.matches();
         return b;
     }
+    
+    private boolean cityPatternCorrect(String val3) {
+        Pattern p = Pattern.compile("^[a-zA-Z]+$");
+        Matcher m = p.matcher(val3);
+        boolean b = m.matches();
+        return b;
+    }
+
+    private boolean passwordPatternCorrect(String val4) {
+        Pattern p1;
+        p1 = Pattern.compile("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$");
+        Matcher m1 = p1.matcher(String.valueOf(val4));
+        boolean b1 = m1.matches();
+        return b1;
+    }
+
+    private boolean numberPatternCorrect(String val5) {
+        Pattern p = Pattern.compile("^[0-9]$");
+        Matcher m = p.matcher(val5);
+        boolean b = m.matches();
+        return b;
+    }
 
     
 
@@ -680,7 +702,16 @@ public class CreateNewStudentJPanel extends javax.swing.JPanel {
 
     private void txtPasswordKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPasswordKeyReleased
         // TODO add your handling code here:
-        
+        if (!passwordPatternCorrect(txtPassword.getText()) && !(txtPassword.getText().isEmpty())) {
+            passwordSuccessLbl.setVisible(false);
+            passwordLbl.setVisible(true);
+        } else if (txtPassword.getText().isEmpty()) {
+            passwordLbl.setVisible(false);
+            passwordSuccessLbl.setVisible(false);
+        } else {
+            passwordLbl.setVisible(false);
+            passwordSuccessLbl.setVisible(true);
+        }
     }//GEN-LAST:event_txtPasswordKeyReleased
 
     private void txtAdressKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAdressKeyReleased
@@ -699,7 +730,19 @@ public class CreateNewStudentJPanel extends javax.swing.JPanel {
 
     private void txtCityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCityKeyReleased
         // TODO add your handling code here:
-        
+        if (!cityPatternCorrect(txtCity.getText()) && !(txtCity.getText().isEmpty())) {
+            citySuccessLbl.setVisible(false);
+            cityLbl.setVisible(true);
+            cityValid = false;
+        } else if (txtCity.getText().isEmpty()) {
+            citySuccessLbl.setVisible(false);
+            cityLbl.setVisible(false);
+            cityValid = false;
+        } else {
+            cityValid = true;
+            cityLbl.setVisible(false);
+            citySuccessLbl.setVisible(true);
+        }
     }//GEN-LAST:event_txtCityKeyReleased
 
     private void txtZipcodeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtZipcodeKeyReleased
