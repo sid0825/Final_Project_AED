@@ -48,6 +48,40 @@ public class StudentWorkAreaJPanel extends javax.swing.JPanel {
         this.network = network;
         this.system = business;
         
+        txtName.setEditable(false);
+        txtAge.setEditable(false);
+        radioMale.setEnabled(false);
+        radioFemale.setEnabled(false);
+        txtAdress.setEditable(false);
+        txtPassword.setEditable(false);
+        txtCity.setEditable(false);
+        networkJComboBox.setEditable(false);
+        txtZipcode.setEditable(false);
+        txtHeight.setEditable(false);
+        txtWeight.setEditable(false);
+        saveBtn.setEnabled(false);
+        clearLabels();
+
+        txtName.setText(userAccount.getStudent().getName());
+        txtAge.setText(String.valueOf(userAccount.getStudent().getAge()));
+        greetLbl.setText(userAccount.getStudent().getName() + " !!");
+        if (userAccount.getStudent().getGender().toLowerCase().equals("male")) {
+            radioMale.setSelected(true);
+        } else {
+            radioFemale.setSelected(true);
+        }
+        txtPassword.setText(userAccount.getPassword());
+        txtAdress.setText(userAccount.getStudent().getAddress());
+        txtCity.setText(userAccount.getStudent().getCity());
+        DefaultComboBoxModel dm = new DefaultComboBoxModel();
+        dm.addElement(userAccount.getStudent().getNetwork());
+        networkJComboBox.setModel(dm);
+        txtZipcode.setText(String.valueOf(userAccount.getStudent().getZipcode()));
+        txtHeight.setText(String.valueOf(userAccount.getStudent().getHeight()));
+        txtWeight.setText(String.valueOf(userAccount.getStudent().getWeight()));
+        student = userAccount.getStudent();
+        return;
+        
     }
 
     private void clearLabels() {
@@ -68,6 +102,34 @@ public class StudentWorkAreaJPanel extends javax.swing.JPanel {
         heightSuccessLbl.setVisible(false);
         weightLbl.setVisible(false);
         weightSuccessLbl.setVisible(false);
+    }
+    
+    private boolean usernamePatternCorrect(String val) {
+        Pattern p = Pattern.compile("^.+@[^\\.].*\\.[a-z]{2,}$");
+        Matcher m = p.matcher(val);
+        boolean b = m.matches();
+        return b;
+    }
+
+    private boolean namePatternCorrect(String val1) {
+        Pattern p = Pattern.compile("^[a-zA-Z ]+$");
+        Matcher m = p.matcher(val1);
+        boolean b = m.matches();
+        return b;
+    }
+
+    private boolean addressPatternCorrect(String val2) {
+        Pattern p = Pattern.compile("^[a-z A-Z 0-9 #/-]+$");
+        Matcher m = p.matcher(val2);
+        boolean b = m.matches();
+        return b;
+    }
+
+    private boolean cityPatternCorrect(String val3) {
+        Pattern p = Pattern.compile("^[a-zA-Z ]+$");
+        Matcher m = p.matcher(val3);
+        boolean b = m.matches();
+        return b;
     }
 
     
@@ -499,11 +561,35 @@ public class StudentWorkAreaJPanel extends javax.swing.JPanel {
     private void btnAnalysisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnalysisActionPerformed
 
         // TODO add your handling code here:
+        StudentAnalysisJPanel studentAnalysisJPanel = new StudentAnalysisJPanel(userProcessContainer, student, system, userAccount, enterprise, network);
+        userProcessContainer.add("StudentAnalysisJPanel", studentAnalysisJPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_btnAnalysisActionPerformed
 
     private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
         // TODO add your handling code here:
-        
+        txtName.setEditable(true);
+        txtName.setEnabled(true);
+        txtAge.setEditable(true);
+        txtAge.setEnabled(true);
+        radioMale.setEnabled(true);
+        radioFemale.setEnabled(true);
+        txtAdress.setEditable(true);
+        txtAdress.setEnabled(true);
+        txtPassword.setEditable(true);
+        txtPassword.setEnabled(true);
+        txtCity.setEditable(true);
+        txtCity.setEnabled(true);
+        networkJComboBox.setEditable(true);
+        txtZipcode.setEditable(true);
+        txtZipcode.setEnabled(true);
+        txtHeight.setEditable(true);
+        txtHeight.setEnabled(true);
+        txtWeight.setEditable(true);
+        txtWeight.setEnabled(true);
+        saveBtn.setEnabled(true);
+        updateBtn.setEnabled(false);
     }//GEN-LAST:event_updateBtnActionPerformed
 
     private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
@@ -513,12 +599,21 @@ public class StudentWorkAreaJPanel extends javax.swing.JPanel {
 
     private void radioFemaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioFemaleActionPerformed
         // TODO add your handling code here:
-        
+        radioMale.setSelected(false);
     }//GEN-LAST:event_radioFemaleActionPerformed
 
     private void txtNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyReleased
         // TODO add your handling code here:
-        
+        if (!namePatternCorrect(txtName.getText()) && !(txtName.getText().isEmpty())) {
+            nameLbl.setVisible(true);
+            nameSuccessLbl.setVisible(false);
+        } else if (txtName.getText().isEmpty()) {
+            nameLbl.setVisible(false);
+            nameSuccessLbl.setVisible(false);
+        } else {
+            nameLbl.setVisible(false);
+            nameSuccessLbl.setVisible(true);
+        }
     }//GEN-LAST:event_txtNameKeyReleased
 
     private void txtAgeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAgeKeyReleased
@@ -538,12 +633,24 @@ public class StudentWorkAreaJPanel extends javax.swing.JPanel {
 
     private void txtAdressKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAdressKeyReleased
         // TODO add your handling code here:
-        
+        if (!addressPatternCorrect(txtAdress.getText()) && !(txtAdress.getText().isEmpty())) {
+            addressSuccessLbl.setVisible(false);
+            addressLbl.setVisible(true);
+        } else {
+            addressLbl.setVisible(false);
+            addressSuccessLbl.setVisible(true);
+        }
     }//GEN-LAST:event_txtAdressKeyReleased
 
     private void txtCityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCityKeyReleased
         // TODO add your handling code here:
-        
+        if (!cityPatternCorrect(txtCity.getText()) && !(txtCity.getText().isEmpty())) {
+            citySuccessLbl.setVisible(false);
+            cityLbl.setVisible(true);
+        } else {
+            cityLbl.setVisible(false);
+            citySuccessLbl.setVisible(true);
+        }
     }//GEN-LAST:event_txtCityKeyReleased
 
     private void txtZipcodeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtZipcodeKeyReleased
