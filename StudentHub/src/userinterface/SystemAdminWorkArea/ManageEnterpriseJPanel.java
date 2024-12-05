@@ -225,7 +225,38 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void SubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitButtonActionPerformed
+        Network network = (Network) networkJComboBox.getSelectedItem();
+        for (Enterprise e : network.getEnterpriseDirectory().getEnterpriseList()) {
+            if (e.getEnterpriseType().equals(enterpriseTypeJComboBox.getSelectedItem())) {
+                entAvail = 1;
+            }
+        }
 
+        if (nameValid && entAvail != 1) {
+            Enterprise.EnterpriseType type = (Enterprise.EnterpriseType) enterpriseTypeJComboBox.getSelectedItem();
+
+            if (network == null || type == null) {
+                JOptionPane.showMessageDialog(null, "Invalid Input!");
+                return;
+            }
+
+            String name = nameJTextField.getText();
+            Enterprise enterprise = network.getEnterpriseDirectory().createAndAddEnterprise(name, type);
+
+            n = network;
+            citySuccessLbl.setVisible(false);
+            populateTable();
+            nameJTextField.setText("");
+        } else {
+            if (entAvail == 1) {
+                JOptionPane.showMessageDialog(null, "Enterprise is already added !", "Alert", JOptionPane.INFORMATION_MESSAGE);
+                citySuccessLbl.setVisible(false);
+                nameJTextField.setText("");
+            } else {
+                JOptionPane.showMessageDialog(null, "Please enter all the required fields correctly!", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+
+        }
     }//GEN-LAST:event_SubmitButtonActionPerformed
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
