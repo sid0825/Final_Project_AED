@@ -39,7 +39,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         enterpriseJTable.getTableHeader().setDefaultRenderer(new tableHeaderColors());
         cityLbl.setVisible(false);
         populateTable();
-
+        populateComboBox();
     }
     
     private void populateTable() {
@@ -63,6 +63,19 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         Matcher m = p.matcher(val3);
         boolean b = m.matches();
         return b;
+    }
+    
+    private void populateComboBox() {
+        networkJComboBox.removeAllItems();
+        enterpriseTypeJComboBox.removeAllItems();
+
+        for (Network network : system.getNetworkList()) {
+            networkJComboBox.addItem(network);
+        }
+        for (Enterprise.EnterpriseType type : Enterprise.EnterpriseType.values()) {
+            enterpriseTypeJComboBox.addItem(type);
+        }
+
     }
 
     /**
