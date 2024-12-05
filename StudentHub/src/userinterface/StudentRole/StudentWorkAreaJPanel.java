@@ -132,7 +132,20 @@ public class StudentWorkAreaJPanel extends javax.swing.JPanel {
         return b;
     }
 
-    
+    private boolean passwordPatternCorrect(String val4) {
+        Pattern p1;
+        p1 = Pattern.compile("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$");
+        Matcher m1 = p1.matcher(String.valueOf(val4));
+        boolean b1 = m1.matches();
+        return b1;
+    }
+
+    private boolean numberPatternCorrect(String val5) {
+        Pattern p = Pattern.compile("^[0-9]$");
+        Matcher m = p.matcher(val5);
+        boolean b = m.matches();
+        return b;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -594,7 +607,57 @@ public class StudentWorkAreaJPanel extends javax.swing.JPanel {
 
     private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
         // TODO add your handling code here:
-        
+        Network network = (Network) networkJComboBox.getSelectedItem();
+        if (txtName.getText().isEmpty() || txtAge.getText().isEmpty() || txtWeight.getText().isEmpty() || txtHeight.getText().isEmpty() || txtAdress.getText().isEmpty() || txtCity.getText().isEmpty() || txtZipcode.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Field(s) cannot be Empty!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        } else if (ageValid && zipValid && heightValid && weightValid) {
+            String name = txtName.getText();
+            String password = txtPassword.getText();
+            String add = txtAdress.getText();
+            String city = txtCity.getText();
+            String gender = "";
+            if (radioMale.isSelected()) {
+                gender = "Male";
+            } else {
+                gender = "Female";
+            }
+            double height = Double.parseDouble(txtHeight.getText());
+            double weight = Double.parseDouble(txtWeight.getText());
+            int age = Integer.parseInt(txtAge.getText());
+            String address = txtAdress.getText();
+            String zipcode = txtZipcode.getText();
+
+            system.getStudentDirectory().updateStudent(student, name, height, weight, gender, age, address, city, zipcode);
+            system.getUserAccountDirectory().updateUserAccount(userAccount, password);
+            JOptionPane.showMessageDialog(null, "Student has been updated successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+
+            txtName.setEditable(false);
+            txtName.setEnabled(false);
+            txtAge.setEditable(false);
+            txtAge.setEnabled(false);
+            radioMale.setEnabled(false);
+            radioFemale.setEnabled(false);
+            txtAdress.setEditable(false);
+            txtAdress.setEnabled(false);
+            txtPassword.setEditable(false);
+            txtPassword.setEnabled(false);
+            txtCity.setEditable(false);
+            txtCity.setEnabled(false);
+            networkJComboBox.setEditable(false);
+            networkJComboBox.setEnabled(false);
+            txtZipcode.setEditable(false);
+            txtZipcode.setEnabled(false);
+            txtHeight.setEditable(false);
+            txtHeight.setEnabled(false);
+            txtWeight.setEditable(false);
+            txtWeight.setEnabled(false);
+            saveBtn.setEnabled(false);
+            updateBtn.setEnabled(true);
+            clearLabels();
+        } else {
+            JOptionPane.showMessageDialog(null, "Please enter all the required fields correctly!", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_saveBtnActionPerformed
 
     private void radioFemaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioFemaleActionPerformed
@@ -618,17 +681,93 @@ public class StudentWorkAreaJPanel extends javax.swing.JPanel {
 
     private void txtAgeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAgeKeyReleased
         // TODO add your handling code here:
-        
+        int age = 0;
+        try {
+            age = Integer.parseInt(txtAge.getText());
+        } catch (NumberFormatException e) {
+            if (!txtAge.getText().isEmpty()) {
+                invalidAgeLbl.setVisible(true);
+                ageValid = false;
+                ageBandLbl.setVisible(false);
+                AgeSuccessLbl.setVisible(false);
+                return;
+            } else {
+                invalidAgeLbl.setVisible(false);
+                ageValid = false;
+                ageBandLbl.setVisible(false);
+                AgeSuccessLbl.setVisible(false);
+                return;
+            }
+        }
+        if (age < 15 || age > 85) {
+            ageBandLbl.setVisible(true);
+            ageValid = false;
+            invalidAgeLbl.setVisible(false);
+            AgeSuccessLbl.setVisible(false);
+        } else {
+            invalidAgeLbl.setVisible(false);
+            ageBandLbl.setVisible(false);
+            ageValid = true;
+            AgeSuccessLbl.setVisible(true);
+        }
     }//GEN-LAST:event_txtAgeKeyReleased
 
     private void txtHeightKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtHeightKeyReleased
         // TODO add your handling code here:
-        
+        int height = 0;
+        try {
+            height = Integer.parseInt(txtHeight.getText());
+        } catch (NumberFormatException e) {
+            if (!txtHeight.getText().isEmpty()) {
+                heightValid = false;
+                heightSuccessLbl.setVisible(false);
+                heightLbl.setVisible(true);
+                return;
+            } else {
+                heightValid = false;
+                heightLbl.setVisible(false);
+                heightSuccessLbl.setVisible(false);
+                return;
+            }
+        }
+        if (txtHeight.getText().length() > 3 || txtHeight.getText().length() < 3) {
+            heightValid = false;
+            heightLbl.setVisible(true);
+            heightSuccessLbl.setVisible(false);
+        } else {
+            heightValid = true;
+            heightLbl.setVisible(false);
+            heightSuccessLbl.setVisible(true);
+        }
     }//GEN-LAST:event_txtHeightKeyReleased
 
     private void txtWeightKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtWeightKeyReleased
         // TODO add your handling code here:
-        
+        int weight = 0;
+        try {
+            weight = Integer.parseInt(txtWeight.getText());
+        } catch (NumberFormatException e) {
+            if (!txtWeight.getText().isEmpty()) {
+                weightValid = false;
+                weightSuccessLbl.setVisible(false);
+                weightLbl.setVisible(true);
+                return;
+            } else {
+                weightValid = false;
+                weightLbl.setVisible(false);
+                weightSuccessLbl.setVisible(false);
+                return;
+            }
+        }
+        if (weight > 200) {
+            weightValid = false;
+            weightLbl.setVisible(true);
+            weightSuccessLbl.setVisible(false);
+        } else {
+            weightValid = true;
+            weightLbl.setVisible(false);
+            weightSuccessLbl.setVisible(true);
+        }
     }//GEN-LAST:event_txtWeightKeyReleased
 
     private void txtAdressKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAdressKeyReleased
@@ -655,17 +794,42 @@ public class StudentWorkAreaJPanel extends javax.swing.JPanel {
 
     private void txtZipcodeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtZipcodeKeyReleased
         // TODO add your handling code here:
-        
+        int zip = 0;
+        try {
+            zip = Integer.parseInt(txtZipcode.getText());
+            zipValid = true;
+            zipSuccessLbl.setVisible(true);
+            zipLbl.setVisible(false);
+            return;
+        } catch (NumberFormatException e) {
+            if (!txtZipcode.getText().isEmpty()) {
+                zipValid = false;
+                zipSuccessLbl.setVisible(false);
+                zipLbl.setVisible(true);
+                return;
+            } else {
+                zipValid = false;
+                zipLbl.setVisible(false);
+                zipSuccessLbl.setVisible(false);
+                return;
+            }
+        }
     }//GEN-LAST:event_txtZipcodeKeyReleased
 
     private void txtPasswordKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPasswordKeyReleased
         // TODO add your handling code here:
-        
+        if (!passwordPatternCorrect(txtPassword.getText()) && !(txtPassword.getText().isEmpty())) {
+            passwordSuccessLbl.setVisible(false);
+            passwordLbl.setVisible(true);
+        } else {
+            passwordLbl.setVisible(false);
+            passwordSuccessLbl.setVisible(true);
+        }
     }//GEN-LAST:event_txtPasswordKeyReleased
 
     private void radioMaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioMaleActionPerformed
         // TODO add your handling code here:
-        
+        radioFemale.setSelected(false);
     }//GEN-LAST:event_radioMaleActionPerformed
 
     private void updateBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtn1ActionPerformed
@@ -674,11 +838,17 @@ public class StudentWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnMaintainReqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMaintainReqActionPerformed
         // TODO add your handling code here:
-        
+        RaiseRequestJPanel requestPanel = new RaiseRequestJPanel(userProcessContainer, student, system, userAccount, enterprise, network);
+        userProcessContainer.add("StudentRequestJPanel", requestPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_btnMaintainReqActionPerformed
 
     private void placeOrderBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_placeOrderBtn1ActionPerformed
-        
+        PlaceOrderJPanel placeOrder = new PlaceOrderJPanel(userProcessContainer, student, system, userAccount, enterprise, network);
+        userProcessContainer.add("StudentAnalysisJPanel", placeOrder);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_placeOrderBtn1ActionPerformed
 
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
