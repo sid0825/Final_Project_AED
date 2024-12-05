@@ -55,7 +55,7 @@ public class ViewStudentsJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        enterpriseLabel.setForeground(new java.awt.Color(255, 51, 51));
+        enterpriseLabel.setForeground(new java.awt.Color(102, 204, 255));
         enterpriseLabel.setText("Northeastern University Students");
         add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 410, 30));
 
@@ -77,7 +77,7 @@ public class ViewStudentsJPanel extends javax.swing.JPanel {
         txtNuIdSearchField.setForeground(new java.awt.Color(51, 51, 51));
         add(txtNuIdSearchField, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 200, 120, -1));
 
-        searchBtn.setBackground(new java.awt.Color(204, 204, 204));
+        searchBtn.setBackground(new java.awt.Color(102, 255, 255));
         searchBtn.setForeground(new java.awt.Color(51, 51, 51));
         searchBtn.setText("Search");
         searchBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -91,7 +91,7 @@ public class ViewStudentsJPanel extends javax.swing.JPanel {
         jLabel1.setText("Enter NUID");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 180, -1, -1));
 
-        backJButton.setBackground(new java.awt.Color(204, 204, 204));
+        backJButton.setBackground(new java.awt.Color(102, 255, 255));
         backJButton.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
         backJButton.setForeground(new java.awt.Color(51, 51, 51));
         backJButton.setText("<< Back");
@@ -123,7 +123,46 @@ public class ViewStudentsJPanel extends javax.swing.JPanel {
 
     private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
         // TODO add your handling code here:
-        
+        int nuId = 0;
+        System.out.println(txtNuIdSearchField.getText());
+        if (!txtNuIdSearchField.getText().isEmpty()) {
+            try {
+                nuId = Integer.parseInt(txtNuIdSearchField.getText());
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Please enter numbers only", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+        }
+
+        if (nuId == 0) {
+            populateTable();
+            return;
+        }
+
+        Student studentResult = null;
+        for (Student student : business.getStudentDirectory().getStudentList()) {
+            if (student.getId() == nuId) {
+                studentResult = student;
+                break;
+            }
+        }
+
+        if (studentResult == null) {
+            JOptionPane.showMessageDialog(this, "Student not found!", "Not Found", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+
+        DefaultTableModel model = (DefaultTableModel) tblStudents.getModel();
+
+        model.setRowCount(0);
+        Object[] row = new Object[5];
+        row[0] = studentResult.getId();
+        row[1] = studentResult.getName();
+        row[2] = studentResult.getNetwork();
+        row[3] = studentResult.getRoomNumber();
+        row[4] = studentResult.getEmail();
+
+        model.addRow(row);
     }//GEN-LAST:event_searchBtnActionPerformed
 
 
