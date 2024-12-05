@@ -29,7 +29,7 @@ public class ViewStudentsJPanel extends javax.swing.JPanel {
         initComponents();
         this.business = business;
         this.userProcessContainer = userProcessContainer;
-        
+        populateTable();
     }
 
     /**
@@ -139,6 +139,21 @@ public class ViewStudentsJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtNuIdSearchField;
     // End of variables declaration//GEN-END:variables
 
-    
+    private void populateTable() {
+        DefaultTableModel model = (DefaultTableModel) tblStudents.getModel();
+
+        model.setRowCount(0);
+
+        for (Student student : business.getStudentDirectory().getStudentList()) {
+            Object[] row = new Object[5];
+            row[0] = student.getId();
+            row[1] = student.getName();
+            row[2] = student.getNetwork();
+            row[3] = student.getRoomNumber();
+            row[4] = student.getEmail();
+
+            model.addRow(row);
+        }
+    }
         
 }
