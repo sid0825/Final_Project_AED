@@ -8,7 +8,7 @@ package Business.WorkQueue;
  *
  * @author omkarsalian
  */
-public class GenPracWorkRequest {
+public class GenPracWorkRequest extends WorkRequest{
 
     private String doctorResult;
 
