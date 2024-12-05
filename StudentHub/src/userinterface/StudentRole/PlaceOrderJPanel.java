@@ -426,13 +426,37 @@ public class PlaceOrderJPanel extends javax.swing.JPanel {
 
     private void delCartBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delCartBtnActionPerformed
         // TODO add your handling code here:
-        
+        int selectedRow = invoiceTbl.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a row", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        } else {
+            Items i = (Items) invoiceTbl.getValueAt(selectedRow, 0);
+            cusList.remove(i);
+            this.total = populateTable();
+            totBillTxt.setText(this.total);
+        }
     }//GEN-LAST:event_delCartBtnActionPerformed
 
     private void addToCartHistBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addToCartHistBtnActionPerformed
         // TODO add your handling code here:
-        
+        int selectedRow = histTbl.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a row", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        } else {
+            WorkRequest i = (WorkRequest) histTbl.getValueAt(selectedRow, 2);
+            histList = ((DormInventoryWorkRequest) i).getCusList();
+            DefaultTableModel dtm = (DefaultTableModel) histItemTbl.getModel();
+            dtm.setRowCount(0);
+            for (int d = 0; d < histList.size(); d++) {
+                Object row[] = new Object[2];
 
+                row[0] = histList.get(d).getItemName();
+                row[1] = histList.get(d).getPrice();
+                dtm.addRow(row);
+            }
+        }
     }//GEN-LAST:event_addToCartHistBtnActionPerformed
 
 
