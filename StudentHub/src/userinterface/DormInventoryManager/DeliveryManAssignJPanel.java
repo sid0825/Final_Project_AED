@@ -38,6 +38,7 @@ public class DeliveryManAssignJPanel extends javax.swing.JPanel {
         this.business = business;
         this.request = request;
         this.enterprise = enterprise;
+        populateComboBox();
     }
 
     /**
@@ -62,7 +63,7 @@ public class DeliveryManAssignJPanel extends javax.swing.JPanel {
 
         jLabel1.setBackground(new java.awt.Color(204, 204, 204));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel1.setForeground(new java.awt.Color(102, 204, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Assign Deliveryman");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 310, 37));
@@ -140,6 +141,16 @@ public class DeliveryManAssignJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
-
+private void populateComboBox() {
+        DefaultComboBoxModel dm = new DefaultComboBoxModel();
+        for (Organization o : enterprise.getOrganizationDirectory().getOrganizationList()) {
+            for (UserAccount e : o.getUserAccountDirectory().getUserAccountList()) {
+                if (e.getRole().toString().equals("Business.Role.DeliveryManRole")) {
+                    dm.addElement(e.getEmployee().getName());
+                    deliveryManCmbBox.setModel(dm);
+                }
+            }
+        }
+    }
     
 }
