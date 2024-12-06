@@ -251,7 +251,52 @@ public class ManageInventoryJPanel extends javax.swing.JPanel {
     }
     private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
         // TODO add your handling code here:
-        
+        if (priceValid && itemValid) {
+
+            for (Items item : enterprise.getItemsList()) {
+                if (itemNameTxt.getText().equals(item.getItemName())) {
+
+                    JOptionPane.showMessageDialog(null, "Item already exists.", "Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+            }
+            if (itemNameTxt.getText().equals("") || itemNameTxt.getText() == null) {
+                JOptionPane.showMessageDialog(null, "Field(s) cannot be empty.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            if (!itemNameTxt.getText().matches("^[a-zA-Z0-9 ]*$")) {
+                JOptionPane.showMessageDialog(null, "Invalid Item Name.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            try {
+                Double.parseDouble(priceTxt.getText());
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Invalid Price.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            if (Double.parseDouble(priceTxt.getText()) <= 0) {
+                JOptionPane.showMessageDialog(null, "Price should be greater than zero.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            String name = itemNameTxt.getText();
+            String type = (String) typeComboBox.getSelectedItem();
+            int price = Integer.parseInt(priceTxt.getText());
+            Items s = enterprise.createMenuItem();
+            s.setItemName(name);
+            s.setItemType(type);
+            s.setPrice(price);
+            JOptionPane.showMessageDialog(null, "Item Added Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            populateTable();
+            itemNameTxt.setText("");
+            priceTxt.setText("");
+            typeComboBox.setSelectedIndex(0);
+            itemSuccessLbl.setVisible(false);
+            priceSuccessLbl.setVisible(false);
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Please enter all the required fields correctly!", "Error", JOptionPane.ERROR_MESSAGE);
+        }
 
     }//GEN-LAST:event_addBtnActionPerformed
 
