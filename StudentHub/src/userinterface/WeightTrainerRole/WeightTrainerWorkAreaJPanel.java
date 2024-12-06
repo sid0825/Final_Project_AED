@@ -343,7 +343,30 @@ public class WeightTrainerWorkAreaJPanel extends javax.swing.JPanel {
 
     private void ViewMessageButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewMessageButtonActionPerformed
         // TODO add your handling code here:
-        
+        DefaultTableModel dtm = (DefaultTableModel) tblStudentList.getModel();
+        dtm.setRowCount(0);
+        String viewMessage = "";
+
+        for (Organization org : enterprise.getOrganizationDirectory().getOrganizationList()) {
+            for (Employee emp : org.getEmployeeDirectory().getEmployeeList()) {
+                if (emp.toString().equals(account.getEmployee().toString())) {
+                    for (WorkRequest request : account.getWorkQueue().getWorkRequestList()) {
+                        Student cust = request.getSender().getStudent();
+                        Object[] row = new Object[4];
+                        row[0] = cust.getId();
+                        row[1] = cust;
+                        row[2] = request;
+                        row[3] = request.getStatus();
+                        dtm.addRow(row);
+                    }
+                }
+            }
+        }
+
+        if (dtm.getRowCount() > 0) {
+            viewMessage = "Request: " + dtm.getValueAt(0, 2); // Assuming you want the first row's request value
+            JOptionPane.showMessageDialog(null, viewMessage, "Information", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_ViewMessageButtonActionPerformed
 
 
