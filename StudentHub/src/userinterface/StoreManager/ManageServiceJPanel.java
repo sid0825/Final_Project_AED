@@ -223,7 +223,22 @@ public class ManageServiceJPanel extends javax.swing.JPanel {
 
     private void viewOrderBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewOrderBtnActionPerformed
         // TODO add your handling code here:
-        
+        int selectedRow = orderMgtTbl.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a row.", "INFORMATION", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+        MaintenanceWorkRequest request = (MaintenanceWorkRequest) orderMgtTbl.getValueAt(selectedRow, 2);
+        DefaultTableModel dtm = (DefaultTableModel) itemListTbl.getModel();
+        dtm.setRowCount(0);
+
+        for (ServiceTypes s : request.getCusList()) {
+            Object row[] = new Object[2];
+            row[0] = s;
+            row[1] = s.getPrice();
+            dtm.addRow(row);
+        }
+        totBillTxt.setText(String.valueOf(request.getTotalBill()));
     }//GEN-LAST:event_viewOrderBtnActionPerformed
 
     private void placeOrderBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_placeOrderBtnActionPerformed
