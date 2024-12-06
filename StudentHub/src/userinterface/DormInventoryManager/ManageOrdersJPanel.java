@@ -42,7 +42,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         orderMgtTbl.getTableHeader().setDefaultRenderer(new tableHeaderColors());
         itemListTbl.getTableHeader().setDefaultRenderer(new tableHeaderColors());
         this.business = business;
-
+        populateTable();
     }
 
     /**
@@ -104,7 +104,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
 
         jLabel1.setBackground(new java.awt.Color(51, 51, 51));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel1.setForeground(new java.awt.Color(102, 204, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Dorm Inventory Order Management");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, 440, 37));
@@ -193,7 +193,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
 
         jLabel2.setBackground(new java.awt.Color(51, 51, 51));
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel2.setForeground(new java.awt.Color(102, 204, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Order Details");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 390, 452, -1));
@@ -262,6 +262,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         request.setStatus("Accepted");
 
         JOptionPane.showMessageDialog(null, "Order accepted successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+        populateTable();
     }//GEN-LAST:event_placeOrderBtnActionPerformed
 
     private void assignDelManBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignDelManBtnActionPerformed
@@ -294,7 +295,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
 
     private void refreshBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshBtnActionPerformed
         // TODO add your handling code here:
-     
+        populateTable();
     }//GEN-LAST:event_refreshBtnActionPerformed
 
 
@@ -315,6 +316,22 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField totBillTxt;
     private javax.swing.JButton viewOrderBtn;
     // End of variables declaration//GEN-END:variables
+private void populateTable() {
+        DefaultTableModel dtm = (DefaultTableModel) orderMgtTbl.getModel();
+        dtm.setRowCount(0);
 
-    
+        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+            for (WorkRequest request : organization.getWorkQueue().getWorkRequestList()) {
+                Object[] row = new Object[4];
+                int orderID = request.getRequestID();
+                row[0] = orderID;
+                row[1] = request.getSender().getStudent().getName();
+                row[2] = request;
+                row[3] = request.getStatus();
+
+                dtm.addRow(row);
+            }
+        }
+    }
+
 }
