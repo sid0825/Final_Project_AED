@@ -243,7 +243,27 @@ public class ManageServiceJPanel extends javax.swing.JPanel {
 
     private void placeOrderBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_placeOrderBtnActionPerformed
         // TODO add your handling code here:
-        
+        int selectedRow = orderMgtTbl.getSelectedRow();
+
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a row.", "INFORMATION", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+
+        MaintenanceWorkRequest request = (MaintenanceWorkRequest) orderMgtTbl.getValueAt(selectedRow, 2);
+        if ((request.getStatus().equals("Request pending"))) {
+            JOptionPane.showMessageDialog(null, "Can't accept request until admin assigns you", "INFORMATION", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+        if ((!request.getStatus().equals("Assigned"))) {
+            JOptionPane.showMessageDialog(null, "Request already accepted", "INFORMATION", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+
+        request.setStatus("Accepted");
+
+        JOptionPane.showMessageDialog(null, "Request accepted successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+        populateTable();
     }//GEN-LAST:event_placeOrderBtnActionPerformed
 
     private void assignDelManBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignDelManBtnActionPerformed
