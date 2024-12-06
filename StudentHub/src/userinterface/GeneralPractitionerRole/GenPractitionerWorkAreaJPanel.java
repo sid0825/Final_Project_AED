@@ -285,8 +285,83 @@ public class GenPractitionerWorkAreaJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_radioFemaleActionPerformed
 
+    public void sendEmail(String email, String name){
+                //final String username = "";
+		final String password = "uhugcrgdragopyzz";
+		String fromEmail = "huskylives23@gmail.com";
+		String toEmail = email;
+		Properties properties = new Properties();
+		properties.put("mail.smtp.auth", "true");
+                properties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+		properties.put("mail.smtp.starttls.enable", "true");
+		properties.put("mail.smtp.host", "smtp.gmail.com");
+		properties.put("mail.smtp.port", "587");
+                properties.put("mail.smtp.starttls.required", "true");
+                properties.put("mail.smtp.ssl.protocols", "TLSv1.2");
+		
+		Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication(fromEmail,password);
+			}
+		});
+		//Start our mail message
+		MimeMessage msg = new MimeMessage(session);
+		try {
+			msg.setFrom(new InternetAddress(fromEmail));
+			msg.addRecipient(Message.RecipientType.TO, new InternetAddress(toEmail));
+			msg.setSubject("General Practitioner - "+name+"'s"+" Zoom Link");
+			
+			Multipart emailContent = new MimeMultipart();
+			
+			//Text body part
+			MimeBodyPart textBodyPart = new MimeBodyPart();
+			textBodyPart.setText("Please find the attached Zoom link");
+                        
+                        MimeBodyPart textBodyPart2 = new MimeBodyPart();
+			textBodyPart2.setText("https://northeastern.zoom.us/j/6735568010/"+ name+"/");
+			
+			//Attachment body part.
+			
+//			
+			//Attach body parts
+			emailContent.addBodyPart(textBodyPart);
+                        emailContent.addBodyPart(textBodyPart2);
+			
+			
+			//Attach multipart to message
+			msg.setContent(emailContent);
+			
+			Transport.send(msg);
+			System.out.println("Sent message");
+		}catch (MessagingException e) {
+			e.printStackTrace();
+		}
+        // TODO Auto-generated catch block
+         
+
+    }
+    
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+        int selectedRow = tblStudentList.getSelectedRow();
+        if(selectedRow >=0){
+            GenPracWorkRequest request = (GenPracWorkRequest) tblStudentList.getValueAt(selectedRow, 2);
+            if(!"Result Posted".equals(request.getStatus())){
+                request.setStatus("Result Posted");
+                request.setDoctorResult(doctorMsgTxt.getText());
+                String email = request.getSender().getUsername();
+                String name = account.getEmployee().getName();
+                populateStudent();
+                sendEmail(email, name);
+                JOptionPane.showMessageDialog(null,"Email has been sent to Student!","Success",JOptionPane.INFORMATION_MESSAGE);
+                doctorMsgTxt.setText("");
+            }else{
+                JOptionPane.showMessageDialog(null,"Result has been already Processed","INFORMATION",JOptionPane.INFORMATION_MESSAGE);
+            }
+            
+        }else{
+            JOptionPane.showMessageDialog(null,"Please Select a row","Error",JOptionPane.ERROR_MESSAGE);
+        }
         
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
