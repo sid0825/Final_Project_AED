@@ -439,6 +439,31 @@ public class NutritionWorkAreaJPanel extends javax.swing.JPanel {
 
     private void viewGoalBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewGoalBtnActionPerformed
         // TODO add your handling code here:
+       DefaultTableModel dtm = (DefaultTableModel) tblStudentList.getModel();
+        dtm.setRowCount(0);
+        String goalMessage = "";
+
+        for (Organization org : enterprise.getOrganizationDirectory().getOrganizationList()) {
+            for (Employee emp : org.getEmployeeDirectory().getEmployeeList()) {
+                if (emp.toString().equals(account.getEmployee().toString())) {
+                    for (WorkRequest request : account.getWorkQueue().getWorkRequestList()) {
+                        Student cust = request.getSender().getStudent();
+                        Object[] row = new Object[4];
+                        row[0] = cust.getId();
+                        row[1] = cust;
+                        row[2] = request;
+                        row[3] = request.getStatus();
+                        dtm.addRow(row);
+                    }
+                }
+            }
+        }
+
+        // Display the value of row[2] in a JOptionPane message
+        if (dtm.getRowCount() > 0) {
+            goalMessage = "Request: " + dtm.getValueAt(0, 2); // Assuming you want the first row's request value
+            JOptionPane.showMessageDialog(null, goalMessage, "Information", JOptionPane.INFORMATION_MESSAGE);
+    }
     }//GEN-LAST:event_viewGoalBtnActionPerformed
 
 
