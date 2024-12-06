@@ -47,6 +47,19 @@ public class CreateServicesJPanel extends javax.swing.JPanel {
         serviceTbl.getTableHeader().setDefaultRenderer(new tableHeaderColors());
         priceSuccessLbl.setVisible(false);
         this.userProcessContainer = userProcessContainer;
+        populateTable();
+    }
+    private void populateTable() {
+        DefaultTableModel dtm = (DefaultTableModel) serviceTbl.getModel();
+        dtm.setRowCount(0);
+
+        System.out.println("ebnt" + enterprise.getServiceTypeList().toString());
+        for (ServiceTypes service : enterprise.getServiceTypeList()) {
+            Object row[] = new Object[2];
+            row[0] = service;
+            row[1] = service.getPrice();
+            dtm.addRow(row);
+        }
     }
 
     
@@ -285,13 +298,64 @@ public class CreateServicesJPanel extends javax.swing.JPanel {
 
     private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
         // TODO add your handling code here:
-        
+        if (priceValid && itemValid) {
+
+            for (ServiceTypes service : enterprise.getServiceTypeList()) {
+                if (itemNameTxt.getText().equals(service.getServiceName())) {
+
+                    JOptionPane.showMessageDialog(null, "Service already exists.", "Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+            }
+            if (itemNameTxt.getText().equals("") || itemNameTxt.getText() == null) {
+                JOptionPane.showMessageDialog(null, "Field(s) cannot be empty.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            if (!itemNameTxt.getText().matches("^[a-zA-Z0-9 ]*$")) {
+                JOptionPane.showMessageDialog(null, "Invalid Item Name.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            try {
+                Double.parseDouble(priceTxt.getText());
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Invalid Price.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            if (Double.parseDouble(priceTxt.getText()) <= 0) {
+                JOptionPane.showMessageDialog(null, "Price should be greater than zero.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            String name = itemNameTxt.getText();
+            int price = Integer.parseInt(priceTxt.getText());
+            ServiceTypes s = enterprise.createServiceType();
+            s.setServiceName(name);
+            s.setPrice(price);
+            JOptionPane.showMessageDialog(null, "Service Added Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            populateTable();
+            itemNameTxt.setText("");
+            priceTxt.setText("");
+            itemSuccessLbl.setVisible(false);
+            priceSuccessLbl.setVisible(false);
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Please enter all the required fields correctly!", "Error", JOptionPane.ERROR_MESSAGE);
+        }
 
     }//GEN-LAST:event_addBtnActionPerformed
 
     private void delBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delBtnActionPerformed
         // TODO add your handling code here:
-        
+        int selectedRow = serviceTbl.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a row.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        } else {
+            ServiceTypes service = (ServiceTypes) serviceTbl.getValueAt(selectedRow, 0);
+            enterprise.deleteService(service);
+            JOptionPane.showMessageDialog(null, "Service deleted successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+            populateTable();
+        }
     }//GEN-LAST:event_delBtnActionPerformed
 
 
