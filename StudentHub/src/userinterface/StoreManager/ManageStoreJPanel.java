@@ -110,7 +110,10 @@ public class ManageStoreJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_manageInventoryBtnActionPerformed
 
     private void manageOrdersBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageOrdersBtnActionPerformed
-        
+        ManageServiceJPanel panel = new ManageServiceJPanel(userProcessContainer, organization, business, enterprise, account);
+        userProcessContainer.add("ManageServiceJPanel", panel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_manageOrdersBtnActionPerformed
 
 
