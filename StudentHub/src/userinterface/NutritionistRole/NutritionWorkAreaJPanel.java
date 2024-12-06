@@ -319,6 +319,35 @@ public class NutritionWorkAreaJPanel extends javax.swing.JPanel {
 
     private void AcceptButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AcceptButtonActionPerformed
         // TODO add your handling code here:
+        int selectedRow = tblStudentList.getSelectedRow();
+        if (selectedRow >= 0) {
+            Student cus = (Student) tblStudentList.getValueAt(selectedRow, 1);
+            if (cus != null) {
+                NutritionistWorkRequest request = (NutritionistWorkRequest) tblStudentList.getValueAt(selectedRow, 2);
+                if (!"Result Posted".equals(request.getStatus())) {
+                    String email = request.getSender().getUsername();
+                    sendEmail(email, (String) dietChartComboBox.getSelectedItem());
+                    request.setDietResult(nutriMsgTxt.getText());
+                    request.setStatus("Result Posted");
+
+                    populateStudent();
+
+                    JOptionPane.showMessageDialog(null, "Email has been sent to Student!", "Success", JOptionPane.INFORMATION_MESSAGE);
+                    nutriMsgTxt.setText("");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Result has been already Processed", "Information", JOptionPane.INFORMATION_MESSAGE);
+                }
+
+                /*    NutritionManageRequestJPanel mnjp = new NutritionManageRequestJPanel(userProcessContainer, cus, request,enterprise);
+                    userProcessContainer.add("NutritionManageRequestJPanel",mnjp);
+                    CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+                    layout.next(userProcessContainer);  */
+            } else {
+
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Please Select a row", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_AcceptButtonActionPerformed
 
     private void ViewDetailsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewDetailsButtonActionPerformed
@@ -326,6 +355,64 @@ public class NutritionWorkAreaJPanel extends javax.swing.JPanel {
        
     }//GEN-LAST:event_ViewDetailsButtonActionPerformed
    
+    
+    public void sendEmail(String email, String chart){
+                //final String username = "";
+		final String password = "uhugcrgdragopyzz";
+		String fromEmail = "huskylives23@gmail.com";
+		String toEmail = email;
+		Properties properties = new Properties();
+		properties.put("mail.smtp.auth", "true");
+                properties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+		properties.put("mail.smtp.starttls.enable", "true");
+		properties.put("mail.smtp.host", "smtp.gmail.com");
+		properties.put("mail.smtp.port", "587");
+                
+                properties.put("mail.smtp.starttls.required", "true");
+                properties.put("mail.smtp.ssl.protocols", "TLSv1.2");
+		
+		Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication(fromEmail,password);
+			}
+		});
+		//Start our mail message
+		MimeMessage msg = new MimeMessage(session);
+		try {
+			msg.setFrom(new InternetAddress(fromEmail));
+			msg.addRecipient(Message.RecipientType.TO, new InternetAddress(toEmail));
+			msg.setSubject("Nutrition Chart");
+			
+			Multipart emailContent = new MimeMultipart();
+			
+			//Text body part
+			MimeBodyPart textBodyPart = new MimeBodyPart();
+			textBodyPart.setText("Please find attached your diet chart");
+			
+			//Attachment body part.
+			MimeBodyPart pdfAttachment = new MimeBodyPart();
+			pdfAttachment.attachFile("src/Business/DietCharts/"+ chart+".pdf");
+//			
+			//Attach body parts
+			emailContent.addBodyPart(textBodyPart);
+			emailContent.addBodyPart(pdfAttachment);
+			
+			//Attach multipart to message
+			msg.setContent(emailContent);
+			
+			Transport.send(msg);
+			System.out.println("Sent message");
+		} catch (MessagingException e) {
+			e.printStackTrace();
+		} 
+                catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+    }
+    
+    
     private void radioFemaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioFemaleActionPerformed
         // radioMale.setEnabled(false);
         // TODO add your handling code here:
