@@ -352,7 +352,21 @@ public class NutritionWorkAreaJPanel extends javax.swing.JPanel {
 
     private void ViewDetailsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewDetailsButtonActionPerformed
         // TODO add your handling code here:
-       
+       int selectedRow = tblStudentList.getSelectedRow();
+        if(selectedRow >=0){
+             Student student = (Student) tblStudentList.getValueAt(selectedRow, 1);
+           nameTxt.setText(student.getName());
+            txtAge.setText(String.valueOf(student.getAge()));
+            if(student.getGender().toLowerCase().equals("male")){
+                radioMale.setSelected(true);
+            }else{
+                radioFemale.setSelected(false);
+            }
+            txtHeight.setText(String.valueOf(student.getHeight()));
+            txtWeight.setText(String.valueOf(student.getWeight()));
+        }else{
+            JOptionPane.showMessageDialog(null,"Please Select a row","Error",JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_ViewDetailsButtonActionPerformed
    
     
