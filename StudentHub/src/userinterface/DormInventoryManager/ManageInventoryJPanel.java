@@ -49,6 +49,7 @@ public class ManageInventoryJPanel extends javax.swing.JPanel {
         menuTbl.getTableHeader().setDefaultRenderer(new tableHeaderColors());
         priceSuccessLbl.setVisible(false);
         this.userProcessContainer = userProcessContainer;
+        populateTable();
     }
 
     private boolean cityPatternCorrect(String val3) {
@@ -217,15 +218,67 @@ public class ManageInventoryJPanel extends javax.swing.JPanel {
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 264, 52));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        enterpriseLabel.setForeground(new java.awt.Color(255, 51, 51));
+        enterpriseLabel.setForeground(new java.awt.Color(102, 204, 255));
         enterpriseLabel.setText("Dorm Inventory Management");
         add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 90, 490, 30));
     }// </editor-fold>//GEN-END:initComponents
+private void populateTable() {
+        DefaultTableModel dtm = (DefaultTableModel) menuTbl.getModel();
+        dtm.setRowCount(0);
 
-    
+        for (Items dormInventory : enterprise.getItemsList()) {
+            Object row[] = new Object[2];
+            row[0] = dormInventory;
+            row[1] = dormInventory.getPrice();
+            dtm.addRow(row);
+        }
+    }
+
     private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
         // TODO add your handling code here:
-        
+        if (priceValid && itemValid) {
+
+            for (Items item : enterprise.getItemsList()) {
+                if (itemNameTxt.getText().equals(item.getItemName())) {
+
+                    JOptionPane.showMessageDialog(null, "Item already exists.", "Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+            }
+            if (itemNameTxt.getText().equals("") || itemNameTxt.getText() == null) {
+                JOptionPane.showMessageDialog(null, "Field(s) cannot be empty.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            if (!itemNameTxt.getText().matches("^[a-zA-Z0-9 ]*$")) {
+                JOptionPane.showMessageDialog(null, "Invalid Item Name.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            try {
+                Double.parseDouble(priceTxt.getText());
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Invalid Price.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            if (Double.parseDouble(priceTxt.getText()) <= 0) {
+                JOptionPane.showMessageDialog(null, "Price should be greater than zero.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            String name = itemNameTxt.getText();
+            int price = Integer.parseInt(priceTxt.getText());
+            Items s = enterprise.createMenuItem();
+            s.setItemName(name);
+            s.setPrice(price);
+            JOptionPane.showMessageDialog(null, "Item Added Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            populateTable();
+            itemNameTxt.setText("");
+            priceTxt.setText("");
+            itemSuccessLbl.setVisible(false);
+            priceSuccessLbl.setVisible(false);
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Please enter all the required fields correctly!", "Error", JOptionPane.ERROR_MESSAGE);
+        }
 
     }//GEN-LAST:event_addBtnActionPerformed
 
@@ -238,7 +291,16 @@ public class ManageInventoryJPanel extends javax.swing.JPanel {
 
     private void delBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delBtnActionPerformed
         // TODO add your handling code here:
-        
+        int selectedRow = menuTbl.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a row.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        } else {
+            Items item = (Items) menuTbl.getValueAt(selectedRow, 0);
+            enterprise.deleteItem(item);
+            JOptionPane.showMessageDialog(null, "Item deleted successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+            populateTable();
+        }
     }//GEN-LAST:event_delBtnActionPerformed
 
     private void itemNameTxtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_itemNameTxtKeyReleased
