@@ -113,12 +113,23 @@ public class ServiceManAssignJPanel extends javax.swing.JPanel {
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         // TODO add your handling code here:
-        
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
     }//GEN-LAST:event_backBtnActionPerformed
 
     private void appointDelManBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_appointDelManBtnActionPerformed
         // TODO add your handling code here:
-        
+        for (Organization org : enterprise.getOrganizationDirectory().getOrganizationList()) {
+            for (UserAccount user : org.getUserAccountDirectory().getUserAccountList()) {
+                if (deliveryManCmbBox.getSelectedItem().equals(user.getEmployee().getName())) {
+                    request.setReceiver(user);
+                    request.setStatus("Serviceman Assigned");
+                    user.getWorkQueue().getWorkRequestList().add(request);
+                    JOptionPane.showMessageDialog(null, "Service Man assigned successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+                }
+            }
+        }
     }//GEN-LAST:event_appointDelManBtnActionPerformed
 
     private void deliveryManCmbBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deliveryManCmbBoxActionPerformed
