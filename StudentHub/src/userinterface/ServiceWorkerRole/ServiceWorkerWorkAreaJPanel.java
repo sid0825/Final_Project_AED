@@ -41,8 +41,8 @@ public class ServiceWorkerWorkAreaJPanel extends javax.swing.JPanel {
         delManTbl.getTableHeader().setDefaultRenderer(new tableHeaderColors());
         populateTable();
     }
-    
-        public void populateTable() {
+
+    public void populateTable() {
         DefaultTableModel dtm = (DefaultTableModel) delManTbl.getModel();
         dtm.setRowCount(0);
         for (Organization o : enterprise.getOrganizationDirectory().getOrganizationList()) {
@@ -58,7 +58,7 @@ public class ServiceWorkerWorkAreaJPanel extends javax.swing.JPanel {
             }
         }
     }
-        
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -183,7 +183,21 @@ public class ServiceWorkerWorkAreaJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CompleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompleteButtonActionPerformed
+        int selectedRow = delManTbl.getSelectedRow();
 
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a row.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        MaintenanceWorkRequest request = (MaintenanceWorkRequest) delManTbl.getValueAt(selectedRow, 2);
+        if (request.getStatus() == "Completed") {
+            JOptionPane.showMessageDialog(null, "The request has been already completed.", "Error", JOptionPane.ERROR_MESSAGE);
+            populateTable();
+        } else {
+            request.setStatus("Completed");
+            JOptionPane.showMessageDialog(null, "The request has been completed successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+            populateTable();
+        }
     }//GEN-LAST:event_CompleteButtonActionPerformed
 
     private void RefreshButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshButtonActionPerformed
