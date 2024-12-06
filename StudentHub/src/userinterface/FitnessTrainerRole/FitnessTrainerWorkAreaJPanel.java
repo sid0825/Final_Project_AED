@@ -320,7 +320,24 @@ public class FitnessTrainerWorkAreaJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_radioFemaleActionPerformed
 
     private void ProcessButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProcessButtonActionPerformed
+        int selectedRow = tblStudentList.getSelectedRow();
+        if (selectedRow >= 0) {
+            FitnessTrainerWorkRequest request = (FitnessTrainerWorkRequest) tblStudentList.getValueAt(selectedRow, 2);
+            if (!"Result Posted".equals(request.getStatus())) {
+                request.setStatus("Result Posted");
+                request.setFitnessTrainerResult(fitnessMsgTxt.getText());
+                String email = request.getSender().getUsername();
+                populateStudent();
+                sendEmail(email, (String) fitnessChartComboBox.getSelectedItem());
+                JOptionPane.showMessageDialog(null, "Email has been sent to Student!", "Success", JOptionPane.INFORMATION_MESSAGE);
+                fitnessMsgTxt.setText("");
+            } else {
+                JOptionPane.showMessageDialog(null, "Result has been already Processed", "INFORMATION", JOptionPane.INFORMATION_MESSAGE);
+            }
 
+        } else {
+            JOptionPane.showMessageDialog(null, "Please Select a row", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_ProcessButtonActionPerformed
 
     private void ViewDetailsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewDetailsButtonActionPerformed
@@ -368,7 +385,58 @@ public class FitnessTrainerWorkAreaJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, viewMessage, "Information", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_ViewMessageButtonActionPerformed
+    
+    public void sendEmail(String email, String chart) {
+        final String password = "uhugcrgdragopyzz";
+        String fromEmail = "huskylives23@gmail.com";
+        String toEmail = email;
+        Properties properties = new Properties();
+        properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+        properties.put("mail.smtp.starttls.enable", "true");
+        properties.put("mail.smtp.host", "smtp.gmail.com");
+        properties.put("mail.smtp.port", "587");
 
+        properties.put("mail.smtp.starttls.required", "true");
+        properties.put("mail.smtp.ssl.protocols", "TLSv1.2");
+        
+        Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(fromEmail, password);
+            }
+        });
+        MimeMessage msg = new MimeMessage(session);
+        try {
+            msg.setFrom(new InternetAddress(fromEmail));
+            msg.addRecipient(Message.RecipientType.TO, new InternetAddress(toEmail));
+            msg.setSubject("Fitness Chart");
+
+            Multipart emailContent = new MimeMultipart();
+
+            //Text body part
+            MimeBodyPart textBodyPart = new MimeBodyPart();
+            textBodyPart.setText("Please find attached your fitness chart");
+
+            //Attachment body part.
+            MimeBodyPart pdfAttachment = new MimeBodyPart();
+            pdfAttachment.attachFile("src/Business/WorkoutCharts/" + chart + ".pdf");
+
+            //Attach body parts
+            emailContent.addBodyPart(textBodyPart);
+            emailContent.addBodyPart(pdfAttachment);
+
+            //Attach multipart to message
+            msg.setContent(emailContent);
+
+            Transport.send(msg);
+            System.out.println("Sent message");
+        } catch (MessagingException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ProcessButton;
