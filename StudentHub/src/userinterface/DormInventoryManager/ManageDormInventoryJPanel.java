@@ -110,7 +110,10 @@ public class ManageDormInventoryJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_manageInventoryBtnActionPerformed
 
     private void manageOrdersBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageOrdersBtnActionPerformed
-       
+       ManageOrdersJPanel panel = new ManageOrdersJPanel(userProcessContainer, organization, business, enterprise, account);
+        userProcessContainer.add("ManageOrdersJPanel", panel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_manageOrdersBtnActionPerformed
 
 
