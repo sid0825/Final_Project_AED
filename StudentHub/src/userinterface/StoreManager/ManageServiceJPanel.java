@@ -268,7 +268,31 @@ public class ManageServiceJPanel extends javax.swing.JPanel {
 
     private void assignDelManBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignDelManBtnActionPerformed
         // TODO add your handling code here:
-        
+        int selectedRow = orderMgtTbl.getSelectedRow();
+
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a row.", "INFORMATION", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+
+        MaintenanceWorkRequest order1 = (MaintenanceWorkRequest) orderMgtTbl.getValueAt(selectedRow, 2);
+        if (order1.getStatus().equalsIgnoreCase("Completed")) {
+            JOptionPane.showMessageDialog(null, "Request has been already completed.", "INFORMATION", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+        if (order1.getStatus().equalsIgnoreCase("Serviceman Assigned")) {
+            JOptionPane.showMessageDialog(null, "Service man has already been assigned. ", "INFORMATION", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+        if (!order1.getStatus().equalsIgnoreCase("Accepted")) {
+            JOptionPane.showMessageDialog(null, "Request is not accepted. Kindly accept the request first to proceed.", "INFORMATION", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+
+        ServiceManAssignJPanel panel = new ServiceManAssignJPanel(userProcessContainer, business, enterprise, order1);
+        userProcessContainer.add("AssignServiceManJPanel", panel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_assignDelManBtnActionPerformed
 
     private void refreshBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshBtnActionPerformed
