@@ -39,9 +39,26 @@ public class ServiceWorkerWorkAreaJPanel extends javax.swing.JPanel {
         this.enterprise = enterprise;
         greetLbl.setText(account.getEmployee().getName() + "!!");
         delManTbl.getTableHeader().setDefaultRenderer(new tableHeaderColors());
-
+        populateTable();
     }
-
+    
+        public void populateTable() {
+        DefaultTableModel dtm = (DefaultTableModel) delManTbl.getModel();
+        dtm.setRowCount(0);
+        for (Organization o : enterprise.getOrganizationDirectory().getOrganizationList()) {
+            for (WorkRequest request : o.getWorkQueue().getWorkRequestList()) {
+                if (request.getReceiver() != null && request.getReceiver().getEmployee().getName().equals(userAccount.getEmployee().getName())) {
+                    Object row[] = new Object[4];
+                    row[0] = request.getRequestID();
+                    row[1] = request.getSender().getStudent().getName();
+                    row[2] = request;
+                    row[3] = request.getStatus().toString();
+                    dtm.addRow(row);
+                }
+            }
+        }
+    }
+        
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
