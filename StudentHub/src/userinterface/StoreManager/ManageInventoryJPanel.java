@@ -309,7 +309,16 @@ public class ManageInventoryJPanel extends javax.swing.JPanel {
 
     private void delBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delBtnActionPerformed
         // TODO add your handling code here:
-        
+        int selectedRow = menuTbl.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a row.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        } else {
+            Items item = (Items) menuTbl.getValueAt(selectedRow, 0);
+            enterprise.deleteItem(item);
+            JOptionPane.showMessageDialog(null, "Item deleted successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+            populateTable();
+        }
     }//GEN-LAST:event_delBtnActionPerformed
 
     private void itemNameTxtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_itemNameTxtKeyReleased
