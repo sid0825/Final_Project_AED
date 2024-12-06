@@ -201,7 +201,7 @@ public class ServiceWorkerWorkAreaJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_CompleteButtonActionPerformed
 
     private void RefreshButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshButtonActionPerformed
-
+        populateTable();
     }//GEN-LAST:event_RefreshButtonActionPerformed
 
 
