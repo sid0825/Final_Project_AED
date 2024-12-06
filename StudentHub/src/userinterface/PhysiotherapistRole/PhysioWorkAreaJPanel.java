@@ -57,8 +57,33 @@ public class PhysioWorkAreaJPanel extends javax.swing.JPanel {
          this.enterprise = enterprise;
          this.ecosystem = business;
          this.network = network;
+         populateStudent();
          greetLbl.setText(account.getEmployee().getName() + "!!");
         tblStudentList.getTableHeader().setDefaultRenderer(new tableHeaderColors());
+        
+    }
+    
+        public void populateStudent(){
+        DefaultTableModel dtm = (DefaultTableModel) tblStudentList.getModel();
+        dtm.setRowCount(0);
+        
+        for(Organization org: enterprise.getOrganizationDirectory().getOrganizationList()){
+        for(Employee emp : org.getEmployeeDirectory().getEmployeeList()){
+            if(emp.toString().equals(account.getEmployee().toString())){
+                for( WorkRequest request: account.getWorkQueue().getWorkRequestList()){
+                Student cust = request.getSender().getStudent();
+            
+            Object[] row = new Object[4];
+            row[0] = cust.getId();
+            row[1] = cust;
+            row[2] = request;
+            row[3] = request.getStatus();
+            dtm.addRow(row);
+           }
+            }
+        }
+        }
+        
         
     }
     
