@@ -53,7 +53,6 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         passwordField = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         loginJButton = new javax.swing.JButton();
         registerBtn = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
@@ -98,9 +97,6 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("New User? Click on Sign Up");
         LeftJPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 540, 204, -1));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/UserImg.png"))); // NOI18N
-        LeftJPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 78, 250, 150));
 
         loginJButton.setBackground(new java.awt.Color(51, 204, 255));
         loginJButton.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
@@ -323,7 +319,6 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JButton loginJButton;
