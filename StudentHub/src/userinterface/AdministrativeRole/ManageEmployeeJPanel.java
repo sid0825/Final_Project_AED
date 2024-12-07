@@ -44,7 +44,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         clearLabels();
         organizationJTable.getTableHeader().setDefaultRenderer(new tableHeaderColors());
         populateOrganizationComboBox();
-//        populateOrganizationEmpComboBox();
+        populateOrganizationEmpComboBox();
 
     }
 
