@@ -56,7 +56,7 @@ public class TrainerAppointmentJPanel extends javax.swing.JPanel {
         jSplitPane1.setDividerLocation(80);
         jSplitPane1.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
-        jPanel1.setBackground(new java.awt.Color(255, 51, 51));
+        jPanel1.setBackground(new java.awt.Color(102, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         backJButton.setBackground(new java.awt.Color(204, 204, 204));
@@ -68,7 +68,7 @@ public class TrainerAppointmentJPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, 40));
+        jPanel1.add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, 40));
 
         weightBtn.setBackground(new java.awt.Color(204, 204, 204));
         weightBtn.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
@@ -79,7 +79,7 @@ public class TrainerAppointmentJPanel extends javax.swing.JPanel {
                 weightBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(weightBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 25, 156, 35));
+        jPanel1.add(weightBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 20, 156, 35));
 
         fitnessBtn.setBackground(new java.awt.Color(204, 204, 204));
         fitnessBtn.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
@@ -90,7 +90,7 @@ public class TrainerAppointmentJPanel extends javax.swing.JPanel {
                 fitnessBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(fitnessBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(322, 25, 156, 35));
+        jPanel1.add(fitnessBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, 156, 35));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/fitnessTrainer.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 25, -1, 39));
@@ -115,12 +115,18 @@ public class TrainerAppointmentJPanel extends javax.swing.JPanel {
 
     private void weightBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_weightBtnActionPerformed
         // TODO add your handling code here:
-        
+        WeightTrainerJPanel panel = new WeightTrainerJPanel(userProcessContainer, system, network, userAccount);
+        rightJPanel.add("WeightTrainerJPanel", panel);
+        CardLayout layout = (CardLayout) rightJPanel.getLayout();
+        layout.next(rightJPanel);
     }//GEN-LAST:event_weightBtnActionPerformed
 
     private void fitnessBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fitnessBtnActionPerformed
         // TODO add your handling code here:
-       
+        FitnessTrainerJPanel panel = new FitnessTrainerJPanel(userProcessContainer, system, network, userAccount);
+        rightJPanel.add("FitnessTrainerJPanel", panel);
+        CardLayout layout = (CardLayout) rightJPanel.getLayout();
+        layout.next(rightJPanel);
     }//GEN-LAST:event_fitnessBtnActionPerformed
 
 
