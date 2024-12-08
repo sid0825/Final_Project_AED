@@ -86,9 +86,9 @@ public class CreateServicesJPanel extends javax.swing.JPanel {
         itemNameTxt = new javax.swing.JTextField();
         priceTxt = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        backBtn = new javax.swing.JButton();
-        addBtn = new javax.swing.JButton();
-        delBtn = new javax.swing.JButton();
+        BackButton = new javax.swing.JButton();
+        AddButton = new javax.swing.JButton();
+        DeleteButton = new javax.swing.JButton();
         itemLbl = new javax.swing.JLabel();
         itemSuccessLbl = new javax.swing.JLabel();
         priceLbl = new javax.swing.JLabel();
@@ -160,38 +160,38 @@ public class CreateServicesJPanel extends javax.swing.JPanel {
         jLabel4.setText("Price:");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 460, 130, 30));
 
-        backBtn.setBackground(new java.awt.Color(204, 204, 204));
-        backBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        backBtn.setForeground(new java.awt.Color(51, 51, 51));
-        backBtn.setText("< Back");
-        backBtn.addActionListener(new java.awt.event.ActionListener() {
+        BackButton.setBackground(new java.awt.Color(255, 51, 51));
+        BackButton.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        BackButton.setForeground(new java.awt.Color(51, 51, 51));
+        BackButton.setText("<< Back");
+        BackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backBtnActionPerformed(evt);
+                BackButtonActionPerformed(evt);
             }
         });
-        add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, 30));
+        add(BackButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 30));
 
-        addBtn.setBackground(new java.awt.Color(204, 204, 204));
-        addBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        addBtn.setForeground(new java.awt.Color(51, 51, 51));
-        addBtn.setText("Add");
-        addBtn.addActionListener(new java.awt.event.ActionListener() {
+        AddButton.setBackground(new java.awt.Color(51, 153, 255));
+        AddButton.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        AddButton.setForeground(new java.awt.Color(255, 255, 255));
+        AddButton.setText("Add");
+        AddButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addBtnActionPerformed(evt);
+                AddButtonActionPerformed(evt);
             }
         });
-        add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 520, 100, 40));
+        add(AddButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 520, 100, 40));
 
-        delBtn.setBackground(new java.awt.Color(204, 204, 204));
-        delBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        delBtn.setForeground(new java.awt.Color(51, 51, 51));
-        delBtn.setText("Delete");
-        delBtn.addActionListener(new java.awt.event.ActionListener() {
+        DeleteButton.setBackground(new java.awt.Color(51, 153, 255));
+        DeleteButton.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        DeleteButton.setForeground(new java.awt.Color(255, 255, 255));
+        DeleteButton.setText("Delete");
+        DeleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                delBtnActionPerformed(evt);
+                DeleteButtonActionPerformed(evt);
             }
         });
-        add(delBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 80, 40));
+        add(DeleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 80, 40));
 
         itemLbl.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
         itemLbl.setForeground(new java.awt.Color(255, 51, 51));
@@ -229,7 +229,7 @@ public class CreateServicesJPanel extends javax.swing.JPanel {
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 264, 52));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        enterpriseLabel.setForeground(new java.awt.Color(102, 204, 255));
+        enterpriseLabel.setForeground(new java.awt.Color(51, 204, 255));
         enterpriseLabel.setText("Create Maintenance Services");
         add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 410, 30));
     }// </editor-fold>//GEN-END:initComponents
@@ -289,14 +289,14 @@ public class CreateServicesJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_priceTxtKeyReleased
 
-    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+    private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
         // TODO add your handling code here:
         userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-    }//GEN-LAST:event_backBtnActionPerformed
+    }//GEN-LAST:event_BackButtonActionPerformed
 
-    private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
+    private void AddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddButtonActionPerformed
         // TODO add your handling code here:
         if (priceValid && itemValid) {
 
@@ -342,9 +342,9 @@ public class CreateServicesJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please enter all the required fields correctly!", "Error", JOptionPane.ERROR_MESSAGE);
         }
 
-    }//GEN-LAST:event_addBtnActionPerformed
+    }//GEN-LAST:event_AddButtonActionPerformed
 
-    private void delBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delBtnActionPerformed
+    private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
         // TODO add your handling code here:
         int selectedRow = serviceTbl.getSelectedRow();
         if (selectedRow < 0) {
@@ -356,13 +356,13 @@ public class CreateServicesJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Service deleted successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
             populateTable();
         }
-    }//GEN-LAST:event_delBtnActionPerformed
+    }//GEN-LAST:event_DeleteButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addBtn;
-    private javax.swing.JButton backBtn;
-    private javax.swing.JButton delBtn;
+    private javax.swing.JButton AddButton;
+    private javax.swing.JButton BackButton;
+    private javax.swing.JButton DeleteButton;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel itemLbl;
     private javax.swing.JTextField itemNameTxt;

@@ -57,11 +57,11 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         orderMgtTbl = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        backBtn = new javax.swing.JButton();
-        viewOrderBtn = new javax.swing.JButton();
-        refreshBtn = new javax.swing.JButton();
-        placeOrderBtn = new javax.swing.JButton();
-        assignDelManBtn = new javax.swing.JButton();
+        backButton = new javax.swing.JButton();
+        viewOrderButton = new javax.swing.JButton();
+        refreshButton = new javax.swing.JButton();
+        placeOrderButton = new javax.swing.JButton();
+        assignDelManButton = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         itemListTbl = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
@@ -104,65 +104,65 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
 
         jLabel1.setBackground(new java.awt.Color(51, 51, 51));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel1.setForeground(new java.awt.Color(51, 204, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Dorm Inventory Order Management");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, 440, 37));
 
-        backBtn.setBackground(new java.awt.Color(204, 204, 204));
-        backBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        backBtn.setForeground(new java.awt.Color(51, 51, 51));
-        backBtn.setText("< Back");
-        backBtn.addActionListener(new java.awt.event.ActionListener() {
+        backButton.setBackground(new java.awt.Color(255, 51, 51));
+        backButton.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        backButton.setForeground(new java.awt.Color(51, 51, 51));
+        backButton.setText("<< Back");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backBtnActionPerformed(evt);
+                backButtonActionPerformed(evt);
             }
         });
-        add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        viewOrderBtn.setBackground(new java.awt.Color(204, 204, 204));
-        viewOrderBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        viewOrderBtn.setForeground(new java.awt.Color(51, 51, 51));
-        viewOrderBtn.setText("View Order");
-        viewOrderBtn.addActionListener(new java.awt.event.ActionListener() {
+        viewOrderButton.setBackground(new java.awt.Color(51, 153, 255));
+        viewOrderButton.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        viewOrderButton.setForeground(new java.awt.Color(255, 255, 255));
+        viewOrderButton.setText("View Order");
+        viewOrderButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewOrderBtnActionPerformed(evt);
+                viewOrderButtonActionPerformed(evt);
             }
         });
-        add(viewOrderBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, -1, -1));
+        add(viewOrderButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, -1, -1));
 
-        refreshBtn.setBackground(new java.awt.Color(204, 204, 204));
-        refreshBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        refreshBtn.setForeground(new java.awt.Color(51, 51, 51));
-        refreshBtn.setText("Refresh");
-        refreshBtn.addActionListener(new java.awt.event.ActionListener() {
+        refreshButton.setBackground(new java.awt.Color(51, 153, 255));
+        refreshButton.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        refreshButton.setForeground(new java.awt.Color(255, 255, 255));
+        refreshButton.setText("Refresh");
+        refreshButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                refreshBtnActionPerformed(evt);
+                refreshButtonActionPerformed(evt);
             }
         });
-        add(refreshBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 170, -1, -1));
+        add(refreshButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 170, -1, -1));
 
-        placeOrderBtn.setBackground(new java.awt.Color(204, 204, 204));
-        placeOrderBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        placeOrderBtn.setForeground(new java.awt.Color(51, 51, 51));
-        placeOrderBtn.setText("Take Order");
-        placeOrderBtn.addActionListener(new java.awt.event.ActionListener() {
+        placeOrderButton.setBackground(new java.awt.Color(51, 153, 255));
+        placeOrderButton.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        placeOrderButton.setForeground(new java.awt.Color(255, 255, 255));
+        placeOrderButton.setText("Take Order");
+        placeOrderButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                placeOrderBtnActionPerformed(evt);
+                placeOrderButtonActionPerformed(evt);
             }
         });
-        add(placeOrderBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 310, -1, -1));
+        add(placeOrderButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 310, -1, -1));
 
-        assignDelManBtn.setBackground(new java.awt.Color(204, 204, 204));
-        assignDelManBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        assignDelManBtn.setForeground(new java.awt.Color(51, 51, 51));
-        assignDelManBtn.setText("Assign Deliveryman");
-        assignDelManBtn.addActionListener(new java.awt.event.ActionListener() {
+        assignDelManButton.setBackground(new java.awt.Color(51, 153, 255));
+        assignDelManButton.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        assignDelManButton.setForeground(new java.awt.Color(255, 255, 255));
+        assignDelManButton.setText("Assign Deliveryman");
+        assignDelManButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                assignDelManBtnActionPerformed(evt);
+                assignDelManButtonActionPerformed(evt);
             }
         });
-        add(assignDelManBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 310, -1, -1));
+        add(assignDelManButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 310, -1, -1));
 
         itemListTbl.setBackground(new java.awt.Color(204, 204, 204));
         itemListTbl.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
@@ -217,14 +217,14 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 264, 52));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
         userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-    }//GEN-LAST:event_backBtnActionPerformed
+    }//GEN-LAST:event_backButtonActionPerformed
 
-    private void viewOrderBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewOrderBtnActionPerformed
+    private void viewOrderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewOrderButtonActionPerformed
         // TODO add your handling code here:
         int selectedRow = orderMgtTbl.getSelectedRow();
         if (selectedRow < 0) {
@@ -242,9 +242,9 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
             dtm.addRow(row);
         }
         totBillTxt.setText(String.valueOf(request.getTotalBill()));
-    }//GEN-LAST:event_viewOrderBtnActionPerformed
+    }//GEN-LAST:event_viewOrderButtonActionPerformed
 
-    private void placeOrderBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_placeOrderBtnActionPerformed
+    private void placeOrderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_placeOrderButtonActionPerformed
         // TODO add your handling code here:
         int selectedRow = orderMgtTbl.getSelectedRow();
 
@@ -263,9 +263,9 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
 
         JOptionPane.showMessageDialog(null, "Order accepted successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
         populateTable();
-    }//GEN-LAST:event_placeOrderBtnActionPerformed
+    }//GEN-LAST:event_placeOrderButtonActionPerformed
 
-    private void assignDelManBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignDelManBtnActionPerformed
+    private void assignDelManButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignDelManButtonActionPerformed
         // TODO add your handling code here:
         int selectedRow = orderMgtTbl.getSelectedRow();
 
@@ -291,17 +291,17 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         userProcessContainer.add("AssignDeliveryManJPanel", panel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_assignDelManBtnActionPerformed
+    }//GEN-LAST:event_assignDelManButtonActionPerformed
 
-    private void refreshBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshBtnActionPerformed
+    private void refreshButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshButtonActionPerformed
         // TODO add your handling code here:
         populateTable();
-    }//GEN-LAST:event_refreshBtnActionPerformed
+    }//GEN-LAST:event_refreshButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton assignDelManBtn;
-    private javax.swing.JButton backBtn;
+    private javax.swing.JButton assignDelManButton;
+    private javax.swing.JButton backButton;
     private javax.swing.JTable itemListTbl;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -311,10 +311,10 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable orderMgtTbl;
-    private javax.swing.JButton placeOrderBtn;
-    private javax.swing.JButton refreshBtn;
+    private javax.swing.JButton placeOrderButton;
+    private javax.swing.JButton refreshButton;
     private javax.swing.JTextField totBillTxt;
-    private javax.swing.JButton viewOrderBtn;
+    private javax.swing.JButton viewOrderButton;
     // End of variables declaration//GEN-END:variables
 private void populateTable() {
         DefaultTableModel dtm = (DefaultTableModel) orderMgtTbl.getModel();

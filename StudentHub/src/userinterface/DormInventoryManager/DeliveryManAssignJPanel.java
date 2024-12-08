@@ -51,10 +51,10 @@ public class DeliveryManAssignJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        backBtn = new javax.swing.JButton();
+        BackButton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         deliveryManCmbBox = new javax.swing.JComboBox<>();
-        appointDelManBtn = new javax.swing.JButton();
+        AppointButton = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
 
@@ -63,21 +63,21 @@ public class DeliveryManAssignJPanel extends javax.swing.JPanel {
 
         jLabel1.setBackground(new java.awt.Color(204, 204, 204));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel1.setForeground(new java.awt.Color(51, 204, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Assign Deliveryman");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 310, 37));
 
-        backBtn.setBackground(new java.awt.Color(204, 204, 204));
-        backBtn.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        backBtn.setForeground(new java.awt.Color(51, 51, 51));
-        backBtn.setText("< Back");
-        backBtn.addActionListener(new java.awt.event.ActionListener() {
+        BackButton.setBackground(new java.awt.Color(255, 51, 51));
+        BackButton.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
+        BackButton.setForeground(new java.awt.Color(51, 51, 51));
+        BackButton.setText("<< Back");
+        BackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backBtnActionPerformed(evt);
+                BackButtonActionPerformed(evt);
             }
         });
-        add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 82, 37));
+        add(BackButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 80, 30));
 
         jLabel3.setBackground(new java.awt.Color(204, 204, 204));
         jLabel3.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
@@ -92,16 +92,16 @@ public class DeliveryManAssignJPanel extends javax.swing.JPanel {
         deliveryManCmbBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(deliveryManCmbBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, 150, 30));
 
-        appointDelManBtn.setBackground(new java.awt.Color(204, 204, 204));
-        appointDelManBtn.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        appointDelManBtn.setForeground(new java.awt.Color(51, 51, 51));
-        appointDelManBtn.setText("Appoint");
-        appointDelManBtn.addActionListener(new java.awt.event.ActionListener() {
+        AppointButton.setBackground(new java.awt.Color(51, 153, 255));
+        AppointButton.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
+        AppointButton.setForeground(new java.awt.Color(255, 255, 255));
+        AppointButton.setText("Appoint");
+        AppointButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                appointDelManBtnActionPerformed(evt);
+                AppointButtonActionPerformed(evt);
             }
         });
-        add(appointDelManBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, 95, 36));
+        add(AppointButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, 95, 36));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundLogo.png"))); // NOI18N
         add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 100, 100));
@@ -110,14 +110,14 @@ public class DeliveryManAssignJPanel extends javax.swing.JPanel {
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 264, 52));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+    private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
         // TODO add your handling code here:
         userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-    }//GEN-LAST:event_backBtnActionPerformed
+    }//GEN-LAST:event_BackButtonActionPerformed
 
-    private void appointDelManBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_appointDelManBtnActionPerformed
+    private void AppointButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AppointButtonActionPerformed
         // TODO add your handling code here:
         for (Organization org : enterprise.getOrganizationDirectory().getOrganizationList()) {
             for (UserAccount user : org.getUserAccountDirectory().getUserAccountList()) {
@@ -129,12 +129,12 @@ public class DeliveryManAssignJPanel extends javax.swing.JPanel {
                 }
             }
         }
-    }//GEN-LAST:event_appointDelManBtnActionPerformed
+    }//GEN-LAST:event_AppointButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton appointDelManBtn;
-    private javax.swing.JButton backBtn;
+    private javax.swing.JButton AppointButton;
+    private javax.swing.JButton BackButton;
     private javax.swing.JComboBox<String> deliveryManCmbBox;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
