@@ -41,7 +41,7 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
         delManTbl.getTableHeader().setDefaultRenderer(new tableHeaderColors());
 
         if (enterprise.getEnterpriseType().equals("Maintenance Unit")) {
-            processJButton.setText("Mark as completed");
+            ProcessButton.setText("Mark as completed");
         }
 
         populateTable();
@@ -76,8 +76,8 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         delManTbl = new javax.swing.JTable();
-        processJButton = new javax.swing.JButton();
-        refreshJButton = new javax.swing.JButton();
+        ProcessButton = new javax.swing.JButton();
+        RefreshButton = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -124,29 +124,29 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 730, 96));
 
-        processJButton.setBackground(new java.awt.Color(204, 204, 204));
-        processJButton.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        processJButton.setForeground(new java.awt.Color(51, 51, 51));
-        processJButton.setText("Mark as Delivered");
-        processJButton.addActionListener(new java.awt.event.ActionListener() {
+        ProcessButton.setBackground(new java.awt.Color(51, 153, 255));
+        ProcessButton.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
+        ProcessButton.setForeground(new java.awt.Color(255, 255, 255));
+        ProcessButton.setText("Mark as Delivered");
+        ProcessButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                processJButtonActionPerformed(evt);
+                ProcessButtonActionPerformed(evt);
             }
         });
-        add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 370, 150, 50));
+        add(ProcessButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 370, 150, 50));
 
-        refreshJButton.setBackground(new java.awt.Color(204, 204, 204));
-        refreshJButton.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        refreshJButton.setForeground(new java.awt.Color(51, 51, 51));
-        refreshJButton.setText("Refresh");
-        refreshJButton.addActionListener(new java.awt.event.ActionListener() {
+        RefreshButton.setBackground(new java.awt.Color(51, 153, 255));
+        RefreshButton.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
+        RefreshButton.setForeground(new java.awt.Color(255, 255, 255));
+        RefreshButton.setText("Refresh");
+        RefreshButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                refreshJButtonActionPerformed(evt);
+                RefreshButtonActionPerformed(evt);
             }
         });
-        add(refreshJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 210, 120, 30));
+        add(RefreshButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 210, 120, 30));
 
-        jPanel3.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel3.setBackground(new java.awt.Color(51, 204, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -168,12 +168,12 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
         add(greetLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 320, 30));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        enterpriseLabel.setForeground(new java.awt.Color(51, 255, 204));
+        enterpriseLabel.setForeground(new java.awt.Color(51, 204, 255));
         enterpriseLabel.setText("Delivery Request Processing");
         add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 410, 30));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void processJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processJButtonActionPerformed
+    private void ProcessButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProcessButtonActionPerformed
 
         int selectedRow = delManTbl.getSelectedRow();
 
@@ -191,13 +191,15 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
             populateTable();
         }
 
-    }//GEN-LAST:event_processJButtonActionPerformed
+    }//GEN-LAST:event_ProcessButtonActionPerformed
 
-    private void refreshJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshJButtonActionPerformed
+    private void RefreshButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshButtonActionPerformed
         populateTable();
-    }//GEN-LAST:event_refreshJButtonActionPerformed
+    }//GEN-LAST:event_RefreshButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ProcessButton;
+    private javax.swing.JButton RefreshButton;
     private javax.swing.JTable delManTbl;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel greetLbl;
@@ -206,7 +208,5 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton processJButton;
-    private javax.swing.JButton refreshJButton;
     // End of variables declaration//GEN-END:variables
 }

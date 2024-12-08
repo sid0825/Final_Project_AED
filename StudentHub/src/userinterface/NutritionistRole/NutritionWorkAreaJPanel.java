@@ -161,9 +161,9 @@ public class NutritionWorkAreaJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 675, 91));
 
-        AcceptButton.setBackground(new java.awt.Color(204, 204, 204));
+        AcceptButton.setBackground(new java.awt.Color(51, 153, 255));
         AcceptButton.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        AcceptButton.setForeground(new java.awt.Color(51, 51, 51));
+        AcceptButton.setForeground(new java.awt.Color(255, 255, 255));
         AcceptButton.setText("Accept & Process Request");
         AcceptButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -245,9 +245,9 @@ public class NutritionWorkAreaJPanel extends javax.swing.JPanel {
         jLabel7.setText("Height(in cms):");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 500, 86, 30));
 
-        ViewDetailsButton.setBackground(new java.awt.Color(204, 204, 204));
+        ViewDetailsButton.setBackground(new java.awt.Color(51, 153, 255));
         ViewDetailsButton.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        ViewDetailsButton.setForeground(new java.awt.Color(51, 51, 51));
+        ViewDetailsButton.setForeground(new java.awt.Color(255, 255, 255));
         ViewDetailsButton.setText("View Details");
         ViewDetailsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -261,12 +261,11 @@ public class NutritionWorkAreaJPanel extends javax.swing.JPanel {
         jLabel3.setText("Message:");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 350, -1, 70));
 
-        jPanel3.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel3.setBackground(new java.awt.Color(51, 204, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel13.setBackground(new java.awt.Color(255, 51, 51));
         jLabel13.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(204, 204, 204));
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel13.setText("Welcome,");
         jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 90, 40));
@@ -303,7 +302,7 @@ public class NutritionWorkAreaJPanel extends javax.swing.JPanel {
         add(greetLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 320, 40));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        enterpriseLabel.setForeground(new java.awt.Color(102, 204, 255));
+        enterpriseLabel.setForeground(new java.awt.Color(51, 204, 255));
         enterpriseLabel.setText("STUDENT DETAILS");
         add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 410, 30));
 

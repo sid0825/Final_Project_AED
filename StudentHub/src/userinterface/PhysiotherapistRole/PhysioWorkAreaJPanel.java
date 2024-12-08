@@ -153,9 +153,9 @@ public class PhysioWorkAreaJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 675, 91));
 
-        ProcessButton.setBackground(new java.awt.Color(204, 204, 204));
+        ProcessButton.setBackground(new java.awt.Color(51, 153, 255));
         ProcessButton.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        ProcessButton.setForeground(new java.awt.Color(51, 51, 51));
+        ProcessButton.setForeground(new java.awt.Color(255, 255, 255));
         ProcessButton.setText("Process Request");
         ProcessButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -239,7 +239,7 @@ public class PhysioWorkAreaJPanel extends javax.swing.JPanel {
         txtWeight.setForeground(new java.awt.Color(51, 51, 51));
         add(txtWeight, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 590, 190, 30));
 
-        jPanel3.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel3.setBackground(new java.awt.Color(51, 204, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         greetLbl.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
@@ -253,9 +253,9 @@ public class PhysioWorkAreaJPanel extends javax.swing.JPanel {
 
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1210, 40));
 
-        ViewDetailsButton.setBackground(new java.awt.Color(204, 204, 204));
+        ViewDetailsButton.setBackground(new java.awt.Color(51, 153, 255));
         ViewDetailsButton.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        ViewDetailsButton.setForeground(new java.awt.Color(51, 51, 51));
+        ViewDetailsButton.setForeground(new java.awt.Color(255, 255, 255));
         ViewDetailsButton.setText("View Details");
         ViewDetailsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -284,6 +284,7 @@ public class PhysioWorkAreaJPanel extends javax.swing.JPanel {
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundFoot.png"))); // NOI18N
         add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 264, 52));
 
+        enterpriseLabel.setBackground(new java.awt.Color(51, 204, 255));
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         enterpriseLabel.setForeground(new java.awt.Color(102, 204, 255));
         enterpriseLabel.setText("STUDENT DETAILS");

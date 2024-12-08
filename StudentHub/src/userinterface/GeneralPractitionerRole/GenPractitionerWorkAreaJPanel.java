@@ -93,7 +93,7 @@ public class GenPractitionerWorkAreaJPanel extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tblStudentList = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        ProcessReqButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         nameTxt = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -110,7 +110,7 @@ public class GenPractitionerWorkAreaJPanel extends javax.swing.JPanel {
         jPanel3 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         greetLbl = new javax.swing.JLabel();
-        viewDetailsBtn = new javax.swing.JButton();
+        viewDetailsButton = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         enterpriseLabel = new javax.swing.JLabel();
@@ -143,16 +143,16 @@ public class GenPractitionerWorkAreaJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 675, 91));
 
-        jButton1.setBackground(new java.awt.Color(102, 204, 255));
-        jButton1.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(51, 51, 51));
-        jButton1.setText("Process Request");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        ProcessReqButton.setBackground(new java.awt.Color(51, 153, 255));
+        ProcessReqButton.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
+        ProcessReqButton.setForeground(new java.awt.Color(255, 255, 255));
+        ProcessReqButton.setText("Process Request");
+        ProcessReqButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ProcessReqButtonActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 630, -1, 40));
+        add(ProcessReqButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 630, -1, 40));
 
         jLabel2.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 204, 204));
@@ -238,7 +238,7 @@ public class GenPractitionerWorkAreaJPanel extends javax.swing.JPanel {
         doctorMsgTxt.setForeground(new java.awt.Color(51, 51, 51));
         add(doctorMsgTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 520, 296, 80));
 
-        jPanel3.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel3.setBackground(new java.awt.Color(51, 204, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel10.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
@@ -252,16 +252,16 @@ public class GenPractitionerWorkAreaJPanel extends javax.swing.JPanel {
 
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1210, 40));
 
-        viewDetailsBtn.setBackground(new java.awt.Color(102, 204, 255));
-        viewDetailsBtn.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        viewDetailsBtn.setForeground(new java.awt.Color(51, 51, 51));
-        viewDetailsBtn.setText("View Details");
-        viewDetailsBtn.addActionListener(new java.awt.event.ActionListener() {
+        viewDetailsButton.setBackground(new java.awt.Color(51, 153, 255));
+        viewDetailsButton.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
+        viewDetailsButton.setForeground(new java.awt.Color(255, 255, 255));
+        viewDetailsButton.setText("View Details");
+        viewDetailsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewDetailsBtnActionPerformed(evt);
+                viewDetailsButtonActionPerformed(evt);
             }
         });
-        add(viewDetailsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 350, 138, 45));
+        add(viewDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 350, 138, 45));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundLogo.png"))); // NOI18N
         add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 100, 100));
@@ -270,7 +270,7 @@ public class GenPractitionerWorkAreaJPanel extends javax.swing.JPanel {
         add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 264, 52));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        enterpriseLabel.setForeground(new java.awt.Color(102, 204, 255));
+        enterpriseLabel.setForeground(new java.awt.Color(51, 204, 255));
         enterpriseLabel.setText("STUDENT DETAILS");
         add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 410, 30));
     }// </editor-fold>//GEN-END:initComponents
@@ -342,7 +342,7 @@ public class GenPractitionerWorkAreaJPanel extends javax.swing.JPanel {
     }
     
     
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void ProcessReqButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProcessReqButtonActionPerformed
         int selectedRow = tblStudentList.getSelectedRow();
         if(selectedRow >=0){
             GenPracWorkRequest request = (GenPracWorkRequest) tblStudentList.getValueAt(selectedRow, 2);
@@ -364,12 +364,12 @@ public class GenPractitionerWorkAreaJPanel extends javax.swing.JPanel {
         }
         
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_ProcessReqButtonActionPerformed
 
     
     
     
-    private void viewDetailsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewDetailsBtnActionPerformed
+    private void viewDetailsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewDetailsButtonActionPerformed
         // TODO add your handling code here:
             int selectedRow = tblStudentList.getSelectedRow();
             if(selectedRow >=0){
@@ -387,14 +387,14 @@ public class GenPractitionerWorkAreaJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null,"Please Select a row","Error",JOptionPane.ERROR_MESSAGE);
         }
 
-    }//GEN-LAST:event_viewDetailsBtnActionPerformed
+    }//GEN-LAST:event_viewDetailsButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ProcessReqButton;
     private javax.swing.JTextField doctorMsgTxt;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel greetLbl;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -413,7 +413,7 @@ public class GenPractitionerWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtAge;
     private javax.swing.JTextField txtHeight;
     private javax.swing.JTextField txtWeight;
-    private javax.swing.JButton viewDetailsBtn;
+    private javax.swing.JButton viewDetailsButton;
     // End of variables declaration//GEN-END:variables
 
     

@@ -37,18 +37,18 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         greetLbl.setText(account.getEmployee().getName() + "!!");
         valueLabel.setText(enterprise.getName());
         if (enterprise.getEnterpriseType().toString().equals("Dorm Inventory Unit")) {
-            manageRequestsBtn.setVisible(false);
+            ManageRequestsButton.setVisible(false);
         }
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        manageEmployeeJButton = new javax.swing.JButton();
-        manageOrganizationJButton = new javax.swing.JButton();
+        ManageEmployeeButton = new javax.swing.JButton();
+        ManageOrganizationButton = new javax.swing.JButton();
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
-        manageRequestsBtn = new javax.swing.JButton();
+        ManageRequestsButton = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         greetLbl = new javax.swing.JLabel();
@@ -58,27 +58,27 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(51, 51, 51));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        manageEmployeeJButton.setBackground(new java.awt.Color(204, 204, 204));
-        manageEmployeeJButton.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        manageEmployeeJButton.setForeground(new java.awt.Color(51, 51, 51));
-        manageEmployeeJButton.setText("Manage Employee");
-        manageEmployeeJButton.addActionListener(new java.awt.event.ActionListener() {
+        ManageEmployeeButton.setBackground(new java.awt.Color(204, 204, 204));
+        ManageEmployeeButton.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        ManageEmployeeButton.setForeground(new java.awt.Color(51, 51, 51));
+        ManageEmployeeButton.setText("Manage Employee");
+        ManageEmployeeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                manageEmployeeJButtonActionPerformed(evt);
+                ManageEmployeeButtonActionPerformed(evt);
             }
         });
-        add(manageEmployeeJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 180, 40));
+        add(ManageEmployeeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 180, 40));
 
-        manageOrganizationJButton.setBackground(new java.awt.Color(204, 204, 204));
-        manageOrganizationJButton.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        manageOrganizationJButton.setForeground(new java.awt.Color(51, 51, 51));
-        manageOrganizationJButton.setText("Manage Organization");
-        manageOrganizationJButton.addActionListener(new java.awt.event.ActionListener() {
+        ManageOrganizationButton.setBackground(new java.awt.Color(204, 204, 204));
+        ManageOrganizationButton.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        ManageOrganizationButton.setForeground(new java.awt.Color(51, 51, 51));
+        ManageOrganizationButton.setText("Manage Organization");
+        ManageOrganizationButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                manageOrganizationJButtonActionPerformed(evt);
+                ManageOrganizationButtonActionPerformed(evt);
             }
         });
-        add(manageOrganizationJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, 180, 40));
+        add(ManageOrganizationButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, 180, 40));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         enterpriseLabel.setForeground(new java.awt.Color(51, 204, 255));
@@ -90,16 +90,16 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         valueLabel.setText("<value>");
         add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 100, 500, 30));
 
-        manageRequestsBtn.setBackground(new java.awt.Color(204, 204, 204));
-        manageRequestsBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        manageRequestsBtn.setForeground(new java.awt.Color(51, 51, 51));
-        manageRequestsBtn.setText("Manage Requests");
-        manageRequestsBtn.addActionListener(new java.awt.event.ActionListener() {
+        ManageRequestsButton.setBackground(new java.awt.Color(204, 204, 204));
+        ManageRequestsButton.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        ManageRequestsButton.setForeground(new java.awt.Color(51, 51, 51));
+        ManageRequestsButton.setText("Manage Requests");
+        ManageRequestsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                manageRequestsBtnActionPerformed(evt);
+                ManageRequestsButtonActionPerformed(evt);
             }
         });
-        add(manageRequestsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 310, 180, 40));
+        add(ManageRequestsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 310, 180, 40));
 
         jPanel3.setBackground(new java.awt.Color(51, 204, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -107,7 +107,6 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel7.setBackground(new java.awt.Color(255, 51, 51));
         jLabel7.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(204, 204, 204));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel7.setText("Welcome,");
         jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 90, 40));
@@ -126,42 +125,42 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 264, 52));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void manageEmployeeJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageEmployeeJButtonActionPerformed
+    private void ManageEmployeeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageEmployeeButtonActionPerformed
         ManageEmployeeJPanel manageEmployeeJPanel = new ManageEmployeeJPanel(userProcessContainer, enterprise.getOrganizationDirectory(), business);
         userProcessContainer.add("manageEmployeeJPanel", manageEmployeeJPanel);
 
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
 
-    }//GEN-LAST:event_manageEmployeeJButtonActionPerformed
+    }//GEN-LAST:event_ManageEmployeeButtonActionPerformed
 
-    private void manageOrganizationJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageOrganizationJButtonActionPerformed
+    private void ManageOrganizationButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageOrganizationButtonActionPerformed
         ManageOrganizationJPanel manageOrganizationJPanel = new ManageOrganizationJPanel(userProcessContainer, enterprise);
         userProcessContainer.add("manageOrganizationJPanel", manageOrganizationJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
 
-    }//GEN-LAST:event_manageOrganizationJButtonActionPerformed
+    }//GEN-LAST:event_ManageOrganizationButtonActionPerformed
 
-    private void manageRequestsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageRequestsBtnActionPerformed
+    private void ManageRequestsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageRequestsButtonActionPerformed
         ManageRequestsJPanel manageRequestsJPanel = new ManageRequestsJPanel(userProcessContainer, enterprise, account, organization, business);
         userProcessContainer.add("manageRequestsJPanel", manageRequestsJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
 
-    }//GEN-LAST:event_manageRequestsBtnActionPerformed
+    }//GEN-LAST:event_ManageRequestsButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ManageEmployeeButton;
+    private javax.swing.JButton ManageOrganizationButton;
+    private javax.swing.JButton ManageRequestsButton;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel greetLbl;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JButton manageEmployeeJButton;
-    private javax.swing.JButton manageOrganizationJButton;
-    private javax.swing.JButton manageRequestsBtn;
     private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
 
