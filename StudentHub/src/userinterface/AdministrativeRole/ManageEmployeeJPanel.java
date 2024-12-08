@@ -141,7 +141,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         organizationJTable = new javax.swing.JTable();
         organizationJComboBox = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
-        backJButton = new javax.swing.JButton();
+        BackButton = new javax.swing.JButton();
         organizationEmpJComboBox = new javax.swing.JComboBox();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -149,10 +149,10 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         txtUserName = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        createUserJButton = new javax.swing.JButton();
+        CreateUserButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        btnRemove = new javax.swing.JButton();
+        RemoveButton = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
         emailIDAlreadyLbl = new javax.swing.JLabel();
@@ -226,16 +226,16 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         jLabel1.setText("Organization:");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 290, 78, 25));
 
-        backJButton.setBackground(new java.awt.Color(204, 204, 204));
-        backJButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        backJButton.setForeground(new java.awt.Color(51, 51, 51));
-        backJButton.setText("<< Back");
-        backJButton.addActionListener(new java.awt.event.ActionListener() {
+        BackButton.setBackground(new java.awt.Color(255, 51, 51));
+        BackButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        BackButton.setForeground(new java.awt.Color(51, 51, 51));
+        BackButton.setText("<< Back");
+        BackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backJButtonActionPerformed(evt);
+                BackButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 31));
+        add(BackButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 31));
 
         organizationEmpJComboBox.setBackground(new java.awt.Color(204, 204, 204));
         organizationEmpJComboBox.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
@@ -297,16 +297,16 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         jLabel6.setText("Password:");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 480, 70, 10));
 
-        createUserJButton.setBackground(new java.awt.Color(204, 204, 204));
-        createUserJButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        createUserJButton.setForeground(new java.awt.Color(51, 51, 51));
-        createUserJButton.setText("Create");
-        createUserJButton.addActionListener(new java.awt.event.ActionListener() {
+        CreateUserButton.setBackground(new java.awt.Color(51, 153, 255));
+        CreateUserButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        CreateUserButton.setForeground(new java.awt.Color(255, 255, 255));
+        CreateUserButton.setText("Create");
+        CreateUserButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                createUserJButtonActionPerformed(evt);
+                CreateUserButtonActionPerformed(evt);
             }
         });
-        add(createUserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 540, 87, 44));
+        add(CreateUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 540, 87, 44));
 
         jLabel2.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 204, 255));
@@ -320,16 +320,16 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         jLabel7.setText("View Employees");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 240, 390, 31));
 
-        btnRemove.setBackground(new java.awt.Color(204, 204, 204));
-        btnRemove.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnRemove.setForeground(new java.awt.Color(51, 51, 51));
-        btnRemove.setText("Remove");
-        btnRemove.addActionListener(new java.awt.event.ActionListener() {
+        RemoveButton.setBackground(new java.awt.Color(51, 153, 255));
+        RemoveButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        RemoveButton.setForeground(new java.awt.Color(255, 255, 255));
+        RemoveButton.setText("Remove");
+        RemoveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRemoveActionPerformed(evt);
+                RemoveButtonActionPerformed(evt);
             }
         });
-        add(btnRemove, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 540, 113, 44));
+        add(RemoveButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 540, 113, 44));
 
         jLabel8.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(204, 204, 204));
@@ -407,12 +407,12 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 410, 30));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+    private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
 
         userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-    }//GEN-LAST:event_backJButtonActionPerformed
+    }//GEN-LAST:event_BackButtonActionPerformed
 
     private void organizationJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_organizationJComboBoxActionPerformed
   
@@ -422,7 +422,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_organizationJComboBoxActionPerformed
 
-    private void createUserJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserJButtonActionPerformed
+    private void CreateUserButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateUserButtonActionPerformed
         String userName = txtUserName.getText();
         String password = passwordJTextField.getText();
         //String name = txtName.getText();
@@ -483,7 +483,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                 clearLabels();
             }
         }
-    }//GEN-LAST:event_createUserJButtonActionPerformed
+    }//GEN-LAST:event_CreateUserButtonActionPerformed
 
     private void organizationEmpJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_organizationEmpJComboBoxActionPerformed
         Organization organization = (Organization) organizationEmpJComboBox.getSelectedItem();
@@ -525,7 +525,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUserNameActionPerformed
 
-    private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
+    private void RemoveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveButtonActionPerformed
         int row = organizationJTable.getSelectedRow();
 
         if (row < 0) {
@@ -538,7 +538,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         org.getUserAccountDirectory().removeUserAccount(ua);
         populateTable(org);
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnRemoveActionPerformed
+    }//GEN-LAST:event_RemoveButtonActionPerformed
 
     private void txtNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyReleased
         // TODO add your handling code here:
@@ -580,11 +580,11 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_roleJComboBoxActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backJButton;
-    private javax.swing.JButton btnRemove;
+    private javax.swing.JButton BackButton;
+    private javax.swing.JButton CreateUserButton;
+    private javax.swing.JButton RemoveButton;
     private javax.swing.JLabel cityLbl;
     private javax.swing.JLabel citySuccessLbl;
-    private javax.swing.JButton createUserJButton;
     private javax.swing.JLabel emailIDAlreadyLbl;
     private javax.swing.JLabel emailLbl;
     private javax.swing.JLabel emailSuccessLbl;

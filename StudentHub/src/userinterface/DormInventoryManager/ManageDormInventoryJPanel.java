@@ -44,8 +44,8 @@ public class ManageDormInventoryJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        manageInventoryBtn = new javax.swing.JButton();
-        manageOrdersBtn = new javax.swing.JButton();
+        ManageInventoryButton = new javax.swing.JButton();
+        manageOrdersButton = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         greetLbl = new javax.swing.JLabel();
@@ -61,27 +61,27 @@ public class ManageDormInventoryJPanel extends javax.swing.JPanel {
         jLabel1.setText("Manage Dorm Inventory");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 140, 320, -1));
 
-        manageInventoryBtn.setBackground(new java.awt.Color(204, 204, 204));
-        manageInventoryBtn.setForeground(new java.awt.Color(51, 51, 51));
-        manageInventoryBtn.setText("Manage Inventory");
-        manageInventoryBtn.addActionListener(new java.awt.event.ActionListener() {
+        ManageInventoryButton.setBackground(new java.awt.Color(51, 153, 255));
+        ManageInventoryButton.setForeground(new java.awt.Color(255, 255, 255));
+        ManageInventoryButton.setText("Manage Inventory");
+        ManageInventoryButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                manageInventoryBtnActionPerformed(evt);
+                ManageInventoryButtonActionPerformed(evt);
             }
         });
-        add(manageInventoryBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 250, 170, 50));
+        add(ManageInventoryButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 250, 170, 50));
 
-        manageOrdersBtn.setBackground(new java.awt.Color(204, 204, 204));
-        manageOrdersBtn.setForeground(new java.awt.Color(51, 51, 51));
-        manageOrdersBtn.setText("Manage Orders");
-        manageOrdersBtn.addActionListener(new java.awt.event.ActionListener() {
+        manageOrdersButton.setBackground(new java.awt.Color(51, 153, 255));
+        manageOrdersButton.setForeground(new java.awt.Color(255, 255, 255));
+        manageOrdersButton.setText("Manage Orders");
+        manageOrdersButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                manageOrdersBtnActionPerformed(evt);
+                manageOrdersButtonActionPerformed(evt);
             }
         });
-        add(manageOrdersBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 250, 170, 50));
+        add(manageOrdersButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 250, 170, 50));
 
-        jPanel3.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel3.setBackground(new java.awt.Color(51, 204, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel7.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
@@ -102,30 +102,30 @@ public class ManageDormInventoryJPanel extends javax.swing.JPanel {
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 264, 52));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void manageInventoryBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageInventoryBtnActionPerformed
+    private void ManageInventoryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageInventoryButtonActionPerformed
         ManageInventoryJPanel panel = new ManageInventoryJPanel(userProcessContainer, organization, business, enterprise, account);
         userProcessContainer.add("ManageMenuJPanel", panel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_manageInventoryBtnActionPerformed
+    }//GEN-LAST:event_ManageInventoryButtonActionPerformed
 
-    private void manageOrdersBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageOrdersBtnActionPerformed
+    private void manageOrdersButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageOrdersButtonActionPerformed
        ManageOrdersJPanel panel = new ManageOrdersJPanel(userProcessContainer, organization, business, enterprise, account);
         userProcessContainer.add("ManageOrdersJPanel", panel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_manageOrdersBtnActionPerformed
+    }//GEN-LAST:event_manageOrdersButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ManageInventoryButton;
     private javax.swing.JLabel greetLbl;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JButton manageInventoryBtn;
-    private javax.swing.JButton manageOrdersBtn;
+    private javax.swing.JButton manageOrdersButton;
     // End of variables declaration//GEN-END:variables
 
 }

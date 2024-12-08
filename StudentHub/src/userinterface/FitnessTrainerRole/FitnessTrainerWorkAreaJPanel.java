@@ -149,9 +149,9 @@ public class FitnessTrainerWorkAreaJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 675, 91));
 
-        ProcessButton.setBackground(new java.awt.Color(204, 204, 204));
+        ProcessButton.setBackground(new java.awt.Color(51, 153, 255));
         ProcessButton.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        ProcessButton.setForeground(new java.awt.Color(51, 51, 51));
+        ProcessButton.setForeground(new java.awt.Color(255, 255, 255));
         ProcessButton.setText("Process Request");
         ProcessButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -234,21 +234,20 @@ public class FitnessTrainerWorkAreaJPanel extends javax.swing.JPanel {
         txtWeight.setForeground(new java.awt.Color(51, 51, 51));
         add(txtWeight, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 550, 150, 30));
 
-        jPanel3.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel3.setBackground(new java.awt.Color(51, 204, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel13.setBackground(new java.awt.Color(255, 51, 51));
         jLabel13.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(204, 204, 204));
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel13.setText("Welcome,");
         jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 90, 40));
 
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1210, 40));
 
-        ViewDetailsButton.setBackground(new java.awt.Color(204, 204, 204));
+        ViewDetailsButton.setBackground(new java.awt.Color(51, 153, 255));
         ViewDetailsButton.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        ViewDetailsButton.setForeground(new java.awt.Color(51, 51, 51));
+        ViewDetailsButton.setForeground(new java.awt.Color(255, 255, 255));
         ViewDetailsButton.setText("View Details");
         ViewDetailsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -294,9 +293,9 @@ public class FitnessTrainerWorkAreaJPanel extends javax.swing.JPanel {
         greetLbl.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         add(greetLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 320, 50));
 
-        ViewMessageButton.setBackground(new java.awt.Color(204, 204, 204));
+        ViewMessageButton.setBackground(new java.awt.Color(51, 153, 255));
         ViewMessageButton.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        ViewMessageButton.setForeground(new java.awt.Color(51, 51, 51));
+        ViewMessageButton.setForeground(new java.awt.Color(255, 255, 255));
         ViewMessageButton.setText("View Message");
         ViewMessageButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -306,7 +305,7 @@ public class FitnessTrainerWorkAreaJPanel extends javax.swing.JPanel {
         add(ViewMessageButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 330, 138, 45));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        enterpriseLabel.setForeground(new java.awt.Color(102, 204, 255));
+        enterpriseLabel.setForeground(new java.awt.Color(51, 204, 255));
         enterpriseLabel.setText("STUDENT DETAILS");
         add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, 270, 30));
     }// </editor-fold>//GEN-END:initComponents

@@ -113,9 +113,9 @@ public class ServiceWorkerWorkAreaJPanel extends javax.swing.JPanel {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 730, 130));
 
-        CompleteButton.setBackground(new java.awt.Color(204, 204, 204));
+        CompleteButton.setBackground(new java.awt.Color(51, 153, 255));
         CompleteButton.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        CompleteButton.setForeground(new java.awt.Color(51, 51, 51));
+        CompleteButton.setForeground(new java.awt.Color(255, 255, 255));
         CompleteButton.setText("Mark as Completed");
         CompleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,9 +124,9 @@ public class ServiceWorkerWorkAreaJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(CompleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 410, 150, 50));
 
-        RefreshButton.setBackground(new java.awt.Color(204, 204, 204));
+        RefreshButton.setBackground(new java.awt.Color(51, 153, 255));
         RefreshButton.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        RefreshButton.setForeground(new java.awt.Color(51, 51, 51));
+        RefreshButton.setForeground(new java.awt.Color(255, 255, 255));
         RefreshButton.setText("Refresh");
         RefreshButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,7 +135,7 @@ public class ServiceWorkerWorkAreaJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(RefreshButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 220, 120, 30));
 
-        jPanel3.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel3.setBackground(new java.awt.Color(51, 204, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel7.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
@@ -156,7 +156,7 @@ public class ServiceWorkerWorkAreaJPanel extends javax.swing.JPanel {
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 264, 52));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        enterpriseLabel.setForeground(new java.awt.Color(102, 204, 255));
+        enterpriseLabel.setForeground(new java.awt.Color(51, 204, 255));
         enterpriseLabel.setText(" SERVICE REQUEST");
         jPanel1.add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 410, 30));
 

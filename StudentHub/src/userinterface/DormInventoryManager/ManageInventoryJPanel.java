@@ -149,20 +149,20 @@ public class ManageInventoryJPanel extends javax.swing.JPanel {
         jLabel4.setText("Price:");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 480, 130, 30));
 
-        backBtn.setBackground(new java.awt.Color(204, 204, 204));
+        backBtn.setBackground(new java.awt.Color(255, 51, 51));
         backBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         backBtn.setForeground(new java.awt.Color(51, 51, 51));
-        backBtn.setText("< Back");
+        backBtn.setText("<< Back");
         backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backBtnActionPerformed(evt);
             }
         });
-        add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, 30));
+        add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 30));
 
-        addBtn.setBackground(new java.awt.Color(204, 204, 204));
+        addBtn.setBackground(new java.awt.Color(51, 153, 255));
         addBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        addBtn.setForeground(new java.awt.Color(51, 51, 51));
+        addBtn.setForeground(new java.awt.Color(255, 255, 255));
         addBtn.setText("Add");
         addBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -171,9 +171,9 @@ public class ManageInventoryJPanel extends javax.swing.JPanel {
         });
         add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 540, 100, 40));
 
-        delBtn.setBackground(new java.awt.Color(204, 204, 204));
+        delBtn.setBackground(new java.awt.Color(51, 153, 255));
         delBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        delBtn.setForeground(new java.awt.Color(51, 51, 51));
+        delBtn.setForeground(new java.awt.Color(255, 255, 255));
         delBtn.setText("Delete");
         delBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -218,7 +218,7 @@ public class ManageInventoryJPanel extends javax.swing.JPanel {
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 264, 52));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        enterpriseLabel.setForeground(new java.awt.Color(102, 204, 255));
+        enterpriseLabel.setForeground(new java.awt.Color(51, 204, 255));
         enterpriseLabel.setText("Dorm Inventory Management");
         add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 90, 490, 30));
     }// </editor-fold>//GEN-END:initComponents

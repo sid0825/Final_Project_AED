@@ -104,10 +104,10 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         organizationJTable = new javax.swing.JTable();
-        addJButton = new javax.swing.JButton();
+        AddButton = new javax.swing.JButton();
         organizationJComboBox = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
-        backJButton = new javax.swing.JButton();
+        BackButton = new javax.swing.JButton();
         enterpriseLabel = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -149,16 +149,16 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 480, 120));
 
-        addJButton.setBackground(new java.awt.Color(204, 204, 204));
-        addJButton.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        addJButton.setForeground(new java.awt.Color(51, 51, 51));
-        addJButton.setText("Add");
-        addJButton.addActionListener(new java.awt.event.ActionListener() {
+        AddButton.setBackground(new java.awt.Color(51, 153, 255));
+        AddButton.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
+        AddButton.setForeground(new java.awt.Color(255, 255, 255));
+        AddButton.setText("Add");
+        AddButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addJButtonActionPerformed(evt);
+                AddButtonActionPerformed(evt);
             }
         });
-        add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 360, 122, 42));
+        add(AddButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 360, 122, 42));
 
         organizationJComboBox.setBackground(new java.awt.Color(204, 204, 204));
         organizationJComboBox.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
@@ -176,16 +176,16 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         jLabel1.setText("Organization Type :");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 300, -1, -1));
 
-        backJButton.setBackground(new java.awt.Color(204, 204, 204));
-        backJButton.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        backJButton.setForeground(new java.awt.Color(51, 51, 51));
-        backJButton.setText("<< Back");
-        backJButton.addActionListener(new java.awt.event.ActionListener() {
+        BackButton.setBackground(new java.awt.Color(255, 51, 51));
+        BackButton.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
+        BackButton.setForeground(new java.awt.Color(51, 51, 51));
+        BackButton.setText("<< Back");
+        BackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backJButtonActionPerformed(evt);
+                BackButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 12, -1, 30));
+        add(BackButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 12, -1, 30));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         enterpriseLabel.setForeground(new java.awt.Color(51, 204, 255));
@@ -199,7 +199,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 264, 52));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
+    private void AddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddButtonActionPerformed
 
         Type type = (Type) organizationJComboBox.getSelectedItem();
         String t = String.valueOf(type) + " Organization";
@@ -212,22 +212,22 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         }
         enterprise.getOrganizationDirectory().createOrganization(type);
         populateTable();
-    }//GEN-LAST:event_addJButtonActionPerformed
+    }//GEN-LAST:event_AddButtonActionPerformed
 
-    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+    private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
 
         userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-    }//GEN-LAST:event_backJButtonActionPerformed
+    }//GEN-LAST:event_BackButtonActionPerformed
 
     private void organizationJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_organizationJComboBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_organizationJComboBoxActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addJButton;
-    private javax.swing.JButton backJButton;
+    private javax.swing.JButton AddButton;
+    private javax.swing.JButton BackButton;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

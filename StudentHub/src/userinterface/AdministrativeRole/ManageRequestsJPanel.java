@@ -88,11 +88,11 @@ public class ManageRequestsJPanel extends javax.swing.JPanel {
         orgComboBox = new javax.swing.JComboBox();
         employeeComboBox = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
-        assignButton = new javax.swing.JButton();
+        AssignButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         workRequestJTable = new javax.swing.JTable();
-        backButton = new javax.swing.JButton();
-        searchButton = new javax.swing.JButton();
+        BackButton = new javax.swing.JButton();
+        SearchButton = new javax.swing.JButton();
         enterpriseLabel = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -133,16 +133,16 @@ public class ManageRequestsJPanel extends javax.swing.JPanel {
         jLabel2.setText("Assign Selected Task to:");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 353, 172, -1));
 
-        assignButton.setBackground(new java.awt.Color(204, 204, 204));
-        assignButton.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        assignButton.setForeground(new java.awt.Color(51, 51, 51));
-        assignButton.setText("Assign");
-        assignButton.addActionListener(new java.awt.event.ActionListener() {
+        AssignButton.setBackground(new java.awt.Color(51, 153, 255));
+        AssignButton.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
+        AssignButton.setForeground(new java.awt.Color(255, 255, 255));
+        AssignButton.setText("Assign");
+        AssignButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                assignButtonActionPerformed(evt);
+                AssignButtonActionPerformed(evt);
             }
         });
-        add(assignButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(389, 417, 93, 42));
+        add(AssignButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(389, 417, 93, 42));
 
         workRequestJTable.setBackground(new java.awt.Color(204, 204, 204));
         workRequestJTable.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
@@ -183,27 +183,27 @@ public class ManageRequestsJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 216, 653, 100));
 
-        backButton.setBackground(new java.awt.Color(204, 204, 204));
-        backButton.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        backButton.setForeground(new java.awt.Color(51, 51, 51));
-        backButton.setText("<< Back");
-        backButton.addActionListener(new java.awt.event.ActionListener() {
+        BackButton.setBackground(new java.awt.Color(255, 51, 51));
+        BackButton.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
+        BackButton.setForeground(new java.awt.Color(51, 51, 51));
+        BackButton.setText("<< Back");
+        BackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backButtonActionPerformed(evt);
+                BackButtonActionPerformed(evt);
             }
         });
-        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
+        add(BackButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, 30));
 
-        searchButton.setBackground(new java.awt.Color(204, 204, 204));
-        searchButton.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        searchButton.setForeground(new java.awt.Color(51, 51, 51));
-        searchButton.setText("Search");
-        searchButton.addActionListener(new java.awt.event.ActionListener() {
+        SearchButton.setBackground(new java.awt.Color(51, 153, 255));
+        SearchButton.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        SearchButton.setForeground(new java.awt.Color(255, 255, 255));
+        SearchButton.setText("Search");
+        SearchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchButtonActionPerformed(evt);
+                SearchButtonActionPerformed(evt);
             }
         });
-        add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 150, -1, -1));
+        add(SearchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 150, -1, -1));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         enterpriseLabel.setForeground(new java.awt.Color(51, 204, 255));
@@ -217,7 +217,7 @@ public class ManageRequestsJPanel extends javax.swing.JPanel {
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 264, 52));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void assignButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignButtonActionPerformed
+    private void AssignButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AssignButtonActionPerformed
         // TODO add your handling code here:
         int selectedRow = workRequestJTable.getSelectedRow();
         if (selectedRow >= 0) {
@@ -262,25 +262,25 @@ public class ManageRequestsJPanel extends javax.swing.JPanel {
         } else {
             JOptionPane.showMessageDialog(null, "Please Select a row", "Error", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_assignButtonActionPerformed
+    }//GEN-LAST:event_AssignButtonActionPerformed
 
     private void orgComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orgComboBoxActionPerformed
         // TODO add your handling code here:
 
     }//GEN-LAST:event_orgComboBoxActionPerformed
 
-    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+    private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
 
         userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-    }//GEN-LAST:event_backButtonActionPerformed
+    }//GEN-LAST:event_BackButtonActionPerformed
 
     private void orgComboBoxPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_orgComboBoxPropertyChange
         // TODO add your handling code here:
     }//GEN-LAST:event_orgComboBoxPropertyChange
 
-    private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
+    private void SearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButtonActionPerformed
         employeeComboBox.removeAllItems();
         String organization = orgComboBox.getSelectedItem().toString();
         for (Organization org : enterprise.getOrganizationDirectory().getOrganizationList()) {
@@ -293,12 +293,13 @@ public class ManageRequestsJPanel extends javax.swing.JPanel {
             }
             populateTable();
         }
-    }//GEN-LAST:event_searchButtonActionPerformed
+    }//GEN-LAST:event_SearchButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton assignButton;
-    private javax.swing.JButton backButton;
+    private javax.swing.JButton AssignButton;
+    private javax.swing.JButton BackButton;
+    private javax.swing.JButton SearchButton;
     private javax.swing.JComboBox<String> employeeComboBox;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel jLabel1;
@@ -307,7 +308,6 @@ public class ManageRequestsJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox orgComboBox;
-    private javax.swing.JButton searchButton;
     private javax.swing.JTable workRequestJTable;
     // End of variables declaration//GEN-END:variables
 
