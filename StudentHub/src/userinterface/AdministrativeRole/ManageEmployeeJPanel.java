@@ -168,7 +168,6 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         jSeparator2 = new javax.swing.JSeparator();
         passwordJTextField = new javax.swing.JPasswordField();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         enterpriseLabel = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(51, 51, 51));
@@ -400,9 +399,6 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundLogo.png"))); // NOI18N
         add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 110, 100));
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundFoot.png"))); // NOI18N
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 264, 52));
-
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         enterpriseLabel.setForeground(new java.awt.Color(51, 204, 255));
         enterpriseLabel.setText("Manage Organization Employees");
@@ -592,7 +588,6 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel emailSuccessLbl;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

@@ -90,7 +90,6 @@ public class WeightTrainerJPanel extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         weightTbl = new javax.swing.JTable();
         jLabel12 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         enterpriseLabel = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(51, 51, 51));
@@ -152,9 +151,6 @@ public class WeightTrainerJPanel extends javax.swing.JPanel {
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundLogo.png"))); // NOI18N
         add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 110, 100));
-
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundFoot.png"))); // NOI18N
-        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 264, 52));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         enterpriseLabel.setForeground(new java.awt.Color(51, 204, 255));
@@ -225,7 +221,6 @@ public class WeightTrainerJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton RequestButton;
     private javax.swing.JLabel enterpriseLabel;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;

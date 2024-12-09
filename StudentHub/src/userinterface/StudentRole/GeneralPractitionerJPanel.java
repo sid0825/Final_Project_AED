@@ -91,7 +91,6 @@ public class GeneralPractitionerJPanel extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         genPracTbl = new javax.swing.JTable();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         enterpriseLabel = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(51, 51, 51));
@@ -151,10 +150,6 @@ public class GeneralPractitionerJPanel extends javax.swing.JPanel {
         jLabel9.setForeground(new java.awt.Color(255, 51, 51));
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundLogo.png"))); // NOI18N
         add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 110, 100));
-
-        jLabel10.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundFoot.png"))); // NOI18N
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 264, 52));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         enterpriseLabel.setForeground(new java.awt.Color(51, 204, 255));
@@ -226,7 +221,6 @@ public class GeneralPractitionerJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnBookApp;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JTable genPracTbl;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;

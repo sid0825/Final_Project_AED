@@ -98,7 +98,6 @@ public class StudentAnalysisJPanel extends javax.swing.JPanel {
         dietStatusTbl = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
@@ -249,9 +248,6 @@ public class StudentAnalysisJPanel extends javax.swing.JPanel {
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundLogo.png"))); // NOI18N
         add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 110, 100));
-
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundFoot.png"))); // NOI18N
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 264, 52));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 760, 10));
 
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -387,7 +383,6 @@ public class StudentAnalysisJPanel extends javax.swing.JPanel {
     private javax.swing.JTable dietStatusTbl;
     private javax.swing.JComboBox<String> goalComboBox;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

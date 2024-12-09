@@ -116,7 +116,6 @@ public class WeightTrainerWorkAreaJPanel extends javax.swing.JPanel {
         weightChartComboBox = new javax.swing.JComboBox<>();
         greetLbl = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         btnViewMessage = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(51, 51, 51));
@@ -293,9 +292,6 @@ public class WeightTrainerWorkAreaJPanel extends javax.swing.JPanel {
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundLogo.png"))); // NOI18N
         add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 110, 100));
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundFoot.png"))); // NOI18N
-        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 264, 52));
-
         btnViewMessage.setBackground(new java.awt.Color(51, 153, 255));
         btnViewMessage.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
         btnViewMessage.setForeground(new java.awt.Color(255, 255, 255));
@@ -445,7 +441,6 @@ public class WeightTrainerWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnViewMessage;
     private javax.swing.JLabel greetLbl;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;

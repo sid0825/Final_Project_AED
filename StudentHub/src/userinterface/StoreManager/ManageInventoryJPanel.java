@@ -87,7 +87,6 @@ public class ManageInventoryJPanel extends javax.swing.JPanel {
         typeComboBox = new javax.swing.JComboBox<>();
         priceLbl1 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         enterpriseLabel = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(51, 51, 51));
@@ -227,9 +226,6 @@ public class ManageInventoryJPanel extends javax.swing.JPanel {
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundLogo.png"))); // NOI18N
         add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 110, 100));
-
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundFoot.png"))); // NOI18N
-        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 264, 52));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         enterpriseLabel.setForeground(new java.awt.Color(51, 204, 255));
@@ -386,7 +382,6 @@ public class ManageInventoryJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField itemNameTxt;
     private javax.swing.JLabel itemSuccessLbl;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

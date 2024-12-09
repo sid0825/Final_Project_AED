@@ -204,7 +204,6 @@ public class StudentWorkAreaJPanel extends javax.swing.JPanel {
         greetLbl = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
         btnPlaceOrder = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(51, 51, 51));
@@ -556,9 +555,6 @@ public class StudentWorkAreaJPanel extends javax.swing.JPanel {
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundLogo.png"))); // NOI18N
         add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 110, 100));
 
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundFoot.png"))); // NOI18N
-        add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 264, 52));
-
         btnPlaceOrder.setBackground(new java.awt.Color(204, 204, 204));
         btnPlaceOrder.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
         btnPlaceOrder.setForeground(new java.awt.Color(51, 51, 51));
@@ -877,7 +873,6 @@ public class StudentWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
