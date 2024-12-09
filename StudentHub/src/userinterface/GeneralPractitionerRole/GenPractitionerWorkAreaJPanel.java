@@ -264,7 +264,7 @@ public class GenPractitionerWorkAreaJPanel extends javax.swing.JPanel {
         add(viewDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 350, 138, 45));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundLogo.png"))); // NOI18N
-        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 100, 100));
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 110, 100));
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundFoot.png"))); // NOI18N
         add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 264, 52));

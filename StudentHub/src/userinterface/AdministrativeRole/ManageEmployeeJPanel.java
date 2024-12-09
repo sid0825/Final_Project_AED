@@ -85,8 +85,10 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         roleJComboBox.removeAllItems();
         for (Role role : organization.getSupportedRole()) {
 
-            String r = role.toString();
-            roleJComboBox.addItem(role);
+            //String r = role.toString();
+            String simpleName = role.getClass().getSimpleName();
+//            String r = role.toString();
+            roleJComboBox.addItem(simpleName);
         }
     }
 
@@ -396,7 +398,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         add(passwordJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 470, 190, 30));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundLogo.png"))); // NOI18N
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 100, 100));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 110, 100));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundFoot.png"))); // NOI18N
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 264, 52));

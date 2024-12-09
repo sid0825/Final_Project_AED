@@ -182,7 +182,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 340, 80, 30));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundLogo.png"))); // NOI18N
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 100, 100));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 110, 100));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundFoot.png"))); // NOI18N
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 264, 52));

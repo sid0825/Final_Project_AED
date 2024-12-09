@@ -526,7 +526,7 @@ public class CreateNewStudentJPanel extends javax.swing.JPanel {
         add(emailIDAlreadyLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, 160, 20));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundLogo.png"))); // NOI18N
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 100, 100));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 110, 100));
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundFoot.png"))); // NOI18N
         add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 264, 52));

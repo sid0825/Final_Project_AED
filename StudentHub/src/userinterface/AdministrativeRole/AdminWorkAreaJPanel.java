@@ -119,10 +119,10 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1210, 40));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundLogo.png"))); // NOI18N
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 100, 100));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 110, 110));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundFoot.png"))); // NOI18N
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 264, 52));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 264, 52));
     }// </editor-fold>//GEN-END:initComponents
 
     private void ManageEmployeeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageEmployeeButtonActionPerformed

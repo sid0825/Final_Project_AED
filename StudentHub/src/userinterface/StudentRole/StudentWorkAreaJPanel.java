@@ -554,7 +554,7 @@ public class StudentWorkAreaJPanel extends javax.swing.JPanel {
         add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 692, 36));
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundLogo.png"))); // NOI18N
-        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 100, 100));
+        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 110, 100));
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundFoot.png"))); // NOI18N
         add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 264, 52));

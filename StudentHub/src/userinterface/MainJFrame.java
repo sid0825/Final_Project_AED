@@ -57,6 +57,7 @@ public class MainJFrame extends javax.swing.JFrame {
         RegisterButton = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         LogiutButton = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         container = new javax.swing.JPanel();
         orangeLbl = new javax.swing.JLabel();
 
@@ -136,6 +137,11 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
         LeftJPanel.add(LogiutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 469, 148, 49));
+
+        jLabel2.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/UserImg.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        LeftJPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 250, 220));
 
         jSplitPane1.setLeftComponent(LeftJPanel);
 
@@ -320,6 +326,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JButton RegisterButton;
     private javax.swing.JPanel container;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;

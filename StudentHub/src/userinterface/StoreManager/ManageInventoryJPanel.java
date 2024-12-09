@@ -226,7 +226,7 @@ public class ManageInventoryJPanel extends javax.swing.JPanel {
         add(priceLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 540, 160, 20));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundLogo.png"))); // NOI18N
-        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 100, 100));
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 110, 100));
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundFoot.png"))); // NOI18N
         add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 264, 52));
