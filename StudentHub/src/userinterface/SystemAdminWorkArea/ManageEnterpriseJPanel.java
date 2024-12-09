@@ -96,7 +96,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         enterpriseTypeJComboBox = new javax.swing.JComboBox();
         SubmitButton = new javax.swing.JButton();
-        BackButton = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         citySuccessLbl = new javax.swing.JLabel();
         cityLbl = new javax.swing.JLabel();
@@ -180,9 +180,9 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         });
         add(enterpriseTypeJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 400, 190, 30));
 
-        SubmitButton.setBackground(new java.awt.Color(204, 204, 204));
+        SubmitButton.setBackground(new java.awt.Color(51, 153, 255));
         SubmitButton.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        SubmitButton.setForeground(new java.awt.Color(51, 51, 51));
+        SubmitButton.setForeground(new java.awt.Color(255, 255, 255));
         SubmitButton.setText("Submit");
         SubmitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -191,16 +191,16 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         });
         add(SubmitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 510, 101, 41));
 
-        BackButton.setBackground(new java.awt.Color(204, 204, 204));
-        BackButton.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        BackButton.setForeground(new java.awt.Color(51, 51, 51));
-        BackButton.setText("<< Back");
-        BackButton.addActionListener(new java.awt.event.ActionListener() {
+        btnBack.setBackground(new java.awt.Color(255, 51, 51));
+        btnBack.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(51, 51, 51));
+        btnBack.setText("<< Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BackButtonActionPerformed(evt);
+                btnBackActionPerformed(evt);
             }
         });
-        add(BackButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 9, -1, 30));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 9, -1, 30));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 204, 255));
@@ -259,7 +259,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_SubmitButtonActionPerformed
 
-    private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
@@ -268,7 +268,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
 
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-    }//GEN-LAST:event_BackButtonActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
     private void networkJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_networkJComboBoxActionPerformed
         // TODO add your handling code here:
@@ -297,8 +297,8 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_nameJTextFieldKeyReleased
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BackButton;
     private javax.swing.JButton SubmitButton;
+    private javax.swing.JButton btnBack;
     private javax.swing.JLabel cityLbl;
     private javax.swing.JLabel citySuccessLbl;
     private javax.swing.JTable enterpriseJTable;

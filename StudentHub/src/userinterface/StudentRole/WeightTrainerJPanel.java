@@ -113,9 +113,9 @@ public class WeightTrainerJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, 320, -1));
 
-        RequestButton.setBackground(new java.awt.Color(204, 204, 204));
+        RequestButton.setBackground(new java.awt.Color(51, 153, 255));
         RequestButton.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        RequestButton.setForeground(new java.awt.Color(51, 51, 51));
+        RequestButton.setForeground(new java.awt.Color(255, 255, 255));
         RequestButton.setText("Request Workouts");
         RequestButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,7 +157,7 @@ public class WeightTrainerJPanel extends javax.swing.JPanel {
         add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 264, 52));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        enterpriseLabel.setForeground(new java.awt.Color(102, 204, 255));
+        enterpriseLabel.setForeground(new java.awt.Color(51, 204, 255));
         enterpriseLabel.setText("WEIGHT TRAINER");
         add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, 270, 30));
     }// </editor-fold>//GEN-END:initComponents

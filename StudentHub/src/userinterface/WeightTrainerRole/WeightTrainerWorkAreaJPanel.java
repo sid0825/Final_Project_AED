@@ -94,7 +94,7 @@ public class WeightTrainerWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblStudentList = new javax.swing.JTable();
-        ProcessRequestButton = new javax.swing.JButton();
+        btnProcessRequest = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         nameTxt = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -108,7 +108,7 @@ public class WeightTrainerWorkAreaJPanel extends javax.swing.JPanel {
         txtWeight = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
-        ViewDetailsButton = new javax.swing.JButton();
+        btnViewDetails = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         weightMsgTxt = new javax.swing.JTextArea();
@@ -117,13 +117,13 @@ public class WeightTrainerWorkAreaJPanel extends javax.swing.JPanel {
         greetLbl = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        ViewMessageButton = new javax.swing.JButton();
+        btnViewMessage = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(51, 51, 51));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel1.setForeground(new java.awt.Color(51, 204, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("STUDENT DETAILS");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, 100, 1200, 39));
@@ -154,16 +154,16 @@ public class WeightTrainerWorkAreaJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 675, 91));
 
-        ProcessRequestButton.setBackground(new java.awt.Color(204, 204, 204));
-        ProcessRequestButton.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        ProcessRequestButton.setForeground(new java.awt.Color(51, 51, 51));
-        ProcessRequestButton.setText("Process Request");
-        ProcessRequestButton.addActionListener(new java.awt.event.ActionListener() {
+        btnProcessRequest.setBackground(new java.awt.Color(51, 153, 255));
+        btnProcessRequest.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        btnProcessRequest.setForeground(new java.awt.Color(255, 255, 255));
+        btnProcessRequest.setText("Process Request");
+        btnProcessRequest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ProcessRequestButtonActionPerformed(evt);
+                btnProcessRequestActionPerformed(evt);
             }
         });
-        add(ProcessRequestButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 630, -1, 40));
+        add(btnProcessRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 630, -1, 40));
 
         jLabel2.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 204, 204));
@@ -243,23 +243,23 @@ public class WeightTrainerWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel13.setBackground(new java.awt.Color(255, 51, 51));
         jLabel13.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel13.setForeground(new java.awt.Color(51, 51, 51));
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel13.setText("Welcome,");
         jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 90, 40));
 
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1210, 40));
 
-        ViewDetailsButton.setBackground(new java.awt.Color(204, 204, 204));
-        ViewDetailsButton.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        ViewDetailsButton.setForeground(new java.awt.Color(51, 51, 51));
-        ViewDetailsButton.setText("View Details");
-        ViewDetailsButton.addActionListener(new java.awt.event.ActionListener() {
+        btnViewDetails.setBackground(new java.awt.Color(51, 153, 255));
+        btnViewDetails.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
+        btnViewDetails.setForeground(new java.awt.Color(255, 255, 255));
+        btnViewDetails.setText("View Details");
+        btnViewDetails.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ViewDetailsButtonActionPerformed(evt);
+                btnViewDetailsActionPerformed(evt);
             }
         });
-        add(ViewDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 340, 138, 45));
+        add(btnViewDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 340, 138, 45));
 
         jLabel3.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(204, 204, 204));
@@ -296,16 +296,16 @@ public class WeightTrainerWorkAreaJPanel extends javax.swing.JPanel {
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundFoot.png"))); // NOI18N
         add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 264, 52));
 
-        ViewMessageButton.setBackground(new java.awt.Color(204, 204, 204));
-        ViewMessageButton.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        ViewMessageButton.setForeground(new java.awt.Color(51, 51, 51));
-        ViewMessageButton.setText("View Message");
-        ViewMessageButton.addActionListener(new java.awt.event.ActionListener() {
+        btnViewMessage.setBackground(new java.awt.Color(51, 153, 255));
+        btnViewMessage.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
+        btnViewMessage.setForeground(new java.awt.Color(255, 255, 255));
+        btnViewMessage.setText("View Message");
+        btnViewMessage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ViewMessageButtonActionPerformed(evt);
+                btnViewMessageActionPerformed(evt);
             }
         });
-        add(ViewMessageButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, 138, 45));
+        add(btnViewMessage, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, 138, 45));
     }// </editor-fold>//GEN-END:initComponents
 
     private void radioMaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioMaleActionPerformed
@@ -318,7 +318,7 @@ public class WeightTrainerWorkAreaJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_radioFemaleActionPerformed
 
-    private void ProcessRequestButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProcessRequestButtonActionPerformed
+    private void btnProcessRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessRequestActionPerformed
         int selectedRow = tblStudentList.getSelectedRow();
         if (selectedRow >= 0) {
             WeightTrainerWorkRequest request = (WeightTrainerWorkRequest) tblStudentList.getValueAt(selectedRow, 2);
@@ -337,9 +337,9 @@ public class WeightTrainerWorkAreaJPanel extends javax.swing.JPanel {
         } else {
             JOptionPane.showMessageDialog(null, "Please Select a row", "Error", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_ProcessRequestButtonActionPerformed
+    }//GEN-LAST:event_btnProcessRequestActionPerformed
 
-    private void ViewDetailsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewDetailsButtonActionPerformed
+    private void btnViewDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDetailsActionPerformed
         // TODO add your handling code here:
         int selectedRow = tblStudentList.getSelectedRow();
         if (selectedRow >= 0) {
@@ -356,9 +356,9 @@ public class WeightTrainerWorkAreaJPanel extends javax.swing.JPanel {
         } else {
             JOptionPane.showMessageDialog(null, "Please Select a row", "Error", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_ViewDetailsButtonActionPerformed
+    }//GEN-LAST:event_btnViewDetailsActionPerformed
 
-    private void ViewMessageButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewMessageButtonActionPerformed
+    private void btnViewMessageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewMessageActionPerformed
         // TODO add your handling code here:
         DefaultTableModel dtm = (DefaultTableModel) tblStudentList.getModel();
         dtm.setRowCount(0);
@@ -384,7 +384,7 @@ public class WeightTrainerWorkAreaJPanel extends javax.swing.JPanel {
             viewMessage = "Request: " + dtm.getValueAt(0, 2); // Assuming you want the first row's request value
             JOptionPane.showMessageDialog(null, viewMessage, "Information", JOptionPane.INFORMATION_MESSAGE);
         }
-    }//GEN-LAST:event_ViewMessageButtonActionPerformed
+    }//GEN-LAST:event_btnViewMessageActionPerformed
 
     public void sendEmail(String email, String chart) {
         final String password = "uhugcrgdragopyzz";
@@ -440,9 +440,9 @@ public class WeightTrainerWorkAreaJPanel extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ProcessRequestButton;
-    private javax.swing.JButton ViewDetailsButton;
-    private javax.swing.JButton ViewMessageButton;
+    private javax.swing.JButton btnProcessRequest;
+    private javax.swing.JButton btnViewDetails;
+    private javax.swing.JButton btnViewMessage;
     private javax.swing.JLabel greetLbl;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
