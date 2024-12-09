@@ -87,7 +87,7 @@ public class GeneralPractitionerJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         msgTxt = new javax.swing.JTextArea();
         jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnBookApp = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         genPracTbl = new javax.swing.JTable();
         jLabel9 = new javax.swing.JLabel();
@@ -111,16 +111,16 @@ public class GeneralPractitionerJPanel extends javax.swing.JPanel {
         jLabel5.setText("Enter Your Message:");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 170, 80));
 
-        jButton1.setBackground(new java.awt.Color(204, 204, 204));
-        jButton1.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(51, 51, 51));
-        jButton1.setText("Book Appointment");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnBookApp.setBackground(new java.awt.Color(51, 153, 255));
+        btnBookApp.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
+        btnBookApp.setForeground(new java.awt.Color(255, 255, 255));
+        btnBookApp.setText("Book Appointment");
+        btnBookApp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnBookAppActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 360, 155, 48));
+        add(btnBookApp, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 360, 155, 48));
 
         genPracTbl.setBackground(new java.awt.Color(204, 204, 204));
         genPracTbl.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
@@ -157,12 +157,12 @@ public class GeneralPractitionerJPanel extends javax.swing.JPanel {
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 264, 52));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        enterpriseLabel.setForeground(new java.awt.Color(102, 204, 255));
+        enterpriseLabel.setForeground(new java.awt.Color(51, 204, 255));
         enterpriseLabel.setText("GENERAL PRACTITIONER");
         add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 410, 30));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnBookAppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBookAppActionPerformed
         // TODO add your handling code here:
         if (userAccount.getWorkQueue().getWorkRequestList().size() == 0) {
             GenPracWorkRequest req = new GenPracWorkRequest();
@@ -219,13 +219,13 @@ public class GeneralPractitionerJPanel extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "Please wait until the previous request has been processed !", "Alert", JOptionPane.WARNING_MESSAGE);
             }
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnBookAppActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBookApp;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JTable genPracTbl;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel9;

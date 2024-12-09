@@ -49,10 +49,10 @@ public class ServiceManAssignJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        backBtn = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         deliveryManCmbBox = new javax.swing.JComboBox<>();
-        appointDelManBtn = new javax.swing.JButton();
+        btnAssign = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         enterpriseLabel = new javax.swing.JLabel();
@@ -60,16 +60,16 @@ public class ServiceManAssignJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(51, 51, 51));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        backBtn.setBackground(new java.awt.Color(204, 204, 204));
-        backBtn.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        backBtn.setForeground(new java.awt.Color(51, 51, 51));
-        backBtn.setText("< Back");
-        backBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnBack.setBackground(new java.awt.Color(255, 51, 51));
+        btnBack.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(51, 51, 51));
+        btnBack.setText("<< Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backBtnActionPerformed(evt);
+                btnBackActionPerformed(evt);
             }
         });
-        add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 82, 37));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 82, 37));
 
         jLabel3.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(204, 204, 204));
@@ -88,16 +88,16 @@ public class ServiceManAssignJPanel extends javax.swing.JPanel {
         });
         add(deliveryManCmbBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, 150, 30));
 
-        appointDelManBtn.setBackground(new java.awt.Color(204, 204, 204));
-        appointDelManBtn.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        appointDelManBtn.setForeground(new java.awt.Color(51, 51, 51));
-        appointDelManBtn.setText("Assign");
-        appointDelManBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnAssign.setBackground(new java.awt.Color(51, 153, 255));
+        btnAssign.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
+        btnAssign.setForeground(new java.awt.Color(255, 255, 255));
+        btnAssign.setText("Assign");
+        btnAssign.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                appointDelManBtnActionPerformed(evt);
+                btnAssignActionPerformed(evt);
             }
         });
-        add(appointDelManBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 310, 95, 36));
+        add(btnAssign, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 310, 95, 36));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundLogo.png"))); // NOI18N
         add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 100, 100));
@@ -106,19 +106,19 @@ public class ServiceManAssignJPanel extends javax.swing.JPanel {
         add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 264, 52));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        enterpriseLabel.setForeground(new java.awt.Color(255, 51, 51));
+        enterpriseLabel.setForeground(new java.awt.Color(51, 204, 255));
         enterpriseLabel.setText("Assign Serviceman");
         add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 410, 30));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-    }//GEN-LAST:event_backBtnActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
-    private void appointDelManBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_appointDelManBtnActionPerformed
+    private void btnAssignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignActionPerformed
         // TODO add your handling code here:
         for (Organization org : enterprise.getOrganizationDirectory().getOrganizationList()) {
             for (UserAccount user : org.getUserAccountDirectory().getUserAccountList()) {
@@ -130,7 +130,7 @@ public class ServiceManAssignJPanel extends javax.swing.JPanel {
                 }
             }
         }
-    }//GEN-LAST:event_appointDelManBtnActionPerformed
+    }//GEN-LAST:event_btnAssignActionPerformed
 
     private void deliveryManCmbBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deliveryManCmbBoxActionPerformed
         // TODO add your handling code here:
@@ -138,8 +138,8 @@ public class ServiceManAssignJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton appointDelManBtn;
-    private javax.swing.JButton backBtn;
+    private javax.swing.JButton btnAssign;
+    private javax.swing.JButton btnBack;
     private javax.swing.JComboBox<String> deliveryManCmbBox;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel jLabel11;

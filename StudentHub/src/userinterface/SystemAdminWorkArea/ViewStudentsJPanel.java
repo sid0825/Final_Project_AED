@@ -45,9 +45,9 @@ public class ViewStudentsJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblStudents = new javax.swing.JTable();
         txtNuIdSearchField = new javax.swing.JTextField();
-        searchBtn = new javax.swing.JButton();
+        btnsearch = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        backJButton = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
 
@@ -77,30 +77,30 @@ public class ViewStudentsJPanel extends javax.swing.JPanel {
         txtNuIdSearchField.setForeground(new java.awt.Color(51, 51, 51));
         add(txtNuIdSearchField, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 200, 120, -1));
 
-        searchBtn.setBackground(new java.awt.Color(102, 255, 255));
-        searchBtn.setForeground(new java.awt.Color(51, 51, 51));
-        searchBtn.setText("Search");
-        searchBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnsearch.setBackground(new java.awt.Color(51, 153, 255));
+        btnsearch.setForeground(new java.awt.Color(255, 255, 255));
+        btnsearch.setText("Search");
+        btnsearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchBtnActionPerformed(evt);
+                btnsearchActionPerformed(evt);
             }
         });
-        add(searchBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 200, -1, -1));
+        add(btnsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 200, -1, -1));
 
         jLabel1.setForeground(new java.awt.Color(204, 204, 204));
         jLabel1.setText("Enter NUID");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 180, -1, -1));
 
-        backJButton.setBackground(new java.awt.Color(102, 255, 255));
-        backJButton.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        backJButton.setForeground(new java.awt.Color(51, 51, 51));
-        backJButton.setText("<< Back");
-        backJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnBack.setBackground(new java.awt.Color(255, 51, 51));
+        btnBack.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(51, 51, 51));
+        btnBack.setText("<< Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backJButtonActionPerformed(evt);
+                btnBackActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundLogo.png"))); // NOI18N
         add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 100, 100));
@@ -109,7 +109,7 @@ public class ViewStudentsJPanel extends javax.swing.JPanel {
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 264, 52));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
 
         userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
@@ -119,9 +119,9 @@ public class ViewStudentsJPanel extends javax.swing.JPanel {
 
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-    }//GEN-LAST:event_backJButtonActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
-    private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
+    private void btnsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsearchActionPerformed
         // TODO add your handling code here:
         int nuId = 0;
         System.out.println(txtNuIdSearchField.getText());
@@ -163,17 +163,17 @@ public class ViewStudentsJPanel extends javax.swing.JPanel {
         row[4] = studentResult.getEmail();
 
         model.addRow(row);
-    }//GEN-LAST:event_searchBtnActionPerformed
+    }//GEN-LAST:event_btnsearchActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backJButton;
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnsearch;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton searchBtn;
     private javax.swing.JTable tblStudents;
     private javax.swing.JTextField txtNuIdSearchField;
     // End of variables declaration//GEN-END:variables

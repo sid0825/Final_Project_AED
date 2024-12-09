@@ -109,16 +109,16 @@ public class PlaceOrderJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        backBtn = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         dormInventoryTbl = new javax.swing.JTable();
         jLabel7 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         studentNotes = new javax.swing.JTextArea();
-        addToCartBtn = new javax.swing.JButton();
-        delCartBtn = new javax.swing.JButton();
-        placeOrderBtn = new javax.swing.JButton();
+        btnAddToCart = new javax.swing.JButton();
+        btnDeleteCart = new javax.swing.JButton();
+        btnPlaceOrder = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         invoiceTbl = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
@@ -132,28 +132,28 @@ public class PlaceOrderJPanel extends javax.swing.JPanel {
         histTbl = new javax.swing.JTable();
         jScrollPane5 = new javax.swing.JScrollPane();
         histItemTbl = new javax.swing.JTable();
-        addToCartHistBtn = new javax.swing.JButton();
+        btnAddToCartHist = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(51, 51, 51));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel1.setForeground(new java.awt.Color(255, 51, 51));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("ORDER DETAILS");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 0, 1127, 37));
 
-        backBtn.setBackground(new java.awt.Color(204, 204, 204));
-        backBtn.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        backBtn.setForeground(new java.awt.Color(51, 51, 51));
-        backBtn.setText("<< Back");
-        backBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnBack.setBackground(new java.awt.Color(255, 51, 51));
+        btnBack.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(51, 51, 51));
+        btnBack.setText("<< Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backBtnActionPerformed(evt);
+                btnBackActionPerformed(evt);
             }
         });
-        add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 100, 30));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 100, 30));
 
         dormInventoryTbl.setBackground(new java.awt.Color(204, 204, 204));
         dormInventoryTbl.setFont(new java.awt.Font("SansSerif", 1, 10)); // NOI18N
@@ -203,38 +203,38 @@ public class PlaceOrderJPanel extends javax.swing.JPanel {
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 470, 260, 58));
 
-        addToCartBtn.setBackground(new java.awt.Color(204, 204, 204));
-        addToCartBtn.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        addToCartBtn.setForeground(new java.awt.Color(51, 51, 51));
-        addToCartBtn.setText("Add To Cart");
-        addToCartBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnAddToCart.setBackground(new java.awt.Color(51, 153, 255));
+        btnAddToCart.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
+        btnAddToCart.setForeground(new java.awt.Color(255, 255, 255));
+        btnAddToCart.setText("Add To Cart");
+        btnAddToCart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addToCartBtnActionPerformed(evt);
+                btnAddToCartActionPerformed(evt);
             }
         });
-        add(addToCartBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, -1, -1));
+        add(btnAddToCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, -1, -1));
 
-        delCartBtn.setBackground(new java.awt.Color(0, 102, 153));
-        delCartBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        delCartBtn.setForeground(new java.awt.Color(255, 255, 255));
-        delCartBtn.setText("Delete From Cart");
-        delCartBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnDeleteCart.setBackground(new java.awt.Color(51, 153, 255));
+        btnDeleteCart.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        btnDeleteCart.setForeground(new java.awt.Color(255, 255, 255));
+        btnDeleteCart.setText("Delete From Cart");
+        btnDeleteCart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                delCartBtnActionPerformed(evt);
+                btnDeleteCartActionPerformed(evt);
             }
         });
-        add(delCartBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 620, -1, 49));
+        add(btnDeleteCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 620, -1, 49));
 
-        placeOrderBtn.setBackground(new java.awt.Color(102, 255, 102));
-        placeOrderBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        placeOrderBtn.setForeground(new java.awt.Color(51, 51, 51));
-        placeOrderBtn.setText("Place Order");
-        placeOrderBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnPlaceOrder.setBackground(new java.awt.Color(51, 153, 255));
+        btnPlaceOrder.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        btnPlaceOrder.setForeground(new java.awt.Color(255, 255, 255));
+        btnPlaceOrder.setText("Place Order");
+        btnPlaceOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                placeOrderBtnActionPerformed(evt);
+                btnPlaceOrderActionPerformed(evt);
             }
         });
-        add(placeOrderBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 620, 125, 49));
+        add(btnPlaceOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 620, 125, 49));
 
         invoiceTbl.setBackground(new java.awt.Color(204, 204, 204));
         invoiceTbl.setFont(new java.awt.Font("SansSerif", 1, 10)); // NOI18N
@@ -348,16 +348,16 @@ public class PlaceOrderJPanel extends javax.swing.JPanel {
 
         add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 340, -1, 114));
 
-        addToCartHistBtn.setBackground(new java.awt.Color(204, 204, 204));
-        addToCartHistBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        addToCartHistBtn.setForeground(new java.awt.Color(51, 51, 51));
-        addToCartHistBtn.setText("Show Items");
-        addToCartHistBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnAddToCartHist.setBackground(new java.awt.Color(51, 153, 255));
+        btnAddToCartHist.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        btnAddToCartHist.setForeground(new java.awt.Color(255, 255, 255));
+        btnAddToCartHist.setText("Show Items");
+        btnAddToCartHist.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addToCartHistBtnActionPerformed(evt);
+                btnAddToCartHistActionPerformed(evt);
             }
         });
-        add(addToCartHistBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 260, -1, -1));
+        add(btnAddToCartHist, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 260, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -365,14 +365,14 @@ public class PlaceOrderJPanel extends javax.swing.JPanel {
         add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 110, 452, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-    }//GEN-LAST:event_backBtnActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
-    private void placeOrderBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_placeOrderBtnActionPerformed
+    private void btnPlaceOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlaceOrderActionPerformed
         // TODO add your handling code here:
         if (invoiceTbl.getRowCount() > 0 && cartCount > 0) {
             DormInventoryWorkRequest request = new DormInventoryWorkRequest();
@@ -406,9 +406,9 @@ public class PlaceOrderJPanel extends javax.swing.JPanel {
             return;
         }
 
-    }//GEN-LAST:event_placeOrderBtnActionPerformed
+    }//GEN-LAST:event_btnPlaceOrderActionPerformed
 
-    private void addToCartBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addToCartBtnActionPerformed
+    private void btnAddToCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddToCartActionPerformed
         // TODO add your handling code here:
         int selectedRow = dormInventoryTbl.getSelectedRow();
         if (selectedRow < 0) {
@@ -422,9 +422,9 @@ public class PlaceOrderJPanel extends javax.swing.JPanel {
             totBillTxt.setText(this.total);
             JOptionPane.showMessageDialog(null, "Added to cart successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
         }
-    }//GEN-LAST:event_addToCartBtnActionPerformed
+    }//GEN-LAST:event_btnAddToCartActionPerformed
 
-    private void delCartBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delCartBtnActionPerformed
+    private void btnDeleteCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteCartActionPerformed
         // TODO add your handling code here:
         int selectedRow = invoiceTbl.getSelectedRow();
         if (selectedRow < 0) {
@@ -436,9 +436,9 @@ public class PlaceOrderJPanel extends javax.swing.JPanel {
             this.total = populateTable();
             totBillTxt.setText(this.total);
         }
-    }//GEN-LAST:event_delCartBtnActionPerformed
+    }//GEN-LAST:event_btnDeleteCartActionPerformed
 
-    private void addToCartHistBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addToCartHistBtnActionPerformed
+    private void btnAddToCartHistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddToCartHistActionPerformed
         // TODO add your handling code here:
         int selectedRow = histTbl.getSelectedRow();
         if (selectedRow < 0) {
@@ -457,14 +457,15 @@ public class PlaceOrderJPanel extends javax.swing.JPanel {
                 dtm.addRow(row);
             }
         }
-    }//GEN-LAST:event_addToCartHistBtnActionPerformed
+    }//GEN-LAST:event_btnAddToCartHistActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addToCartBtn;
-    private javax.swing.JButton addToCartHistBtn;
-    private javax.swing.JButton backBtn;
-    private javax.swing.JButton delCartBtn;
+    private javax.swing.JButton btnAddToCart;
+    private javax.swing.JButton btnAddToCartHist;
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnDeleteCart;
+    private javax.swing.JButton btnPlaceOrder;
     private javax.swing.JTable dormInventoryTbl;
     private javax.swing.JTable histItemTbl;
     private javax.swing.JTable histTbl;
@@ -484,7 +485,6 @@ public class PlaceOrderJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JButton placeOrderBtn;
     private javax.swing.JTextArea studentNotes;
     private javax.swing.JTextField totBillTxt;
     // End of variables declaration//GEN-END:variables

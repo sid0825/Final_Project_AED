@@ -48,11 +48,11 @@ public class DoctorAppointmentJPanel extends javax.swing.JPanel {
 
         jSplitPane1 = new javax.swing.JSplitPane();
         jPanel1 = new javax.swing.JPanel();
-        generalBtn = new javax.swing.JButton();
-        physioBtn = new javax.swing.JButton();
+        btnGeneral = new javax.swing.JButton();
+        btnPhysio = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        backJButton = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
         rightJPanel = new javax.swing.JPanel();
 
         setLayout(new java.awt.CardLayout());
@@ -60,30 +60,30 @@ public class DoctorAppointmentJPanel extends javax.swing.JPanel {
         jSplitPane1.setDividerLocation(80);
         jSplitPane1.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
-        jPanel1.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(51, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        generalBtn.setBackground(new java.awt.Color(204, 204, 204));
-        generalBtn.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        generalBtn.setForeground(new java.awt.Color(51, 51, 51));
-        generalBtn.setText("General Practitioner");
-        generalBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnGeneral.setBackground(new java.awt.Color(51, 153, 255));
+        btnGeneral.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
+        btnGeneral.setForeground(new java.awt.Color(255, 255, 255));
+        btnGeneral.setText("General Practitioner");
+        btnGeneral.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                generalBtnActionPerformed(evt);
+                btnGeneralActionPerformed(evt);
             }
         });
-        jPanel1.add(generalBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 156, 35));
+        jPanel1.add(btnGeneral, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 156, 35));
 
-        physioBtn.setBackground(new java.awt.Color(204, 204, 204));
-        physioBtn.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        physioBtn.setForeground(new java.awt.Color(51, 51, 51));
-        physioBtn.setText("Physiotherapist");
-        physioBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnPhysio.setBackground(new java.awt.Color(51, 153, 255));
+        btnPhysio.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
+        btnPhysio.setForeground(new java.awt.Color(255, 255, 255));
+        btnPhysio.setText("Physiotherapist");
+        btnPhysio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                physioBtnActionPerformed(evt);
+                btnPhysioActionPerformed(evt);
             }
         });
-        jPanel1.add(physioBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, 156, 35));
+        jPanel1.add(btnPhysio, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, 156, 35));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/gneralPrac.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 30, 40));
@@ -91,16 +91,16 @@ public class DoctorAppointmentJPanel extends javax.swing.JPanel {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/physio.png"))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, -1, 40));
 
-        backJButton.setBackground(new java.awt.Color(204, 204, 204));
-        backJButton.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        backJButton.setForeground(new java.awt.Color(51, 51, 51));
-        backJButton.setText("<< Back");
-        backJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnBack.setBackground(new java.awt.Color(51, 153, 255));
+        btnBack.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setText("<< Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backJButtonActionPerformed(evt);
+                btnBackActionPerformed(evt);
             }
         });
-        jPanel1.add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, 40));
+        jPanel1.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, 40));
 
         jSplitPane1.setLeftComponent(jPanel1);
 
@@ -111,37 +111,37 @@ public class DoctorAppointmentJPanel extends javax.swing.JPanel {
         add(jSplitPane1, "card2");
     }// </editor-fold>//GEN-END:initComponents
 
-    private void generalBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generalBtnActionPerformed
+    private void btnGeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGeneralActionPerformed
         // TODO add your handling code here:
         GeneralPractitionerJPanel panel = new GeneralPractitionerJPanel(userProcessContainer, system, network, userAccount);
         rightJPanel.add("ManageStudentsJPanel", panel);
         CardLayout layout = (CardLayout) rightJPanel.getLayout();
         layout.next(rightJPanel);
-    }//GEN-LAST:event_generalBtnActionPerformed
+    }//GEN-LAST:event_btnGeneralActionPerformed
 
-    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-    }//GEN-LAST:event_backJButtonActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
-    private void physioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_physioBtnActionPerformed
+    private void btnPhysioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPhysioActionPerformed
         // TODO add your handling code here:
         PhysiotherapistJPanel panel = new PhysiotherapistJPanel(userProcessContainer, system, network, userAccount);
         rightJPanel.add("ManageStudentsJPanel", panel);
         CardLayout layout = (CardLayout) rightJPanel.getLayout();
         layout.next(rightJPanel);
-    }//GEN-LAST:event_physioBtnActionPerformed
+    }//GEN-LAST:event_btnPhysioActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backJButton;
-    private javax.swing.JButton generalBtn;
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnGeneral;
+    private javax.swing.JButton btnPhysio;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSplitPane jSplitPane1;
-    private javax.swing.JButton physioBtn;
     private javax.swing.JPanel rightJPanel;
     // End of variables declaration//GEN-END:variables
 }

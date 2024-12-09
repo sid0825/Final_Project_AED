@@ -135,8 +135,8 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         passwordJPasswordField = new javax.swing.JPasswordField();
         jLabel6 = new javax.swing.JLabel();
-        backJButton1 = new javax.swing.JButton();
-        submitJButton1 = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
+        btnSubmit = new javax.swing.JButton();
         emailLbl = new javax.swing.JLabel();
         emailSuccessLbl = new javax.swing.JLabel();
         passwordLbl = new javax.swing.JLabel();
@@ -266,27 +266,27 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         jLabel6.setText("MANAGE ENTERPRISE ADMIN");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 723, 30));
 
-        backJButton1.setBackground(new java.awt.Color(204, 204, 204));
-        backJButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        backJButton1.setForeground(new java.awt.Color(51, 51, 51));
-        backJButton1.setText("<< Back");
-        backJButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnBack.setBackground(new java.awt.Color(255, 51, 51));
+        btnBack.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(51, 51, 51));
+        btnBack.setText("<< Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backJButton1ActionPerformed(evt);
+                btnBackActionPerformed(evt);
             }
         });
-        add(backJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 30));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 30));
 
-        submitJButton1.setBackground(new java.awt.Color(204, 204, 204));
-        submitJButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        submitJButton1.setForeground(new java.awt.Color(51, 51, 51));
-        submitJButton1.setText("Submit");
-        submitJButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnSubmit.setBackground(new java.awt.Color(51, 153, 255));
+        btnSubmit.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnSubmit.setForeground(new java.awt.Color(255, 255, 255));
+        btnSubmit.setText("Submit");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitJButton1ActionPerformed(evt);
+                btnSubmitActionPerformed(evt);
             }
         });
-        add(submitJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 640, 98, 42));
+        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 640, 98, 42));
 
         emailLbl.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
         emailLbl.setForeground(new java.awt.Color(255, 51, 51));
@@ -335,7 +335,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_enterpriseJComboBoxActionPerformed
 
-    private void backJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButton1ActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
@@ -343,9 +343,9 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         sysAdminwjp.populateTree();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-    }//GEN-LAST:event_backJButton1ActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
-    private void submitJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButton1ActionPerformed
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         Enterprise enterprise = (Enterprise) enterpriseJComboBox.getSelectedItem();
         if (enterprise.getEmployeeDirectory().getEmployeeList().size() != 0) {
             entAvail = 1;
@@ -382,7 +382,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
             }
         }
 
-    }//GEN-LAST:event_submitJButton1ActionPerformed
+    }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void usernameJTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_usernameJTextFieldKeyReleased
         // TODO add your handling code here:
@@ -433,7 +433,8 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_nameJTextFieldKeyReleased
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backJButton1;
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnSubmit;
     private javax.swing.JLabel cityLbl;
     private javax.swing.JLabel citySuccessLbl;
     private javax.swing.JLabel emailLbl;
@@ -454,7 +455,6 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
     private javax.swing.JPasswordField passwordJPasswordField;
     private javax.swing.JLabel passwordLbl;
     private javax.swing.JLabel passwordSuccessLbl;
-    private javax.swing.JButton submitJButton1;
     private javax.swing.JTextField usernameJTextField;
     // End of variables declaration//GEN-END:variables
 

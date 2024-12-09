@@ -70,15 +70,15 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        SubmitButton = new javax.swing.JButton();
+        btnSubmit = new javax.swing.JButton();
         nameJTextField = new javax.swing.JTextField();
-        BackButton = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         networkJTable = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         cityLbl = new javax.swing.JLabel();
         citySuccessLbl = new javax.swing.JLabel();
-        DeleteButton = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
@@ -91,16 +91,16 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         jLabel1.setText("Enter Campus Name:");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 400, 132, 20));
 
-        SubmitButton.setBackground(new java.awt.Color(51, 204, 255));
-        SubmitButton.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        SubmitButton.setForeground(new java.awt.Color(51, 51, 51));
-        SubmitButton.setText("Submit");
-        SubmitButton.addActionListener(new java.awt.event.ActionListener() {
+        btnSubmit.setBackground(new java.awt.Color(51, 153, 255));
+        btnSubmit.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        btnSubmit.setForeground(new java.awt.Color(255, 255, 255));
+        btnSubmit.setText("Submit");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SubmitButtonActionPerformed(evt);
+                btnSubmitActionPerformed(evt);
             }
         });
-        add(SubmitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 460, 90, 40));
+        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 460, 90, 40));
 
         nameJTextField.setBackground(new java.awt.Color(204, 204, 204));
         nameJTextField.setForeground(new java.awt.Color(51, 51, 51));
@@ -111,16 +111,16 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         });
         add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 400, 190, 30));
 
-        BackButton.setBackground(new java.awt.Color(204, 204, 204));
-        BackButton.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        BackButton.setForeground(new java.awt.Color(51, 51, 51));
-        BackButton.setText("<< Back");
-        BackButton.addActionListener(new java.awt.event.ActionListener() {
+        btnBack.setBackground(new java.awt.Color(255, 51, 51));
+        btnBack.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(51, 51, 51));
+        btnBack.setText("<< Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BackButtonActionPerformed(evt);
+                btnBackActionPerformed(evt);
             }
         });
-        add(BackButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 14, -1, 30));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 14, -1, 30));
 
         networkJTable.setBackground(new java.awt.Color(204, 204, 204));
         networkJTable.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
@@ -170,16 +170,16 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         citySuccessLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/tick.png"))); // NOI18N
         add(citySuccessLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 390, 40, 50));
 
-        DeleteButton.setBackground(new java.awt.Color(204, 204, 204));
-        DeleteButton.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        DeleteButton.setForeground(new java.awt.Color(51, 51, 51));
-        DeleteButton.setText("Delete");
-        DeleteButton.addActionListener(new java.awt.event.ActionListener() {
+        btnDelete.setBackground(new java.awt.Color(51, 153, 255));
+        btnDelete.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
+        btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DeleteButtonActionPerformed(evt);
+                btnDeleteActionPerformed(evt);
             }
         });
-        add(DeleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 340, 80, 30));
+        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 340, 80, 30));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundLogo.png"))); // NOI18N
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 100, 100));
@@ -188,7 +188,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 264, 52));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void SubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitButtonActionPerformed
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         if (cityValid) {
             String name = nameJTextField.getText();
             Network network = system.createAndAddNetwork();
@@ -198,9 +198,9 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         } else {
             JOptionPane.showMessageDialog(null, "Please enter all the required fields correctly!", "Error", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_SubmitButtonActionPerformed
+    }//GEN-LAST:event_btnSubmitActionPerformed
 
-    private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
@@ -208,7 +208,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         sysAdminwjp.populateTree();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-    }//GEN-LAST:event_BackButtonActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
     private void nameJTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameJTextFieldKeyReleased
          if (!cityPatternCorrect(nameJTextField.getText()) && !(nameJTextField.getText().isEmpty())) {
@@ -226,7 +226,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_nameJTextFieldKeyReleased
 
-    private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         int row = networkJTable.getSelectedRow();
         if (row < 0) {
             JOptionPane.showMessageDialog(null, "Please select a row!!", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -235,12 +235,12 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         Network n = (Network) networkJTable.getValueAt(row, 0);
         system.getNetworkList().remove(n);
         populateNetworkTable();
-    }//GEN-LAST:event_DeleteButtonActionPerformed
+    }//GEN-LAST:event_btnDeleteActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BackButton;
-    private javax.swing.JButton DeleteButton;
-    private javax.swing.JButton SubmitButton;
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnSubmit;
     private javax.swing.JLabel cityLbl;
     private javax.swing.JLabel citySuccessLbl;
     private javax.swing.JLabel jLabel1;

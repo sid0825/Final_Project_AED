@@ -59,7 +59,7 @@ public class StudentWorkAreaJPanel extends javax.swing.JPanel {
         txtZipcode.setEditable(false);
         txtHeight.setEditable(false);
         txtWeight.setEditable(false);
-        saveBtn.setEnabled(false);
+        btnSave.setEnabled(false);
         clearLabels();
 
         txtName.setText(userAccount.getStudent().getName());
@@ -168,8 +168,8 @@ public class StudentWorkAreaJPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         radioMale = new javax.swing.JRadioButton();
         radioFemale = new javax.swing.JRadioButton();
-        updateBtn = new javax.swing.JButton();
-        saveBtn = new javax.swing.JButton();
+        btnUpdate = new javax.swing.JButton();
+        btnSave = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         txtAdress = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
@@ -205,7 +205,7 @@ public class StudentWorkAreaJPanel extends javax.swing.JPanel {
         jLabel9 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        placeOrderBtn1 = new javax.swing.JButton();
+        btnPlaceOrder = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(51, 51, 51));
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -331,27 +331,27 @@ public class StudentWorkAreaJPanel extends javax.swing.JPanel {
         });
         add(radioFemale, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 440, -1, -1));
 
-        updateBtn.setBackground(new java.awt.Color(204, 204, 204));
-        updateBtn.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        updateBtn.setForeground(new java.awt.Color(51, 51, 51));
-        updateBtn.setText("Update");
-        updateBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnUpdate.setBackground(new java.awt.Color(204, 204, 204));
+        btnUpdate.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
+        btnUpdate.setForeground(new java.awt.Color(51, 51, 51));
+        btnUpdate.setText("Update");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updateBtnActionPerformed(evt);
+                btnUpdateActionPerformed(evt);
             }
         });
-        add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 490, 106, 51));
+        add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 490, 106, 51));
 
-        saveBtn.setBackground(new java.awt.Color(204, 204, 204));
-        saveBtn.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        saveBtn.setForeground(new java.awt.Color(51, 51, 51));
-        saveBtn.setText("Save");
-        saveBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnSave.setBackground(new java.awt.Color(204, 204, 204));
+        btnSave.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
+        btnSave.setForeground(new java.awt.Color(51, 51, 51));
+        btnSave.setText("Save");
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                saveBtnActionPerformed(evt);
+                btnSaveActionPerformed(evt);
             }
         });
-        add(saveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 490, 106, 51));
+        add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 490, 106, 51));
 
         jLabel10.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(204, 204, 204));
@@ -548,7 +548,7 @@ public class StudentWorkAreaJPanel extends javax.swing.JPanel {
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1210, 40));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(102, 255, 255));
+        jLabel9.setForeground(new java.awt.Color(51, 204, 255));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Student");
         add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 692, 36));
@@ -559,16 +559,16 @@ public class StudentWorkAreaJPanel extends javax.swing.JPanel {
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/backgroundFoot.png"))); // NOI18N
         add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 264, 52));
 
-        placeOrderBtn1.setBackground(new java.awt.Color(204, 204, 204));
-        placeOrderBtn1.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        placeOrderBtn1.setForeground(new java.awt.Color(51, 51, 51));
-        placeOrderBtn1.setText("Student Store");
-        placeOrderBtn1.addActionListener(new java.awt.event.ActionListener() {
+        btnPlaceOrder.setBackground(new java.awt.Color(204, 204, 204));
+        btnPlaceOrder.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
+        btnPlaceOrder.setForeground(new java.awt.Color(51, 51, 51));
+        btnPlaceOrder.setText("Student Store");
+        btnPlaceOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                placeOrderBtn1ActionPerformed(evt);
+                btnPlaceOrderActionPerformed(evt);
             }
         });
-        add(placeOrderBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(566, 490, 110, 51));
+        add(btnPlaceOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(566, 490, 110, 51));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAnalysisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnalysisActionPerformed
@@ -580,7 +580,7 @@ public class StudentWorkAreaJPanel extends javax.swing.JPanel {
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnAnalysisActionPerformed
 
-    private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
         txtName.setEditable(true);
         txtName.setEnabled(true);
@@ -601,11 +601,11 @@ public class StudentWorkAreaJPanel extends javax.swing.JPanel {
         txtHeight.setEnabled(true);
         txtWeight.setEditable(true);
         txtWeight.setEnabled(true);
-        saveBtn.setEnabled(true);
-        updateBtn.setEnabled(false);
-    }//GEN-LAST:event_updateBtnActionPerformed
+        btnSave.setEnabled(true);
+        btnUpdate.setEnabled(false);
+    }//GEN-LAST:event_btnUpdateActionPerformed
 
-    private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
         Network network = (Network) networkJComboBox.getSelectedItem();
         if (txtName.getText().isEmpty() || txtAge.getText().isEmpty() || txtWeight.getText().isEmpty() || txtHeight.getText().isEmpty() || txtAdress.getText().isEmpty() || txtCity.getText().isEmpty() || txtZipcode.getText().isEmpty()) {
@@ -652,13 +652,13 @@ public class StudentWorkAreaJPanel extends javax.swing.JPanel {
             txtHeight.setEnabled(false);
             txtWeight.setEditable(false);
             txtWeight.setEnabled(false);
-            saveBtn.setEnabled(false);
-            updateBtn.setEnabled(true);
+            btnSave.setEnabled(false);
+            btnUpdate.setEnabled(true);
             clearLabels();
         } else {
             JOptionPane.showMessageDialog(null, "Please enter all the required fields correctly!", "Error", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_saveBtnActionPerformed
+    }//GEN-LAST:event_btnSaveActionPerformed
 
     private void radioFemaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioFemaleActionPerformed
         // TODO add your handling code here:
@@ -844,12 +844,12 @@ public class StudentWorkAreaJPanel extends javax.swing.JPanel {
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnMaintainReqActionPerformed
 
-    private void placeOrderBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_placeOrderBtn1ActionPerformed
+    private void btnPlaceOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlaceOrderActionPerformed
         PlaceOrderJPanel placeOrder = new PlaceOrderJPanel(userProcessContainer, student, system, userAccount, enterprise, network);
         userProcessContainer.add("StudentAnalysisJPanel", placeOrder);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_placeOrderBtn1ActionPerformed
+    }//GEN-LAST:event_btnPlaceOrderActionPerformed
 
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
         // TODO add your handling code here:
@@ -863,6 +863,9 @@ public class StudentWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel ageBandLbl;
     private javax.swing.JButton btnAnalysis;
     private javax.swing.JButton btnMaintainReq;
+    private javax.swing.JButton btnPlaceOrder;
+    private javax.swing.JButton btnSave;
+    private javax.swing.JButton btnUpdate;
     private javax.swing.JLabel cityLbl;
     private javax.swing.JLabel citySuccessLbl;
     private javax.swing.JLabel greetLbl;
@@ -889,10 +892,8 @@ public class StudentWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JComboBox networkJComboBox;
     private javax.swing.JLabel passwordLbl;
     private javax.swing.JLabel passwordSuccessLbl;
-    private javax.swing.JButton placeOrderBtn1;
     private javax.swing.JRadioButton radioFemale;
     private javax.swing.JRadioButton radioMale;
-    private javax.swing.JButton saveBtn;
     private javax.swing.JTextField txtAdress;
     private javax.swing.JTextField txtAge;
     private javax.swing.JTextField txtCity;
@@ -901,7 +902,6 @@ public class StudentWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtWeight;
     private javax.swing.JTextField txtZipcode;
-    private javax.swing.JButton updateBtn;
     private javax.swing.JButton updateBtn1;
     private javax.swing.JLabel weightLbl;
     private javax.swing.JLabel weightSuccessLbl;

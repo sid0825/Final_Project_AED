@@ -44,8 +44,8 @@ public class ManageStoreJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        manageInventoryBtn = new javax.swing.JButton();
-        manageOrdersBtn = new javax.swing.JButton();
+        btnManageServices = new javax.swing.JButton();
+        btnManageReq = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         greetLbl = new javax.swing.JLabel();
@@ -56,25 +56,25 @@ public class ManageStoreJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(51, 51, 51));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        manageInventoryBtn.setBackground(new java.awt.Color(204, 204, 204));
-        manageInventoryBtn.setForeground(new java.awt.Color(51, 51, 51));
-        manageInventoryBtn.setText("Manage Services");
-        manageInventoryBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnManageServices.setBackground(new java.awt.Color(51, 153, 255));
+        btnManageServices.setForeground(new java.awt.Color(255, 255, 255));
+        btnManageServices.setText("Manage Services");
+        btnManageServices.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                manageInventoryBtnActionPerformed(evt);
+                btnManageServicesActionPerformed(evt);
             }
         });
-        add(manageInventoryBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, 170, 50));
+        add(btnManageServices, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, 170, 50));
 
-        manageOrdersBtn.setBackground(new java.awt.Color(204, 204, 204));
-        manageOrdersBtn.setForeground(new java.awt.Color(51, 51, 51));
-        manageOrdersBtn.setText("Manage Requests");
-        manageOrdersBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnManageReq.setBackground(new java.awt.Color(51, 153, 255));
+        btnManageReq.setForeground(new java.awt.Color(255, 255, 255));
+        btnManageReq.setText("Manage Requests");
+        btnManageReq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                manageOrdersBtnActionPerformed(evt);
+                btnManageReqActionPerformed(evt);
             }
         });
-        add(manageOrdersBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 390, 170, 50));
+        add(btnManageReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 390, 170, 50));
 
         jPanel3.setBackground(new java.awt.Color(102, 204, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -102,30 +102,30 @@ public class ManageStoreJPanel extends javax.swing.JPanel {
         add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, 460, 30));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void manageInventoryBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageInventoryBtnActionPerformed
+    private void btnManageServicesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageServicesActionPerformed
         CreateServicesJPanel panel = new CreateServicesJPanel(userProcessContainer, organization, business, enterprise, account);
         userProcessContainer.add("CreateServicesJPanel", panel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_manageInventoryBtnActionPerformed
+    }//GEN-LAST:event_btnManageServicesActionPerformed
 
-    private void manageOrdersBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageOrdersBtnActionPerformed
+    private void btnManageReqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageReqActionPerformed
         ManageServiceJPanel panel = new ManageServiceJPanel(userProcessContainer, organization, business, enterprise, account);
         userProcessContainer.add("ManageServiceJPanel", panel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_manageOrdersBtnActionPerformed
+    }//GEN-LAST:event_btnManageReqActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnManageReq;
+    private javax.swing.JButton btnManageServices;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel greetLbl;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JButton manageInventoryBtn;
-    private javax.swing.JButton manageOrdersBtn;
     // End of variables declaration//GEN-END:variables
 
 }

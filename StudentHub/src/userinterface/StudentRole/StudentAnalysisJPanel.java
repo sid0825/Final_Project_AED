@@ -86,14 +86,14 @@ public class StudentAnalysisJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         txtBMI = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        btnDocApp = new javax.swing.JButton();
+        btnDoctorAppointment = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        backJButton = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
         txtWtDec = new javax.swing.JTextField();
         goalComboBox = new javax.swing.JComboBox<>();
-        trainerAptBtn = new javax.swing.JButton();
-        submitRequest = new javax.swing.JButton();
+        btnTrainerApt = new javax.swing.JButton();
+        btnSubmitRequest = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         dietStatusTbl = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
@@ -134,16 +134,16 @@ public class StudentAnalysisJPanel extends javax.swing.JPanel {
         jLabel2.setText("Based on your BMI you are:");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 220, -1, 40));
 
-        btnDocApp.setBackground(new java.awt.Color(204, 204, 204));
-        btnDocApp.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        btnDocApp.setForeground(new java.awt.Color(51, 51, 51));
-        btnDocApp.setText("Get Doctor Appointment");
-        btnDocApp.addActionListener(new java.awt.event.ActionListener() {
+        btnDoctorAppointment.setBackground(new java.awt.Color(51, 153, 255));
+        btnDoctorAppointment.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
+        btnDoctorAppointment.setForeground(new java.awt.Color(255, 255, 255));
+        btnDoctorAppointment.setText("Get Doctor Appointment");
+        btnDoctorAppointment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDocAppActionPerformed(evt);
+                btnDoctorAppointmentActionPerformed(evt);
             }
         });
-        add(btnDocApp, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, 183, 40));
+        add(btnDoctorAppointment, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, 183, 40));
 
         jLabel3.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(204, 204, 204));
@@ -157,16 +157,16 @@ public class StudentAnalysisJPanel extends javax.swing.JPanel {
         jLabel6.setText("Your Analysis");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 692, 36));
 
-        backJButton.setBackground(new java.awt.Color(204, 204, 204));
-        backJButton.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        backJButton.setForeground(new java.awt.Color(51, 51, 51));
-        backJButton.setText("<< Back");
-        backJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnBack.setBackground(new java.awt.Color(255, 51, 51));
+        btnBack.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(51, 51, 51));
+        btnBack.setText("<< Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backJButtonActionPerformed(evt);
+                btnBackActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, 30));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, 30));
 
         txtWtDec.setEditable(false);
         txtWtDec.setBackground(new java.awt.Color(204, 204, 204));
@@ -186,27 +186,27 @@ public class StudentAnalysisJPanel extends javax.swing.JPanel {
         goalComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gain Weight", "Loose Weight" }));
         add(goalComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 138, 32));
 
-        trainerAptBtn.setBackground(new java.awt.Color(204, 204, 204));
-        trainerAptBtn.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        trainerAptBtn.setForeground(new java.awt.Color(51, 51, 51));
-        trainerAptBtn.setText("Get Training Workouts");
-        trainerAptBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnTrainerApt.setBackground(new java.awt.Color(51, 153, 255));
+        btnTrainerApt.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
+        btnTrainerApt.setForeground(new java.awt.Color(255, 255, 255));
+        btnTrainerApt.setText("Get Training Workouts");
+        btnTrainerApt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                trainerAptBtnActionPerformed(evt);
+                btnTrainerAptActionPerformed(evt);
             }
         });
-        add(trainerAptBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 370, 183, 40));
+        add(btnTrainerApt, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 370, 183, 40));
 
-        submitRequest.setBackground(new java.awt.Color(204, 204, 204));
-        submitRequest.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        submitRequest.setForeground(new java.awt.Color(51, 51, 51));
-        submitRequest.setText("Submit Request to Nutrition");
-        submitRequest.addActionListener(new java.awt.event.ActionListener() {
+        btnSubmitRequest.setBackground(new java.awt.Color(51, 153, 255));
+        btnSubmitRequest.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
+        btnSubmitRequest.setForeground(new java.awt.Color(255, 255, 255));
+        btnSubmitRequest.setText("Submit Request to Nutrition");
+        btnSubmitRequest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitRequestActionPerformed(evt);
+                btnSubmitRequestActionPerformed(evt);
             }
         });
-        add(submitRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 190, 45));
+        add(btnSubmitRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 190, 45));
 
         dietStatusTbl.setBackground(new java.awt.Color(204, 204, 204));
         dietStatusTbl.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
@@ -284,33 +284,33 @@ public class StudentAnalysisJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBMIActionPerformed
 
-    private void btnDocAppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDocAppActionPerformed
+    private void btnDoctorAppointmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoctorAppointmentActionPerformed
         DoctorAppointmentJPanel doc = new DoctorAppointmentJPanel(userProcessContainer, system, network, userAccount);
         userProcessContainer.add("DoctorAppointmentJPanel", doc);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnDocAppActionPerformed
+    }//GEN-LAST:event_btnDoctorAppointmentActionPerformed
 
-    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-    }//GEN-LAST:event_backJButtonActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
     private void txtWtDecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtWtDecActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtWtDecActionPerformed
 
-    private void trainerAptBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trainerAptBtnActionPerformed
+    private void btnTrainerAptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrainerAptActionPerformed
         // TODO add your handling code here:
         TrainerAppointmentJPanel trainer = new TrainerAppointmentJPanel(userProcessContainer, system, network, userAccount);
         userProcessContainer.add("TrainerAppointmentJPanel", trainer);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_trainerAptBtnActionPerformed
+    }//GEN-LAST:event_btnTrainerAptActionPerformed
 
-    private void submitRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitRequestActionPerformed
+    private void btnSubmitRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitRequestActionPerformed
         // TODO add your handling code here:
         if (userAccount.getWorkQueue().getWorkRequestList().size() == 0) {
             String bmi = txtBMI.getText();
@@ -376,12 +376,14 @@ public class StudentAnalysisJPanel extends javax.swing.JPanel {
         }
 
 
-    }//GEN-LAST:event_submitRequestActionPerformed
+    }//GEN-LAST:event_btnSubmitRequestActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backJButton;
-    private javax.swing.JButton btnDocApp;
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnDoctorAppointment;
+    private javax.swing.JButton btnSubmitRequest;
+    private javax.swing.JButton btnTrainerApt;
     private javax.swing.JTable dietStatusTbl;
     private javax.swing.JComboBox<String> goalComboBox;
     private javax.swing.JLabel jLabel1;
@@ -399,8 +401,6 @@ public class StudentAnalysisJPanel extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JButton submitRequest;
-    private javax.swing.JButton trainerAptBtn;
     private javax.swing.JTextField txtBMI;
     private javax.swing.JTextField txtWtDec;
     // End of variables declaration//GEN-END:variables

@@ -140,10 +140,10 @@ public class CreateNewStudentJPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         txtPassword = new javax.swing.JPasswordField();
         txtEmail = new javax.swing.JTextField();
-        submitBtn = new javax.swing.JButton();
+        btnSubmit = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        resetBtn = new javax.swing.JButton();
+        btnReset = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -243,16 +243,16 @@ public class CreateNewStudentJPanel extends javax.swing.JPanel {
         });
         add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 190, 30));
 
-        submitBtn.setBackground(new java.awt.Color(102, 204, 255));
-        submitBtn.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        submitBtn.setForeground(new java.awt.Color(51, 51, 51));
-        submitBtn.setText("Submit");
-        submitBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnSubmit.setBackground(new java.awt.Color(51, 153, 255));
+        btnSubmit.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
+        btnSubmit.setForeground(new java.awt.Color(255, 255, 255));
+        btnSubmit.setText("Submit");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitBtnActionPerformed(evt);
+                btnSubmitActionPerformed(evt);
             }
         });
-        add(submitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 530, 100, 50));
+        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 530, 100, 50));
 
         jLabel4.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(204, 204, 204));
@@ -261,21 +261,21 @@ public class CreateNewStudentJPanel extends javax.swing.JPanel {
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 107, 30));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel1.setForeground(new java.awt.Color(51, 204, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("STUDENT REGISTRATION");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-90, 60, 1210, 50));
 
-        resetBtn.setBackground(new java.awt.Color(204, 204, 255));
-        resetBtn.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
-        resetBtn.setForeground(new java.awt.Color(51, 51, 51));
-        resetBtn.setText("Reset");
-        resetBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnReset.setBackground(new java.awt.Color(51, 153, 255));
+        btnReset.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
+        btnReset.setForeground(new java.awt.Color(255, 255, 255));
+        btnReset.setText("Reset");
+        btnReset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                resetBtnActionPerformed(evt);
+                btnResetActionPerformed(evt);
             }
         });
-        add(resetBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 530, 100, 50));
+        add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 530, 100, 50));
 
         jLabel2.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 204, 204));
@@ -532,10 +532,10 @@ public class CreateNewStudentJPanel extends javax.swing.JPanel {
         add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 264, 52));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void resetBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetBtnActionPerformed
+    private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
         clearValues();
         clearLabels();
-    }//GEN-LAST:event_resetBtnActionPerformed
+    }//GEN-LAST:event_btnResetActionPerformed
     private void clearValues() {
         txtName.setText("");
         txtEmail.setText("");
@@ -564,7 +564,7 @@ public class CreateNewStudentJPanel extends javax.swing.JPanel {
         weightSuccessLbl.setVisible(false);
     }
 
-    private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         Network network = (Network) networkJComboBox.getSelectedItem();
         if (txtName.getText().isEmpty() || txtAge.getText().isEmpty()
                 || txtWeight.getText().isEmpty() || txtHeight.getText().isEmpty()
@@ -605,7 +605,7 @@ public class CreateNewStudentJPanel extends javax.swing.JPanel {
         } else {
             JOptionPane.showMessageDialog(null, "Please enter all the required fields correctly!", "Error", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_submitBtnActionPerformed
+    }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void radioMaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioMaleActionPerformed
         radioFemale.setSelected(false);
@@ -858,6 +858,8 @@ public class CreateNewStudentJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel addressLbl;
     private javax.swing.JLabel addressSuccessLbl;
     private javax.swing.JLabel ageBandLbl;
+    private javax.swing.JButton btnReset;
+    private javax.swing.JButton btnSubmit;
     private javax.swing.JLabel cityLbl;
     private javax.swing.JLabel citySuccessLbl;
     private javax.swing.JLabel confirmPasswordLbl;
@@ -892,8 +894,6 @@ public class CreateNewStudentJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel passwordSuccessLbl;
     private javax.swing.JRadioButton radioFemale;
     private javax.swing.JRadioButton radioMale;
-    private javax.swing.JButton resetBtn;
-    private javax.swing.JButton submitBtn;
     private javax.swing.JTextField txtAdress;
     private javax.swing.JTextField txtAge;
     private javax.swing.JTextField txtCity;
