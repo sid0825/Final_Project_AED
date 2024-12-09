@@ -345,7 +345,7 @@ public class PhysioWorkAreaJPanel extends javax.swing.JPanel {
        public void sendEmail(String email, String name){
                 //final String username = "";
 		final String password = "kxidgyrkqqcufple";
-		String fromEmail = "studenthub@gmail.com";
+		String fromEmail = "studenthubneu@gmail.com";
 		String toEmail = email;
 		Properties properties = new Properties();
 		properties.put("mail.smtp.auth", "true");

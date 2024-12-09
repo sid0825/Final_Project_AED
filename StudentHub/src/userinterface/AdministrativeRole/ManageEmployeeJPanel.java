@@ -85,10 +85,10 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         roleJComboBox.removeAllItems();
         for (Role role : organization.getSupportedRole()) {
 
-            //String r = role.toString();
-            String simpleName = role.getClass().getSimpleName();
 //            String r = role.toString();
-            roleJComboBox.addItem(simpleName);
+//            String simpleName = role.getClass().getSimpleName();
+            String r = role.toString();
+            roleJComboBox.addItem(role);
         }
     }
 

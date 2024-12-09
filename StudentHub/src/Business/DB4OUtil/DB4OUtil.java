@@ -21,7 +21,7 @@ import java.nio.file.Paths;
 public class DB4OUtil {
 
     // Data store path
-    private static final String FILENAME = Paths.get("Databank.db4o").toAbsolutePath().toString();
+    private static final String FILENAME = Paths.get("NewData.db4o").toAbsolutePath().toString();
     private static DB4OUtil dB4OUtil;
     
     public synchronized static DB4OUtil getInstance(){

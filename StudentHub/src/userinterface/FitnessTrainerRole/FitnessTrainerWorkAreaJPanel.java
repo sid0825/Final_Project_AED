@@ -383,7 +383,7 @@ public class FitnessTrainerWorkAreaJPanel extends javax.swing.JPanel {
     
     public void sendEmail(String email, String chart) {
         final String password = "kxidgyrkqqcufple";
-        String fromEmail = "studenthub@gmail.com";
+        String fromEmail = "studenthubneu@gmail.com";
         String toEmail = email;
         Properties properties = new Properties();
         properties.put("mail.smtp.auth", "true");
