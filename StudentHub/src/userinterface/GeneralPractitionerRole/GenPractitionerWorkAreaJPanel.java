@@ -287,8 +287,8 @@ public class GenPractitionerWorkAreaJPanel extends javax.swing.JPanel {
 
     public void sendEmail(String email, String name){
                 //final String username = "";
-		final String password = "uhugcrgdragopyzz";
-		String fromEmail = "huskylives23@gmail.com";
+		final String password = "kxidgyrkqqcufple";
+		String fromEmail = "studenthub@gmail.com";
 		String toEmail = email;
 		Properties properties = new Properties();
 		properties.put("mail.smtp.auth", "true");
